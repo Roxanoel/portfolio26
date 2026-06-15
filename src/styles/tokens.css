@@ -1,0 +1,14 @@
+/* Design tokens — 70s vinyl × Bauhaus system */
+:root {
+  --cream:    #f2e8d5;
+  --paper:    #f7efe0;
+  --ink:      #1c1a17;
+  --ink-soft: #3a352d;
+  --terra:    #c75f3a;
+  --gold:     #d9a441;
+  --green:    #3f5e54;
+  --night:    #14110d;
+
+  --maxw:   1320px;
+  --gutter: clamp(20px, 5vw, 72px);
+}
