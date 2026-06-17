@@ -55,7 +55,7 @@ export function Main() {
       <header className={styles.hero}>
         <div className={styles.heroHaze} aria-hidden="true" />
         <div className={styles.heroGrain} aria-hidden="true" />
-        <div className={`wrap ${styles.heroGrid}`}>
+        <div className={styles.heroGrid}>
           <div data-reveal>
             <span className={styles.kicker}>PRODUCT DESIGNER + ENGINEER</span>
             <h1 className={styles.h1}>
@@ -105,7 +105,10 @@ export function Main() {
         <section id="about" className="wrap">
           <div className={styles.about}>
             <div data-reveal>
-              <span className={styles.aboutLabel}>About</span>
+              <h2 className={styles.aboutHead}>
+                <span className={styles.sqGreen} />
+                About
+              </h2>
             </div>
             <div>
               <p data-reveal>
@@ -118,15 +121,14 @@ export function Main() {
                 something usable and practical.
               </p>
               <p data-reveal style={{ "--reveal-delay": "80ms" }}>
-                Today, I translate that conceptual framework into product My PhD
-                in Philosophy from the University of Cambridge provides the
-                analytical anchor for this balance of creativity and structure.
-                My years training in analytical rigor and logic gave me a
-                framework for deconstructing complex, ambiguous systems, while
-                specializing in medieval philosophy taught me a profound lesson
-                in empathy: how to step into a completely different worldview
-                and deeply understand how people think, feel, and navigate their
-                realities.
+                My PhD in Philosophy from the University of Cambridge provides
+                the analytical anchor for this balance of creativity and
+                structure. My years training in analytical rigor and logic gave
+                me a framework for deconstructing complex, ambiguous systems,
+                while specializing in medieval philosophy taught me a profound
+                lesson in empathy: how to step into a completely different
+                worldview and deeply understand how people think, feel, and
+                navigate their realities.
               </p>
               <p data-reveal style={{ "--reveal-delay": "160ms" }}>
                 This unique toolkit allows me to comfortably translate abstract
@@ -176,7 +178,7 @@ export function Main() {
             </li>
           </ul>
           <div className={styles.footBottom}>
-            <span>© {new Date().getFullYear()} Roxane. Made with play.</span>
+            <span>© {new Date().getFullYear()} Roxane Noel.</span>
             <span>Roxane — Portfolio</span>
           </div>
         </div>

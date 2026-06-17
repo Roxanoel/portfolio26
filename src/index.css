@@ -2,7 +2,7 @@
 
 *  { box-sizing: border-box; }
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-body { margin: 0; overflow-x: hidden; }
+body { margin: 0; overflow-x: hidden; font-family: 'Open Sauce Two', sans-serif; }
 
 /* Paper grain overlay — place <Grain /> as a fixed layer */
 .grain {
