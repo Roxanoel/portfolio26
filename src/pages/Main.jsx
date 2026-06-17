@@ -66,8 +66,8 @@ export function Main() {
               <em>ideas</em> and <em>reality</em>
             </h1>
             <p className={styles.lede}>
-              I’m a designer who started coding back when people still asked,
-              <em>"Why would a creative need to learn that?"</em>
+              From research to design and all the way to implementation, I
+              deliver projects holistically from start to finish.
             </p>
             <div className={styles.cta}>
               <a href="#work" className={styles.btn}>
@@ -201,7 +201,7 @@ export function Main() {
           </ul>
           <div className={styles.footBottom}>
             <span>© {new Date().getFullYear()} Roxane Noel.</span>
-            <span>Roxane — Portfolio</span>
+            {/* <span>Roxane — Portfolio</span> */}
           </div>
         </div>
       </footer>
