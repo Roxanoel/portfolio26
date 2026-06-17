@@ -2,7 +2,6 @@
   background: var(--cream);
   color: var(--ink);
   font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  overflow-x: hidden;
 }
 .page ::selection {
   background: var(--green);

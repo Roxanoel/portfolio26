@@ -60,13 +60,13 @@ export function Main() {
             <span className={styles.kicker}>PRODUCT DESIGNER + ENGINEER</span>
             <h1 className={styles.h1}>
               <span className={styles.hi}>Hi, I'm Roxane!</span>
-              I build the
+              I bridge the gap between
               <br />
-              <em>things</em> I design.
+              <em>ideas</em> and <em>reality</em>
             </h1>
             <p className={styles.lede}>
-              A designer who codes and an engineer who sweats the kerning —
-              making playful, considered products end to end.
+              I’m a designer who started coding back when people still asked,
+              <em>"Why would a creative need to learn that?"</em>
             </p>
             <div className={styles.cta}>
               <a href="#work" className={styles.btn}>
@@ -97,7 +97,7 @@ export function Main() {
               <span className={styles.sq} />
               Selected Work
             </h2>
-            <span className={styles.count}>Six projects · 2022—25</span>
+            <span className={styles.count}>Sample projects · 2022—2026</span>
           </div>
           <WorkGrid motifs={MOTIFS} />
         </section>
@@ -109,13 +109,34 @@ export function Main() {
             </div>
             <div>
               <p data-reveal>
-                I work where <em>design and engineering</em> overlap —
-                prototyping in real code, sweating typographic detail, and
-                treating a build pipeline with the same care as a layout grid.
+                As a design engineer, I find inspiration at the intersection of
+                beauty and function. My journey into building began coding video
+                games, evolved into frontend engineering and product design, and
+                expanded outside the world of software through sewing. Whether I
+                am writing clean components or constructing a garment, I am
+                fascinated by the challenge of translating creative vision into
+                something usable and practical.
               </p>
               <p data-reveal style={{ "--reveal-delay": "80ms" }}>
-                Lately I'm drawn to interfaces with a little analogue warmth:
-                grain, rhythm, and a sense of play.
+                Today, I translate that conceptual framework into product My PhD
+                in Philosophy from the University of Cambridge provides the
+                analytical anchor for this balance of creativity and structure.
+                My years training in analytical rigor and logic gave me a
+                framework for deconstructing complex, ambiguous systems, while
+                specializing in medieval philosophy taught me a profound lesson
+                in empathy: how to step into a completely different worldview
+                and deeply understand how people think, feel, and navigate their
+                realities.
+              </p>
+              <p data-reveal style={{ "--reveal-delay": "160ms" }}>
+                This unique toolkit allows me to comfortably translate abstract
+                user needs into a product with precise technical execution. I
+                thrive on small, agile teams where I can wear many hats and
+                adapt quickly to shifting demands. Moving fluidly between B2B
+                SaaS and the nonprofit sector has made me deeply attentive to
+                context; instead of relying on ready-made formulas, I know how
+                to balance business-driven efficiency with mission-driven
+                empathy depending on the problem at hand.
               </p>
               <div
                 className={styles.meta}
@@ -126,14 +147,6 @@ export function Main() {
                   <b>Based in</b>
                   <span>San Francisco, remote-friendly</span>
                 </div>
-                <div>
-                  <b>Toolkit</b>
-                  <span>Figma · React · Vue · Rails · Tailwind CSS ·</span>
-                </div>
-                <div>
-                  <b>Focus</b>
-                  <span>0→1 product, design systems</span>
-                </div>
               </div>
             </div>
           </div>
@@ -143,11 +156,7 @@ export function Main() {
       <footer id="contact" className={styles.footer}>
         <div className="wrap">
           <div className={styles.footTop}>
-            <h3>
-              Let's make
-              <br />
-              something <em>fun.</em>
-            </h3>
+            <h3>Let's chat!</h3>
             <a className={styles.mail} href="mailto:hello@roxane.studio">
               hello@roxane.studio
             </a>
