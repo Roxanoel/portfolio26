@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from './ProjectCard.module.css'
 
 export function ProjectCard({ project, motifSvg }) {
-  const { n, title, year, blurb, tags } = project
+  const { n, slug, title, year, blurb, tags } = project
 
   return (
-    <article
+    <Link
+      to={`/work/${slug}`}
       className={styles.card}
       data-reveal
-      tabIndex={0}
       aria-label={title}
     >
       <div className={styles.art}>
@@ -32,6 +33,6 @@ export function ProjectCard({ project, motifSvg }) {
           ))}
         </div>
       </div>
-    </article>
+    </Link>
   )
 }

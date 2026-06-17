@@ -4,6 +4,8 @@
   flex-direction: column;
   cursor: pointer;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
   background: var(--paper);
   border: 2px solid var(--ink);
   border-radius: 20px;
