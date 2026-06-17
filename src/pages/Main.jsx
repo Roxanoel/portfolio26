@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Grain } from "../components/Grain";
 import { WorkGrid } from "../components/WorkGrid";
+import { BookCard } from "../components/BookCard";
 import { MOTIFS } from "../utils/motifs";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 import { useParallax } from "../hooks/useParallax";
@@ -104,11 +105,42 @@ export function Main() {
 
         <section id="about" className="wrap">
           <div className={styles.about}>
-            <div data-reveal>
-              <h2 className={styles.aboutHead}>
+            <div>
+              <h2 className={styles.aboutHead} data-reveal>
                 <span className={styles.sqGreen} />
                 About
               </h2>
+              <div
+                className={styles.meta}
+                data-reveal
+                style={{ "--reveal-delay": "80ms" }}
+              >
+                <div>
+                  <b>Based in</b>
+                  <span>San Francisco, remote-friendly</span>
+                </div>
+                <div>
+                  <BookCard isbn="9781541604339" />
+                </div>
+                <div>
+                  <b>On Repeat</b>
+                  <iframe
+                    data-testid="embed-iframe"
+                    src="https://open.spotify.com/embed/album/0mu3EvWYfNwBfISSg0q03p?utm_source=generator&si=83b3d10fe58948cf"
+                    width="100%"
+                    height="152"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    style={{
+                      border: "none",
+                      borderRadius: "8px",
+                      marginTop: "8px",
+                      display: "block",
+                    }}
+                  ></iframe>
+                </div>
+              </div>
             </div>
             <div>
               <p data-reveal>
@@ -140,16 +172,6 @@ export function Main() {
                 to balance business-driven efficiency with mission-driven
                 empathy depending on the problem at hand.
               </p>
-              <div
-                className={styles.meta}
-                data-reveal
-                style={{ "--reveal-delay": "160ms" }}
-              >
-                <div>
-                  <b>Based in</b>
-                  <span>San Francisco, remote-friendly</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
