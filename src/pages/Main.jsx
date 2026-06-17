@@ -104,12 +104,12 @@ export function Main() {
         </section>
 
         <section id="about" className="wrap">
+          <h2 className={styles.aboutHead} data-reveal>
+            <span className={styles.sqGreen} />
+            About
+          </h2>
           <div className={styles.about}>
             <div>
-              <h2 className={styles.aboutHead} data-reveal>
-                <span className={styles.sqGreen} />
-                About
-              </h2>
               <div
                 className={styles.meta}
                 data-reveal
