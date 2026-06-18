@@ -1,3 +1,10 @@
+import mentalHealthCheckInForTeenagers from "../assets/project-mental-health-check-in-for-teenagers.png";
+import simplifiedStudentRostering from "../assets/project-simplified-student-rostering.png";
+import mentalHealthResourceAssignment from "../assets/project-mental-health-resource-assignment.png";
+import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistics.png";
+import opteoDesignSystemOverhaul from "../assets/project-opteo-design-system-overhaul.png";
+import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
+
 export const TAG_COLORS = {
   Engineering: { bg: "#3f5e54", ink: "#f2e8d5" },
   Product: { bg: "#c75f3a", ink: "#f7efe0" },
@@ -14,6 +21,7 @@ export const PROJECTS = [
     blurb:
       "A sample from a research deep-dive to better align a mental health check-in tool with the specific needs of teenagers.",
     tags: ["Research", "Product"],
+    image: mentalHealthCheckInForTeenagers,
   },
   {
     n: "02",
@@ -23,6 +31,7 @@ export const PROJECTS = [
     blurb:
       "Tackling attrition by identifying and addressing the main friction point in an edtech tool's onboarding process, namely student rostering.",
     tags: ["UX", "UI", "Research", "Engineering"],
+    image: simplifiedStudentRostering,
   },
   {
     n: "03",
@@ -32,24 +41,28 @@ export const PROJECTS = [
     blurb:
       "Building the missing link to provide an end-to-end student mental health solution.",
     tags: ["Product", "UX", "Engineering"],
+    image: mentalHealthResourceAssignment,
   },
+
   {
     n: "04",
-    slug: "b2b-saas-impact-statistics",
-    title: "B2B SaaS Impact Statistics",
-    year: "2024",
-    blurb:
-      "A suite of data visualisation tools to help team leaders monitor team contributions and optimize tool usage for increased ROI.",
-    tags: ["UX", "Engineering", "UI"],
-  },
-  {
-    n: "05",
     slug: "opteo-design-system-overhaul",
     title: "Opteo Design System Overhaul",
     year: "2024",
     blurb:
       "A sample of a few technically challenging components built as part of rebuilding a design system from the ground up.",
     tags: ["Engineering", "UI"],
+    image: opteoDesignSystemOverhaul,
+  },
+  {
+    n: "05",
+    slug: "b2b-saas-impact-statistics",
+    title: "B2B SaaS Impact Statistics",
+    year: "2024",
+    blurb:
+      "A suite of data visualisation tools to help team leaders monitor team contributions and optimize tool usage for increased ROI.",
+    tags: ["UX", "Engineering", "UI"],
+    image: b2bSaaSImpactStatistics,
   },
   {
     n: "06",
@@ -59,5 +72,6 @@ export const PROJECTS = [
     blurb:
       "A handy tool to drive conversions by allowing teams to externally share RSAs made within our tool.",
     tags: ["Engineering", "UX", "UI"],
+    image: shareableResponsiveSearchAds,
   },
 ];
