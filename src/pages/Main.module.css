@@ -300,11 +300,6 @@
   display: flex;
   align-items: center;
 }
-.ringSpin {
-  position: absolute;
-  inset: 4%;
-  animation: rot 38s linear infinite;
-}
 @keyframes rot {
   to {
     transform: rotate(360deg);
@@ -317,7 +312,6 @@
   overflow: hidden;
   border: 3px solid var(--ink);
   border-right: none;
-  box-shadow: -8px 10px 0 var(--green);
 }
 .portrait {
   width: 100%;
