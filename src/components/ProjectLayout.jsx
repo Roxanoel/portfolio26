@@ -12,7 +12,7 @@ export function ProjectLayout({ project, children }) {
 
       <nav className={styles.nav}>
         <div className="wrap">
-          <Link to="/" className={styles.back}>
+          <Link to="/#work" className={styles.back}>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
               <path d="M11 7H3M6 3L2 7l4 4" />
             </svg>
@@ -51,7 +51,7 @@ export function ProjectLayout({ project, children }) {
 
       <footer className={styles.footer}>
         <div className="wrap">
-          <Link to="/" className={styles.footBack}>← Back to all work</Link>
+          <Link to="/#work" className={styles.footBack}>← Back to all work</Link>
         </div>
       </footer>
     </div>
