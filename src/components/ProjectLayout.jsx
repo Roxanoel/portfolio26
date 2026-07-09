@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Grain } from "./Grain";
+import { NdaDisclosure } from "./NdaDisclosure";
 import { TAG_COLORS } from "../data/projects";
 import styles from "./ProjectLayout.module.css";
 
 export function ProjectLayout({ project, children }) {
-  const { n, title, year, blurb, tags, dateRange } = project;
+  const { n, title, year, blurb, tags, dateRange, nda } = project;
 
   return (
     <div className={styles.page}>
@@ -50,7 +51,8 @@ export function ProjectLayout({ project, children }) {
           </div>
           <h1 className={styles.title}>{title}</h1>
           {dateRange && <p className={styles.dateRange}>{dateRange}</p>}
-          <p className={styles.blurb}>{blurb}</p>
+          <p className={`${styles.blurb}${nda ? ` ${styles.blurbNda}` : ""}`}>{blurb}</p>
+          {nda && <NdaDisclosure />}
         </div>
       </header>
 

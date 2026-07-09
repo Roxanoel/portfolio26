@@ -103,6 +103,9 @@
   text-wrap: pretty;
   margin-top: 24px;
 }
+.blurbNda {
+  margin-bottom: 16px;
+}
 
 /* Content */
 .main {

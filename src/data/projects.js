@@ -18,6 +18,7 @@ const RAW_PROJECTS = [
     title: "Mental Health Check-In for Teenagers",
     year: "2026",
     status: "draft",
+    nda: false,
     blurb:
       "A sample from a research deep-dive to better align a mental health check-in tool with the specific needs of teenagers.",
     tags: ["Research", "Product"],
@@ -29,6 +30,7 @@ const RAW_PROJECTS = [
     year: "2026",
     dateRange: "January – February 2026",
     status: "published",
+    nda: true,
     blurb:
       "Tackling attrition by identifying and addressing the main friction point in an edtech tool's onboarding process, namely student rostering.",
     tags: ["UX", "UI", "Research", "Engineering"],
@@ -39,6 +41,7 @@ const RAW_PROJECTS = [
     title: "Mental Health Resource Assignment",
     year: "2025",
     status: "draft",
+    nda: false,
     blurb:
       "Building the missing link to provide an end-to-end student mental health solution.",
     tags: ["Product", "UX", "Engineering"],
@@ -50,6 +53,7 @@ const RAW_PROJECTS = [
     title: "Opteo Design System Overhaul",
     year: "2024",
     status: "draft",
+    nda: false,
     blurb:
       "A sample of a few technically challenging components built as part of rebuilding a design system from the ground up.",
     tags: ["Engineering", "UI"],
@@ -60,6 +64,7 @@ const RAW_PROJECTS = [
     title: "B2B SaaS Impact Statistics",
     year: "2024",
     status: "draft",
+    nda: false,
     blurb:
       "A suite of data visualisation tools to help team leaders monitor team contributions and optimize tool usage for increased ROI.",
     tags: ["UX", "Engineering", "UI"],
@@ -70,6 +75,7 @@ const RAW_PROJECTS = [
     title: "Shareable Responsive Search Ads",
     year: "2023",
     status: "draft",
+    nda: false,
     blurb:
       "A handy tool to drive conversions by allowing teams to externally share RSAs made within our tool.",
     tags: ["Engineering", "UX", "UI"],
