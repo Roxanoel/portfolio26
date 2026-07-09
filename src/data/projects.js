@@ -27,6 +27,7 @@ const RAW_PROJECTS = [
     slug: "simplified-student-rostering",
     title: "Simplified Student Rostering",
     year: "2026",
+    dateRange: "January – February 2026",
     status: "published",
     blurb:
       "Tackling attrition by identifying and addressing the main friction point in an edtech tool's onboarding process, namely student rostering.",

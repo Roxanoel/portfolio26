@@ -31,7 +31,9 @@
   text-decoration: none;
   padding: 7px 14px;
   border-radius: 999px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .back:hover {
   background: var(--ink);
@@ -48,7 +50,6 @@
 /* Header */
 .header {
   padding: clamp(48px, 8vh, 96px) 0 clamp(32px, 5vh, 56px);
-  border-bottom: 2px solid var(--ink);
 }
 .meta {
   display: flex;
@@ -62,6 +63,16 @@
   letter-spacing: 0.06em;
   color: var(--ink-soft);
 }
+.dateRange {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 20px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
 .tags {
   display: flex;
   gap: 8px;
@@ -81,7 +92,7 @@
   font-size: clamp(42px, 7vw, 96px);
   letter-spacing: -0.03em;
   line-height: 0.94;
-  margin: 0 0 24px;
+  margin: 0;
 }
 .blurb {
   font-size: clamp(16px, 1.3vw, 20px);
@@ -90,11 +101,20 @@
   max-width: 52ch;
   margin: 0;
   text-wrap: pretty;
+  margin-top: 24px;
 }
 
 /* Content */
 .main {
-  padding: clamp(48px, 8vh, 96px) 0;
+  padding: 0;
+}
+
+.main > section:nth-child(odd) {
+  background: var(--paper);
+}
+
+.main > section:nth-child(even) {
+  background: var(--cream);
 }
 
 /* Footer */
