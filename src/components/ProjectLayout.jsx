@@ -192,23 +192,33 @@ export function ProjectLayout({ project, children }) {
   useEffect(() => {
     if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      requestAnimationFrame(() => {
+        const center = window.innerHeight / 2;
+        let best = sections[0].id;
+        let bestDist = Infinity;
+
+        for (const s of sections) {
+          const el = document.getElementById(s.id);
+          if (!el) continue;
+          const dist = Math.abs(el.getBoundingClientRect().top - center);
+          if (dist < bestDist) {
+            bestDist = dist;
+            best = s.id;
           }
         }
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
 
-    sections.forEach((s) => {
-      const el = document.getElementById(s.id);
-      if (el) observer.observe(el);
-    });
+        setActiveId(best);
+        ticking = false;
+      });
+      ticking = true;
+    };
 
-    return () => observer.disconnect();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [sections]);
 
   return (
