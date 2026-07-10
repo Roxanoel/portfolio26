@@ -1,7 +1,6 @@
 import { Children, useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import { Grain } from "./Grain";
 import { NdaDisclosure } from "./NdaDisclosure";
 import { TAG_COLORS } from "../data/projects";
 import styles from "./ProjectLayout.module.css";
@@ -223,8 +222,6 @@ export function ProjectLayout({ project, children }) {
 
   return (
     <div className={styles.page}>
-      <Grain />
-
       <nav className={styles.nav}>
         <div className="wrap">
           <Link to="/#work" className={styles.back}>
