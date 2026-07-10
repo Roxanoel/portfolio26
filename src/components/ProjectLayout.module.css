@@ -14,11 +14,14 @@
   backdrop-filter: blur(8px);
 }
 .nav :global(.wrap) {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 66px;
 }
+.nav :global(.wrap) > :nth-child(1) { justify-self: start; }
+.nav :global(.wrap) > :nth-child(2) { justify-self: center; }
+.nav :global(.wrap) > :nth-child(3) { justify-self: end; }
 .back {
   display: inline-flex;
   align-items: center;
@@ -31,7 +34,9 @@
   text-decoration: none;
   padding: 7px 14px;
   border-radius: 999px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .back:hover {
   background: var(--ink);
@@ -45,10 +50,110 @@
   color: var(--ink-soft);
 }
 
+.navTitle {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .nav :global(.wrap) {
+    grid-template-columns: auto 1fr;
+  }
+  .nav :global(.wrap) > :nth-child(1) { grid-column: 1; }
+  .nav :global(.wrap) > :nth-child(3) { grid-column: 2; justify-self: end; }
+  .navTitle { display: none; }
+  .backLabel { display: none; }
+}
+
+/* Jump trigger */
+.jumpWrapper {
+  position: relative;
+  display: inline-flex;
+}
+.jumpTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.jumpTrigger:hover {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+.jumpTrigger:focus-visible {
+  outline: none;
+}
+
+.jumpChevron {
+  transition: transform 0.2s;
+}
+.jumpChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Jump menu */
+.jumpMenu {
+  position: fixed;
+  z-index: 10000;
+  width: max-content;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.jumpItem {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.jumpItem:hover,
+.jumpItemFocus {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+.jumpItemActive {
+  font-weight: 800;
+}
+.jumpItemActive:hover,
+.jumpItemActive.jumpItemFocus {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
 /* Header */
 .header {
   padding: clamp(48px, 8vh, 96px) 0 clamp(32px, 5vh, 56px);
-  border-bottom: 2px solid var(--ink);
 }
 .meta {
   display: flex;
@@ -62,6 +167,16 @@
   letter-spacing: 0.06em;
   color: var(--ink-soft);
 }
+.dateRange {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 20px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
 .tags {
   display: flex;
   gap: 8px;
@@ -81,7 +196,7 @@
   font-size: clamp(42px, 7vw, 96px);
   letter-spacing: -0.03em;
   line-height: 0.94;
-  margin: 0 0 24px;
+  margin: 0;
 }
 .blurb {
   font-size: clamp(16px, 1.3vw, 20px);
@@ -90,11 +205,23 @@
   max-width: 52ch;
   margin: 0;
   text-wrap: pretty;
+  margin-top: 24px;
+}
+.blurbNda {
+  margin-bottom: 16px;
 }
 
 /* Content */
 .main {
-  padding: clamp(48px, 8vh, 96px) 0;
+  padding: 0;
+}
+
+.main > section:nth-child(odd) {
+  background: var(--paper);
+}
+
+.main > section:nth-child(even) {
+  background: var(--cream);
 }
 
 /* Footer */
@@ -112,4 +239,10 @@
 }
 .footBack:hover {
   color: var(--terra);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 24px 0 16px;
+  }
 }

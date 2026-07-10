@@ -1,0 +1,25 @@
+.box {
+  max-width: 376px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  padding: 18px 20px;
+}
+
+.label {
+  display: block;
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+
+.copy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--gold-dark);
+}
