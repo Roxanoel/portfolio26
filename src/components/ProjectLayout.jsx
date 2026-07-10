@@ -1,11 +1,59 @@
+import { Children, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Grain } from "./Grain";
 import { NdaDisclosure } from "./NdaDisclosure";
 import { TAG_COLORS } from "../data/projects";
 import styles from "./ProjectLayout.module.css";
 
+function sectionsFromChildren(children) {
+  return Children.toArray(children)
+    .filter((child) => child.props?.id?.startsWith("slide-"))
+    .map((child) => {
+      const id = child.props.id;
+      const label = id
+        .replace("slide-", "")
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+      return { id, label };
+    });
+}
+
 export function ProjectLayout({ project, children }) {
   const { n, title, year, blurb, tags, dateRange, nda } = project;
+  const sections = sectionsFromChildren(children);
+  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+
+  const handleJump = useCallback((e) => {
+    const id = e.target.value;
+    setActiveId(id);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [sections]);
 
   return (
     <div className={styles.page}>
@@ -27,7 +75,20 @@ export function ProjectLayout({ project, children }) {
             </svg>
             All work
           </Link>
-          <span className={styles.navNo}>{n}</span>
+          {sections.length > 0 ? (
+            <select className={styles.jump} onChange={handleJump} value={activeId}>
+              <option value="" disabled>
+                Jump to section…
+              </option>
+              {sections.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.label}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <span className={styles.navNo}>{n}</span>
+          )}
         </div>
       </nav>
 
