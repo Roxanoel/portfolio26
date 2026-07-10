@@ -14,11 +14,14 @@
   backdrop-filter: blur(8px);
 }
 .nav :global(.wrap) {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 66px;
 }
+.nav :global(.wrap) > :nth-child(1) { justify-self: start; }
+.nav :global(.wrap) > :nth-child(2) { justify-self: center; }
+.nav :global(.wrap) > :nth-child(3) { justify-self: end; }
 .back {
   display: inline-flex;
   align-items: center;
@@ -45,6 +48,19 @@
   font-size: 13px;
   letter-spacing: 0.06em;
   color: var(--ink-soft);
+}
+
+.navTitle {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 /* Jump trigger */

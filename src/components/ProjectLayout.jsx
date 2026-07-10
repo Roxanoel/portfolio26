@@ -231,6 +231,7 @@ export function ProjectLayout({ project, children }) {
             </svg>
             All work
           </Link>
+          <span className={styles.navTitle}>{title}</span>
           {sections.length > 0 ? (
             <JumpSelect sections={sections} activeId={activeId} onJump={handleJump} />
           ) : (
