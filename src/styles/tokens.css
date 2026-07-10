@@ -13,3 +13,9 @@
   --maxw:   1320px;
   --gutter: clamp(20px, 5vw, 72px);
 }
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 18px;
+  }
+}
