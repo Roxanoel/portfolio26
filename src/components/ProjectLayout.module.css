@@ -47,7 +47,15 @@
   color: var(--ink-soft);
 }
 
-.jump {
+/* Jump trigger */
+.jumpWrapper {
+  position: relative;
+  display: inline-flex;
+}
+.jumpTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: "Bricolage Grotesque", "Archivo", sans-serif;
   font-weight: 800;
   font-size: 13px;
@@ -56,24 +64,65 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 7px 22px 7px 14px;
+  padding: 7px 14px;
   border-radius: 999px;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5l3 3 3-3' stroke='%238c877e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
   transition:
     background-color 0.2s,
     color 0.2s;
 }
-.jump:hover {
+.jumpTrigger:hover {
   background-color: var(--ink);
   color: var(--cream);
-  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5l3 3 3-3' stroke='%23f2e8d5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
-.jump:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 2px;
+.jumpTrigger:focus-visible {
+  outline: none;
+}
+
+.jumpChevron {
+  transition: transform 0.2s;
+}
+.jumpChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Jump menu */
+.jumpMenu {
+  position: fixed;
+  z-index: 10000;
+  width: max-content;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.jumpItem {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.jumpItem:hover,
+.jumpItemFocus {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+.jumpItemActive {
+  font-weight: 800;
+}
+.jumpItemActive:hover,
+.jumpItemActive.jumpItemFocus {
+  background-color: var(--ink);
+  color: var(--cream);
 }
 
 /* Header */

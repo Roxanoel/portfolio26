@@ -1,4 +1,5 @@
-import { Children, useState, useEffect, useCallback } from "react";
+import { Children, useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { Grain } from "./Grain";
 import { NdaDisclosure } from "./NdaDisclosure";
@@ -19,13 +20,168 @@ function sectionsFromChildren(children) {
     });
 }
 
+function JumpSelect({ sections, activeId, onJump }) {
+  const [open, setOpen] = useState(false);
+  const [focusIdx, setFocusIdx] = useState(-1);
+  const [menuStyle, setMenuStyle] = useState({});
+  const triggerRef = useRef(null);
+  const listRef = useRef(null);
+
+  const activeLabel =
+    sections.find((s) => s.id === activeId)?.label ?? "Jump to section…";
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e) => {
+      if (
+        triggerRef.current?.contains(e.target) ||
+        listRef.current?.contains(e.target)
+      ) {
+        return;
+      }
+      setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  useEffect(() => {
+    if (open && focusIdx >= 0 && listRef.current) {
+      listRef.current.children[focusIdx]?.scrollIntoView({ block: "nearest" });
+    }
+  }, [focusIdx, open]);
+
+  const openMenu = useCallback((startIndex) => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setMenuStyle({
+        top: `${rect.bottom + 4}px`,
+        right: `${window.innerWidth - rect.right}px`,
+        minWidth: `${rect.width}px`,
+      });
+    }
+    setOpen(true);
+    setFocusIdx(startIndex);
+  }, []);
+
+  const selectFocused = useCallback(() => {
+    if (focusIdx >= 0) {
+      onJump(sections[focusIdx].id);
+      setOpen(false);
+    }
+  }, [focusIdx, sections, onJump]);
+
+  const handleTriggerKey = useCallback(
+    (e) => {
+      if (!open) {
+        if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+          e.preventDefault();
+          openMenu(0);
+        }
+        return;
+      }
+      switch (e.key) {
+        case "Escape":
+          setOpen(false);
+          break;
+        case "ArrowDown":
+          e.preventDefault();
+          setFocusIdx((i) => (i < sections.length - 1 ? i + 1 : 0));
+          break;
+        case "ArrowUp":
+          e.preventDefault();
+          setFocusIdx((i) => (i > 0 ? i - 1 : sections.length - 1));
+          break;
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          selectFocused();
+          break;
+      }
+    },
+    [open, sections.length, openMenu, selectFocused]
+  );
+
+  const handleTriggerClick = useCallback(() => {
+    if (open) {
+      setOpen(false);
+    } else {
+      const idx = sections.findIndex((s) => s.id === activeId);
+      openMenu(idx >= 0 ? idx : 0);
+    }
+  }, [open, sections, activeId, openMenu]);
+
+  const handleItemClick = useCallback(
+    (id) => {
+      onJump(id);
+      setOpen(false);
+    },
+    [onJump]
+  );
+
+  return (
+    <div className={styles.jumpWrapper}>
+      <button
+        ref={triggerRef}
+        className={styles.jumpTrigger}
+        onClick={handleTriggerClick}
+        onKeyDown={handleTriggerKey}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        {activeLabel}
+        <svg
+          className={`${styles.jumpChevron}${open ? ` ${styles.jumpChevronOpen}` : ""}`}
+          width="8"
+          height="6"
+          viewBox="0 0 8 6"
+          fill="none"
+        >
+          <path
+            d="M1 1.5l3 3 3-3"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {open &&
+        createPortal(
+          <ul
+            className={styles.jumpMenu}
+            ref={listRef}
+            role="listbox"
+            style={menuStyle}
+          >
+            {sections.map((s, i) => (
+              <li
+                key={s.id}
+                role="option"
+                aria-selected={s.id === activeId}
+                className={`${styles.jumpItem}${
+                  s.id === activeId ? ` ${styles.jumpItemActive}` : ""
+                }${i === focusIdx ? ` ${styles.jumpItemFocus}` : ""}`}
+                onClick={() => handleItemClick(s.id)}
+                onMouseEnter={() => setFocusIdx(i)}
+              >
+                {s.label}
+              </li>
+            ))}
+          </ul>,
+          document.body
+        )}
+    </div>
+  );
+}
+
 export function ProjectLayout({ project, children }) {
   const { n, title, year, blurb, tags, dateRange, nda } = project;
   const sections = sectionsFromChildren(children);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
 
-  const handleJump = useCallback((e) => {
-    const id = e.target.value;
+  const handleJump = useCallback((id) => {
     setActiveId(id);
     const el = document.getElementById(id);
     if (el) {
@@ -76,16 +232,7 @@ export function ProjectLayout({ project, children }) {
             All work
           </Link>
           {sections.length > 0 ? (
-            <select className={styles.jump} onChange={handleJump} value={activeId}>
-              <option value="" disabled>
-                Jump to section…
-              </option>
-              {sections.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
+            <JumpSelect sections={sections} activeId={activeId} onJump={handleJump} />
           ) : (
             <span className={styles.navNo}>{n}</span>
           )}
