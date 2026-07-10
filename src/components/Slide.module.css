@@ -3,6 +3,12 @@
   scroll-margin-top: 80px;
 }
 
+@media (max-width: 640px) {
+  .slide {
+    padding: 32px 0;
+  }
+}
+
 .sectionHeader {
   font-family: "Bricolage Grotesque", "Archivo", sans-serif;
   font-weight: 700;

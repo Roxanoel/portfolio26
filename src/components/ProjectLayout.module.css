@@ -63,6 +63,16 @@
   max-width: 100%;
 }
 
+@media (max-width: 640px) {
+  .nav :global(.wrap) {
+    grid-template-columns: auto 1fr;
+  }
+  .nav :global(.wrap) > :nth-child(1) { grid-column: 1; }
+  .nav :global(.wrap) > :nth-child(3) { grid-column: 2; justify-self: end; }
+  .navTitle { display: none; }
+  .backLabel { display: none; }
+}
+
 /* Jump trigger */
 .jumpWrapper {
   position: relative;
@@ -229,4 +239,10 @@
 }
 .footBack:hover {
   color: var(--terra);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 24px 0 16px;
+  }
 }

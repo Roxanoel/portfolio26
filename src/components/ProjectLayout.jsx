@@ -229,7 +229,7 @@ export function ProjectLayout({ project, children }) {
             >
               <path d="M11 7H3M6 3L2 7l4 4" />
             </svg>
-            All work
+            <span className={styles.backLabel}>All work</span>
           </Link>
           <span className={styles.navTitle}>{title}</span>
           {sections.length > 0 ? (
