@@ -57,7 +57,7 @@ export function Main() {
         <div className={styles.heroHaze} aria-hidden="true" />
         <div className={styles.heroGrain} aria-hidden="true" />
         <div className={styles.heroGrid}>
-          <div data-reveal>
+          <div className={styles.bio} data-reveal>
             <h1 className={styles.h1}>
               <span className={styles.hi}>Hi, I'm Roxane!</span>
               I bridge the gap between
@@ -83,7 +83,7 @@ export function Main() {
             data-reveal
             style={{ "--reveal-delay": "120ms" }}
           >
-            <div className={styles.photoCircle}>
+            <div className={styles.photoFrame}>
               <img src={portrait} alt="Roxane" className={styles.portrait} />
             </div>
           </div>
