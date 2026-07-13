@@ -62,7 +62,7 @@ export function Main() {
               <span className={styles.hi}>Hi, I'm Roxane!</span>
               I bridge the gap between
               <br />
-              <em>ideas</em> and <em>reality</em>
+              <em>design</em> and <em>engineering</em>
             </h1>
             <p className={styles.lede}>
               From research to design and all the way to implementation, I
