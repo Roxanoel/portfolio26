@@ -57,13 +57,12 @@ export function Main() {
         <div className={styles.heroHaze} aria-hidden="true" />
         <div className={styles.heroGrain} aria-hidden="true" />
         <div className={styles.heroGrid}>
-          <div data-reveal>
-            <span className={styles.kicker}>PRODUCT DESIGNER + ENGINEER</span>
+          <div className={styles.bio} data-reveal>
             <h1 className={styles.h1}>
               <span className={styles.hi}>Hi, I'm Roxane!</span>
               I bridge the gap between
               <br />
-              <em>ideas</em> and <em>reality</em>
+              <em>design</em> and <em>engineering</em>
             </h1>
             <p className={styles.lede}>
               From research to design and all the way to implementation, I
@@ -84,7 +83,7 @@ export function Main() {
             data-reveal
             style={{ "--reveal-delay": "120ms" }}
           >
-            <div className={styles.photoCircle}>
+            <div className={styles.photoFrame}>
               <img src={portrait} alt="Roxane" className={styles.portrait} />
             </div>
           </div>
@@ -120,7 +119,7 @@ export function Main() {
                   <span>San Francisco, remote-friendly</span>
                 </div>
                 <div>
-                  <BookCard isbn="9781541604339" />
+                  <BookCard isbn="0465051367" />
                 </div>
                 <div>
                   <b>On Repeat</b>
