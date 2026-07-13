@@ -58,7 +58,6 @@ export function Main() {
         <div className={styles.heroGrain} aria-hidden="true" />
         <div className={styles.heroGrid}>
           <div data-reveal>
-            <span className={styles.kicker}>PRODUCT DESIGNER + ENGINEER</span>
             <h1 className={styles.h1}>
               <span className={styles.hi}>Hi, I'm Roxane!</span>
               I bridge the gap between
