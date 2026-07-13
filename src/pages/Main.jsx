@@ -119,7 +119,7 @@ export function Main() {
                   <span>San Francisco, remote-friendly</span>
                 </div>
                 <div>
-                  <BookCard isbn="9781541604339" />
+                  <BookCard isbn="0465051367" />
                 </div>
                 <div>
                   <b>On Repeat</b>
