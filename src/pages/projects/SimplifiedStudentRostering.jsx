@@ -2,6 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { PROJECTS } from "../../data/projects";
 import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
+import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
 import styles from "./SimplifiedStudentRostering.module.css";
 import slideStyles from "../../components/Slide.module.css";
 
@@ -65,7 +66,9 @@ export function SimplifiedStudentRostering() {
             integrations.
           </p>
           <div className={slideStyles.contentBody}>
-            <h3 className={slideStyles.contentHeading}>A long, unoptimized form</h3>
+            <h3 className={slideStyles.contentHeading}>
+              A long, unoptimized form
+            </h3>
             <p className={slideStyles.contentParagraph}>
               The existing rostering process only had two options: uploading a
               CSV based on a provided model, or manually rostering each
@@ -134,6 +137,13 @@ export function SimplifiedStudentRostering() {
           by outlining the flows and options we wanted to support as a
           flowchart, mapping out the necessary steps and deliverables.
         </p>
+        <br />
+        <img
+          src={rosteringFlowchartImg}
+          alt="Flowchart of the rostering process"
+          className={slideStyles.contentImage}
+        />
+        <br />
         <p className={slideStyles.body}>
           In parallel, I consulted the documentation for our identity platform
           integrations to examine the JSON data the APIs returned, ensuring my
