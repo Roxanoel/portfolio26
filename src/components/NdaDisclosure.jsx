@@ -5,8 +5,8 @@ export function NdaDisclosure() {
     <aside className={styles.box}>
       <strong className={styles.label}>Under NDA</strong>
       <p className={styles.copy}>
-        Some of the details and visuals for this project are under NDA and
-        cannot be shared publicly. What follows is a higher-level exposé of my
+        To respect NDA guidelines, specific details and visuals have been
+        omitted. What follows is a high-level, compliant rebuilding of my
         process.
       </p>
     </aside>
