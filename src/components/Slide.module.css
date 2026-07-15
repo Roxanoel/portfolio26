@@ -3,6 +3,11 @@
   scroll-margin-top: 80px;
 }
 
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 @media (max-width: 640px) {
   .slide {
     padding: 32px 0;
@@ -34,10 +39,7 @@
   color: var(--ink-soft);
   max-width: 64ch;
   text-wrap: pretty;
-}
-
-.body + .body {
-  margin-top: 1em;
+  margin: 0;
 }
 
 .subheading {

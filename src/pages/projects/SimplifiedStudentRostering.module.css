@@ -34,27 +34,29 @@
 .actionList {
   list-style: none;
   padding: 0;
-  margin: 32px 0 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .actionItem {
-  background: var(--ink);
-  color: var(--cream);
+  padding: 16px;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
   border-radius: 12px;
-  padding: 24px;
-  font-size: clamp(14px, 1.1vw, 17px);
+  font-size: clamp(13px, 1vw, 15px);
   line-height: 1.5;
+  color: var(--green-dark);
 }
 
 .actionItem strong {
   display: block;
   font-family: "Bricolage Grotesque", "Archivo", sans-serif;
   font-weight: 700;
-  font-size: clamp(16px, 1.3vw, 20px);
-  margin-bottom: 4px;
+  font-size: clamp(14px, 1.1vw, 17px);
+  color: var(--green-dark);
+  margin-bottom: 2px;
 }
 
 /* Task list (Delivering slide) */
@@ -86,12 +88,48 @@
   background: var(--ink);
 }
 
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.definingContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.definingImage {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.definingHeading {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 1.3vw, 20px);
+  margin: unset;
+}
+
+.definingText {
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
 @media (max-width: 640px) {
   .stats {
     grid-template-columns: 1fr;
   }
   .actionList {
     grid-template-columns: 1fr;
+    padding: 0;
+    gap: 16px;
   }
   .taskList {
     grid-template-columns: 1fr;

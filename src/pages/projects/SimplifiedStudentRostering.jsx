@@ -1,6 +1,7 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { PROJECTS } from "../../data/projects";
+import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
 import styles from "./SimplifiedStudentRostering.module.css";
 import slideStyles from "../../components/Slide.module.css";
 
@@ -55,25 +56,72 @@ export function SimplifiedStudentRostering() {
           <p className={slideStyles.sectionHeader}>Defining the problem</p>
           <h2 className={slideStyles.title}>Identifying action points</h2>
         </hgroup>
-        <p className={slideStyles.body}>
-          In order to determine the exact friction points and opportunities for
-          improvement in our onboarding process, I analysed pain points from
-          customer support calls, performed a competitor audit, and coordinated
-          with our CTO to examine our options with our existing integrations.
-          Based on these findings, I identified the following action points:
-        </p>
-        <ol className={styles.actionList}>
-          <li className={styles.actionItem}>
-            <strong>Reduce PII</strong> required for rostering
-          </li>
-          <li className={styles.actionItem}>
-            <strong>Use existing integrations</strong> with identity platforms
-          </li>
-          <li className={styles.actionItem}>
-            <strong>Enable student-led rostering</strong> as an option, where
-            suitable
-          </li>
-        </ol>
+        <div className={styles.slideContent}>
+          <p className={slideStyles.body}>
+            In order to determine the exact friction points and opportunities
+            for improvement in our onboarding process, I analysed pain points
+            from customer support calls, performed a competitor audit, and
+            coordinated with our CTO to examine our options with our existing
+            integrations.
+          </p>
+          <div className={styles.definingContent}>
+            <h3 className={styles.definingHeading}>A long, unoptimized form</h3>
+            <p className={styles.definingText}>
+              The existing rostering process only had two options: uploading a
+              CSV based on a provided model, or manually rostering each
+              individual student using a form similar to the one pictured here.
+            </p>
+            <img
+              src={rosteringFlowchart}
+              alt="Form to add a new student"
+              className={styles.definingImage}
+            />
+            <p className={styles.definingText}>
+              The CSV template worked for more tech-savvy users, but individual
+              teachers and counselors used the manual rostering option in the
+              vast majority of cases.
+            </p>
+            <p className={styles.definingText}>
+              The form asked for a lot of information about students. While
+              useful, this information is not strictly necessary to get up and
+              running, and a majority of users might not need it at all, based
+              on usage data.
+            </p>
+            <p className={styles.definingText}>
+              Based on this information, I identified two priorities for the
+              improved rostering flow:
+            </p>
+            <ul className={styles.definingText}>
+              <li>
+                Require only the strict minimum of information to get started
+              </li>
+              <li>
+                Instead of filling each form one by one, users should be able to
+                batch-roster students in one simple, in-app process
+              </li>
+            </ul>
+          </div>
+          <div className={styles.definingContent}>
+            <h3 className={styles.definingHeading}>New Opportunities</h3>
+            <p className={styles.definingText}>
+              I had extensive discussions with our CTO in order to determine
+              what could be done to better use our existing identity platform
+              integrations, and evaluating some findings of our competitor audit
+              to determine feasibility and appetite. We agreed on the following
+              action points:
+            </p>
+            <ol className={styles.actionList}>
+              <li className={styles.actionItem}>
+                <strong>Create an easy sync wizard </strong>for users
+                authenticated through the identity platform
+              </li>
+              <li className={styles.actionItem}>
+                <strong>Enable student-led rostering</strong> as an option,
+                where suitable
+              </li>
+            </ol>
+          </div>
+        </div>
       </Slide>
 
       <Slide id="slide-ideating">
@@ -98,7 +146,9 @@ export function SimplifiedStudentRostering() {
       <Slide id="slide-iterating">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Iterating</p>
-          <h2 className={slideStyles.title}>From mockups to working prototype</h2>
+          <h2 className={slideStyles.title}>
+            From mockups to working prototype
+          </h2>
         </hgroup>
         <p className={slideStyles.body}>
           Based on the flowchart and information we collected, I started
@@ -118,7 +168,9 @@ export function SimplifiedStudentRostering() {
       <Slide id="slide-integration">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Integration</p>
-          <h2 className={slideStyles.title}>Identity platform & classroom codes</h2>
+          <h2 className={slideStyles.title}>
+            Identity platform & classroom codes
+          </h2>
         </hgroup>
         <p className={slideStyles.body}>
           I explored various concepts to display different states of syncing
