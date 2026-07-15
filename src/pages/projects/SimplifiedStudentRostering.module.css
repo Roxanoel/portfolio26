@@ -94,34 +94,6 @@
   gap: 1em;
 }
 
-.definingContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.definingImage {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  margin: 0 auto;
-}
-
-.definingHeading {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: clamp(16px, 1.3vw, 20px);
-  margin: unset;
-}
-
-.definingText {
-  font-size: clamp(14px, 1.1vw, 17px);
-  line-height: 1.5;
-  color: var(--ink-soft);
-  margin: 0;
-}
-
 @media (max-width: 640px) {
   .stats {
     grid-template-columns: 1fr;

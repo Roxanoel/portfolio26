@@ -64,9 +64,9 @@ export function SimplifiedStudentRostering() {
             coordinated with our CTO to examine our options with our existing
             integrations.
           </p>
-          <div className={styles.definingContent}>
-            <h3 className={styles.definingHeading}>A long, unoptimized form</h3>
-            <p className={styles.definingText}>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>A long, unoptimized form</h3>
+            <p className={slideStyles.contentParagraph}>
               The existing rostering process only had two options: uploading a
               CSV based on a provided model, or manually rostering each
               individual student using a form similar to the one pictured here.
@@ -74,24 +74,24 @@ export function SimplifiedStudentRostering() {
             <img
               src={rosteringFlowchart}
               alt="Form to add a new student"
-              className={styles.definingImage}
+              className={slideStyles.contentImage}
             />
-            <p className={styles.definingText}>
+            <p className={slideStyles.contentParagraph}>
               The CSV template worked for more tech-savvy users, but individual
               teachers and counselors used the manual rostering option in the
               vast majority of cases.
             </p>
-            <p className={styles.definingText}>
+            <p className={slideStyles.contentParagraph}>
               The form asked for a lot of information about students. While
               useful, this information is not strictly necessary to get up and
               running, and a majority of users might not need it at all, based
               on usage data.
             </p>
-            <p className={styles.definingText}>
+            <p className={slideStyles.contentParagraph}>
               Based on this information, I identified two priorities for the
               improved rostering flow:
             </p>
-            <ul className={styles.definingText}>
+            <ul className={slideStyles.contentParagraph}>
               <li>
                 Require only the strict minimum of information to get started
               </li>
@@ -101,9 +101,9 @@ export function SimplifiedStudentRostering() {
               </li>
             </ul>
           </div>
-          <div className={styles.definingContent}>
-            <h3 className={styles.definingHeading}>New Opportunities</h3>
-            <p className={styles.definingText}>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>New Opportunities</h3>
+            <p className={slideStyles.contentParagraph}>
               I had extensive discussions with our CTO in order to determine
               what could be done to better use our existing identity platform
               integrations, and evaluating some findings of our competitor audit
