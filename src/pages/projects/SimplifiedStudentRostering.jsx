@@ -21,7 +21,7 @@ export function SimplifiedStudentRostering() {
           <h2 className={slideStyles.title}>Tackling onboarding attrition</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          While working at a small non-profit edtech company, I was tasked with
+          While working at a small non-profit edtech company, I was tasked with{" "}
           <strong>improving user retention</strong> during our onboarding
           process.
           <br />
