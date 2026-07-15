@@ -1,6 +1,12 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
+import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { PROJECTS } from "../../data/projects";
+import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
+import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
+import flowPresentation from "../../assets/project-rostering/flow_presentation.png";
+import explorationsAsyncStep from "../../assets/project-rostering/explorations_async_step.png";
+import shareCode from "../../assets/project-rostering/share_code.png";
 import styles from "./SimplifiedStudentRostering.module.css";
 import slideStyles from "../../components/Slide.module.css";
 
@@ -9,30 +15,23 @@ const project = PROJECTS.find((p) => p.slug === "simplified-student-rostering");
 export function SimplifiedStudentRostering() {
   return (
     <ProjectLayout project={project}>
-      <Slide id="slide-problem">
+      <Slide id="slide-discovering">
         <hgroup>
-          <p className={slideStyles.sectionHeader}>The Problem</p>
+          <p className={slideStyles.sectionHeader}>Discovering</p>
           <h2 className={slideStyles.title}>Tackling onboarding attrition</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          While working at a small non-profit edtech company, I was tasked with
-          improving user retention during our onboarding process.
-        </p>
-      </Slide>
-
-      <Slide id="slide-discovery">
-        <hgroup>
-          <p className={slideStyles.sectionHeader}>Discovery</p>
-          <h2 className={slideStyles.title}>Finding the friction point</h2>
-        </hgroup>
-        <p className={slideStyles.body}>
-          In order to identify friction points, I built a funnel visualisation
-          of the onboarding process, with active user data at each stage. Based
-          on this quantitative data as well as an analysis of customer support
-          tickets, student rostering was identified as the main friction point
-          to address. Given the clear dominance of the rostering problem, we
-          left aside other, comparatively smaller friction points like staff
-          rostering and setting up a school calendar.
+          While working at a small non-profit edtech company, I was tasked with{" "}
+          <strong>improving user retention</strong> during our onboarding
+          process.
+          <br />
+          To identify friction points, I built a{" "}
+          <strong>funnel visualisation</strong> of the onboarding process with
+          active user data at each stage.
+          <br />
+          Based on this <strong>quantitative data</strong> as well as an{" "}
+          <strong>analysis of customer support tickets</strong>, student
+          rostering was identified as the main friction point to address.
         </p>
         <div className={styles.stats}>
           <figure className={styles.stat}>
@@ -53,27 +52,77 @@ export function SimplifiedStudentRostering() {
       <Slide id="slide-defining">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Defining the problem</p>
-          <h2 className={slideStyles.title}>Identifying action points</h2>
+          <h2 className={slideStyles.title}>Drilling down</h2>
         </hgroup>
-        <p className={slideStyles.body}>
-          In order to determine the exact friction points and opportunities for
-          improvement in our onboarding process, I analysed pain points from
-          customer support calls, performed a competitor audit, and coordinated
-          with our CTO to examine our options with our existing integrations.
-          Based on these findings, I identified the following action points:
-        </p>
-        <ol className={styles.actionList}>
-          <li className={styles.actionItem}>
-            <strong>Reduce PII</strong> required for rostering
-          </li>
-          <li className={styles.actionItem}>
-            <strong>Use existing integrations</strong> with identity platforms
-          </li>
-          <li className={styles.actionItem}>
-            <strong>Enable student-led rostering</strong> as an option, where
-            suitable
-          </li>
-        </ol>
+        <div className={styles.slideContent}>
+          <p className={slideStyles.body}>
+            In order to determine the exact friction points and opportunities
+            for improvement in our onboarding process, I analysed pain points
+            from customer support calls, performed a competitor audit, and
+            coordinated with our CTO to examine our options with our existing
+            integrations.
+          </p>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>
+              A long, unoptimized form
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              The existing rostering process only had two options: uploading a
+              CSV based on a provided model, or manually rostering each
+              individual student using a form similar to the one pictured here.
+            </p>
+            <CaseStudyImage
+              src={rosteringFlowchart}
+              alt="Form to add a new student"
+              maxWidth={560}
+            />
+            <p className={slideStyles.contentParagraph}>
+              The CSV template worked for more tech-savvy users, but individual
+              teachers and counselors used the manual rostering option in the
+              vast majority of cases.
+            </p>
+            <p className={slideStyles.contentParagraph}>
+              The form asked for a lot of information about students. While
+              useful, this information is not strictly necessary to get up and
+              running, and a majority of users might not need it at all, based
+              on usage data.
+            </p>
+            <p className={slideStyles.contentParagraph}>
+              Based on this information, I identified two priorities for the
+              improved rostering flow:
+            </p>
+            <ul className={slideStyles.contentParagraph}>
+              <li>
+                Require only the strict minimum of information to get started
+              </li>
+              <li>
+                Instead of filling each form one by one, users should be able to
+                batch-roster students in one simple, in-app process
+              </li>
+            </ul>
+          </div>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>New Opportunities</h3>
+            <p className={slideStyles.contentParagraph}>
+              I had extensive discussions with our CTO in order to determine
+              what could be done to better use our existing identity platform
+              integrations, and evaluating some findings of our competitor audit
+              to determine feasibility and appetite. We agreed on the following
+              action points:
+            </p>
+            <ol className={styles.actionList}>
+              <li className={styles.actionItem}>
+                <strong>Create an easy sync wizard </strong>Streamline
+                onboarding for users already authenticated through the identity
+                platform
+              </li>
+              <li className={styles.actionItem}>
+                <strong>Enable student-led rostering</strong> Offer an option
+                for classroom join codes to distribute among students
+              </li>
+            </ol>
+          </div>
+        </div>
       </Slide>
 
       <Slide id="slide-ideating">
@@ -86,6 +135,12 @@ export function SimplifiedStudentRostering() {
           by outlining the flows and options we wanted to support as a
           flowchart, mapping out the necessary steps and deliverables.
         </p>
+        <br />
+        <CaseStudyImage
+          src={rosteringFlowchartImg}
+          alt="Flowchart of the rostering process"
+        />
+        <br />
         <p className={slideStyles.body}>
           In parallel, I consulted the documentation for our identity platform
           integrations to examine the JSON data the APIs returned, ensuring my
@@ -98,40 +153,65 @@ export function SimplifiedStudentRostering() {
       <Slide id="slide-iterating">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Iterating</p>
-          <h2 className={slideStyles.title}>From mockups to working prototype</h2>
+          <h2 className={slideStyles.title}>
+            From mockups to working prototype
+          </h2>
         </hgroup>
-        <p className={slideStyles.body}>
-          Based on the flowchart and information we collected, I started
-          building higher fidelity mockups of the screens at each stage,
-          exploring a few different options. Throughout the process, we held
-          team feedback sessions to refine the designs.
-        </p>
-        <p className={slideStyles.body}>
-          For our integrations, I built a quick code prototype using Claude so
-          the CTO and I could test what the interactions and loading states felt
-          like in practice, plugged into the real API, to make design decisions
-          in consequence. We did a few rounds of internal testing to refine the
-          design.
-        </p>
-      </Slide>
-
-      <Slide id="slide-integration">
-        <hgroup>
-          <p className={slideStyles.sectionHeader}>Integration</p>
-          <h2 className={slideStyles.title}>Identity platform & classroom codes</h2>
-        </hgroup>
-        <p className={slideStyles.body}>
-          I explored various concepts to display different states of syncing
-          classrooms, based on API response content.
-        </p>
-        <p className={slideStyles.body}>
-          A URL works better for a message sent to students, while a code works
-          better for displaying on a projector, so it made sense to support
-          both. I also wanted to make it easy for our users to quickly copy the
-          code, and couldn't rely on an icon-only button based on my knowledge
-          of our user base which tends to find icon-only buttons difficult to
-          understand.
-        </p>
+        <div className={styles.slideContent}>
+          <p className={slideStyles.body}>
+            Based on the flowchart and information we collected, I started
+            building higher fidelity mockups of the screens at each stage,
+            exploring a few different options.
+          </p>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>
+              Exploring components for async processes
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              For our integrations, I built a quick code prototype using Claude
+              so the CTO and I could test what the interactions and loading
+              states felt like in practice, plugged into the real API, to make
+              design decisions in consequence. We did a few rounds of internal
+              testing to refine the design. See some explorations below for
+              various sync states.
+            </p>
+            <CaseStudyImage
+              src={explorationsAsyncStep}
+              alt="Explorations of async step"
+              maxWidth={368}
+            />
+            <br />
+            <h3 className={slideStyles.contentHeading}>
+              A step-by-step rostering wizard
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              User interviews had revealed that, in the onboarding process
+              overall, users felt overwhelmed when all steps were presented on a
+              single page, and didn't know where to begin. To solve this
+              problem, I opted for a wizard flow, guiding the user through a
+              series of simple, easy steps.
+            </p>
+            <CaseStudyImage
+              src={flowPresentation}
+              alt="Flow presentation mockups"
+            />
+            <br />
+            <h3 className={slideStyles.contentHeading}>Classroom join codes</h3>
+            <p className={slideStyles.body}>
+              Using a URL works better for a message sent to students, while a
+              code works better for displaying on a projector, so it made sense
+              to support both. I also wanted to make it easy for our users to
+              quickly copy the code, and couldn't rely on an icon-only button
+              based on my knowledge of our user base which tends to find
+              icon-only buttons difficult to understand.
+            </p>
+            <CaseStudyImage
+              src={shareCode}
+              alt="Share code interface"
+              maxWidth={560}
+            />
+          </div>
+        </div>
       </Slide>
 
       <Slide id="slide-delivering">
@@ -146,17 +226,19 @@ export function SimplifiedStudentRostering() {
         </p>
         <p className={slideStyles.subheading}>Some of my tasks:</p>
         <ul className={styles.taskList}>
-          <li className={styles.taskItem}>Implementing all visual designs</li>
           <li className={styles.taskItem}>
-            Creating components for the new classroom code flow
+            Implementing all visual designs in our frontend code
+          </li>
+          <li className={styles.taskItem}>
+            Creating components for the new classroom join code flow
           </li>
           <li className={styles.taskItem}>
             Writing unit tests for the different rostering options
           </li>
           <li className={styles.taskItem}>
-            Implementing the multi-step rostering wizard and ensuring users
-            don't lose unsaved work if they accidentally navigate away from the
-            flow
+            Implementing the logic for the multi-step rostering wizard and
+            ensuring users don't lose unsaved work if they accidentally navigate
+            away from the flow
           </li>
         </ul>
       </Slide>

@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--cream) 86%, transparent);
+  background: color-mix(in srgb, var(--cream) 75%, transparent);
   backdrop-filter: blur(8px);
 }
 .nav :global(.wrap) {
@@ -19,9 +19,15 @@
   align-items: center;
   height: 66px;
 }
-.nav :global(.wrap) > :nth-child(1) { justify-self: start; }
-.nav :global(.wrap) > :nth-child(2) { justify-self: center; }
-.nav :global(.wrap) > :nth-child(3) { justify-self: end; }
+.nav :global(.wrap) > :nth-child(1) {
+  justify-self: start;
+}
+.nav :global(.wrap) > :nth-child(2) {
+  justify-self: center;
+}
+.nav :global(.wrap) > :nth-child(3) {
+  justify-self: end;
+}
 .back {
   display: inline-flex;
   align-items: center;
@@ -67,10 +73,19 @@
   .nav :global(.wrap) {
     grid-template-columns: auto 1fr;
   }
-  .nav :global(.wrap) > :nth-child(1) { grid-column: 1; }
-  .nav :global(.wrap) > :nth-child(3) { grid-column: 2; justify-self: end; }
-  .navTitle { display: none; }
-  .backLabel { display: none; }
+  .nav :global(.wrap) > :nth-child(1) {
+    grid-column: 1;
+  }
+  .nav :global(.wrap) > :nth-child(3) {
+    grid-column: 2;
+    justify-self: end;
+  }
+  .navTitle {
+    display: none;
+  }
+  .backLabel {
+    display: none;
+  }
 }
 
 /* Jump trigger */

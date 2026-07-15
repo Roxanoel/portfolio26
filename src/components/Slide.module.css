@@ -3,6 +3,11 @@
   scroll-margin-top: 80px;
 }
 
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 @media (max-width: 640px) {
   .slide {
     padding: 32px 0;
@@ -34,10 +39,7 @@
   color: var(--ink-soft);
   max-width: 64ch;
   text-wrap: pretty;
-}
-
-.body + .body {
-  margin-top: 1em;
+  margin: 0;
 }
 
 .subheading {
@@ -47,3 +49,24 @@
   color: var(--ink);
   margin: 24px 0 12px;
 }
+
+.contentBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.contentHeading {
+  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 1.3vw, 20px);
+  margin: unset;
+}
+
+.contentParagraph {
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
