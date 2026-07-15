@@ -1,5 +1,6 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
+import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { PROJECTS } from "../../data/projects";
 import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
 import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
@@ -77,11 +78,7 @@ export function SimplifiedStudentRostering() {
               CSV based on a provided model, or manually rostering each
               individual student using a form similar to the one pictured here.
             </p>
-            <img
-              src={rosteringFlowchart}
-              alt="Form to add a new student"
-              className={slideStyles.contentImage}
-            />
+            <CaseStudyImage src={rosteringFlowchart} alt="Form to add a new student" maxWidth={560} />
             <p className={slideStyles.contentParagraph}>
               The CSV template worked for more tech-savvy users, but individual
               teachers and counselors used the manual rostering option in the
@@ -141,11 +138,7 @@ export function SimplifiedStudentRostering() {
           flowchart, mapping out the necessary steps and deliverables.
         </p>
         <br />
-        <img
-          src={rosteringFlowchartImg}
-          alt="Flowchart of the rostering process"
-          className={slideStyles.contentImage}
-        />
+        <CaseStudyImage src={rosteringFlowchartImg} alt="Flowchart of the rostering process" />
         <br />
         <p className={slideStyles.body}>
           In parallel, I consulted the documentation for our identity platform
@@ -180,11 +173,7 @@ export function SimplifiedStudentRostering() {
               problem, I opted for a wizard flow, guiding the user through a
               series of simple, easy steps.
             </p>
-            <img
-              src={flowPresentation}
-              alt="Flow presentation mockups"
-              className={slideStyles.contentImage}
-            />
+            <CaseStudyImage src={flowPresentation} alt="Flow presentation mockups" />
             <br />
             <h3 className={slideStyles.contentHeading}>
               Exploring components for async processes
@@ -197,11 +186,7 @@ export function SimplifiedStudentRostering() {
               testing to refine the design. See some explorations below for
               various sync states.
             </p>
-            <img
-              src={explorationsAsyncStep}
-              alt="Explorations of async step"
-              className={slideStyles.contentImage}
-            />
+            <CaseStudyImage src={explorationsAsyncStep} alt="Explorations of async step" maxWidth={368} />
             <h3 className={slideStyles.contentHeading}>Classroom join codes</h3>
             <p className={slideStyles.body}>
               Using a URL works better for a message sent to students, while a
@@ -211,11 +196,7 @@ export function SimplifiedStudentRostering() {
               based on my knowledge of our user base which tends to find
               icon-only buttons difficult to understand.
             </p>
-            <img
-              src={shareCode}
-              alt="Share code interface"
-              className={slideStyles.contentImage}
-            />
+            <CaseStudyImage src={shareCode} alt="Share code interface" maxWidth={560} />
           </div>
         </div>
       </Slide>
