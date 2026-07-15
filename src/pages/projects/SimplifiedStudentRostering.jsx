@@ -3,6 +3,9 @@ import { Slide } from "../../components/Slide";
 import { PROJECTS } from "../../data/projects";
 import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
 import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
+import flowPresentation from "../../assets/project-rostering/flow_presentation.png";
+import explorationsAsyncStep from "../../assets/project-rostering/explorations_async_step.png";
+import shareCode from "../../assets/project-rostering/share_code.png";
 import styles from "./SimplifiedStudentRostering.module.css";
 import slideStyles from "../../components/Slide.module.css";
 
@@ -160,40 +163,61 @@ export function SimplifiedStudentRostering() {
             From mockups to working prototype
           </h2>
         </hgroup>
-        <p className={slideStyles.body}>
-          Based on the flowchart and information we collected, I started
-          building higher fidelity mockups of the screens at each stage,
-          exploring a few different options. Throughout the process, we held
-          team feedback sessions to refine the designs.
-        </p>
-        <p className={slideStyles.body}>
-          For our integrations, I built a quick code prototype using Claude so
-          the CTO and I could test what the interactions and loading states felt
-          like in practice, plugged into the real API, to make design decisions
-          in consequence. We did a few rounds of internal testing to refine the
-          design.
-        </p>
-      </Slide>
-
-      <Slide id="slide-integration">
-        <hgroup>
-          <p className={slideStyles.sectionHeader}>Integration</p>
-          <h2 className={slideStyles.title}>
-            Identity platform & classroom codes
-          </h2>
-        </hgroup>
-        <p className={slideStyles.body}>
-          I explored various concepts to display different states of syncing
-          classrooms, based on API response content.
-        </p>
-        <p className={slideStyles.body}>
-          A URL works better for a message sent to students, while a code works
-          better for displaying on a projector, so it made sense to support
-          both. I also wanted to make it easy for our users to quickly copy the
-          code, and couldn't rely on an icon-only button based on my knowledge
-          of our user base which tends to find icon-only buttons difficult to
-          understand.
-        </p>
+        <div className={styles.slideContent}>
+          <p className={slideStyles.body}>
+            Based on the flowchart and information we collected, I started
+            building higher fidelity mockups of the screens at each stage,
+            exploring a few different options.
+          </p>
+          <div className={slideStyles.contentBody}>
+            <h3 className={slideStyles.contentHeading}>
+              A step-by-step rostering wizard
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              User interviews had revealed that, in the onboarding process
+              overall, users felt overwhelmed when all steps were presented on a
+              single page, and didn't know where to begin. To solve this
+              problem, I opted for a wizard flow, guiding the user through a
+              series of simple, easy steps.
+            </p>
+            <img
+              src={flowPresentation}
+              alt="Flow presentation mockups"
+              className={slideStyles.contentImage}
+            />
+            <br />
+            <h3 className={slideStyles.contentHeading}>
+              Exploring components for async processes
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              For our integrations, I built a quick code prototype using Claude
+              so the CTO and I could test what the interactions and loading
+              states felt like in practice, plugged into the real API, to make
+              design decisions in consequence. We did a few rounds of internal
+              testing to refine the design. See some explorations below for
+              various sync states.
+            </p>
+            <img
+              src={explorationsAsyncStep}
+              alt="Explorations of async step"
+              className={slideStyles.contentImage}
+            />
+            <h3 className={slideStyles.contentHeading}>Classroom join codes</h3>
+            <p className={slideStyles.body}>
+              Using a URL works better for a message sent to students, while a
+              code works better for displaying on a projector, so it made sense
+              to support both. I also wanted to make it easy for our users to
+              quickly copy the code, and couldn't rely on an icon-only button
+              based on my knowledge of our user base which tends to find
+              icon-only buttons difficult to understand.
+            </p>
+            <img
+              src={shareCode}
+              alt="Share code interface"
+              className={slideStyles.contentImage}
+            />
+          </div>
+        </div>
       </Slide>
 
       <Slide id="slide-delivering">
