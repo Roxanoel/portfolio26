@@ -15,30 +15,23 @@ const project = PROJECTS.find((p) => p.slug === "simplified-student-rostering");
 export function SimplifiedStudentRostering() {
   return (
     <ProjectLayout project={project}>
-      <Slide id="slide-problem">
+      <Slide id="slide-discovery">
         <hgroup>
-          <p className={slideStyles.sectionHeader}>The Problem</p>
+          <p className={slideStyles.sectionHeader}>Discovery</p>
           <h2 className={slideStyles.title}>Tackling onboarding attrition</h2>
         </hgroup>
         <p className={slideStyles.body}>
           While working at a small non-profit edtech company, I was tasked with
-          improving user retention during our onboarding process.
-        </p>
-      </Slide>
-
-      <Slide id="slide-discovery">
-        <hgroup>
-          <p className={slideStyles.sectionHeader}>Discovery</p>
-          <h2 className={slideStyles.title}>Finding the friction point</h2>
-        </hgroup>
-        <p className={slideStyles.body}>
-          In order to identify friction points, I built a funnel visualisation
-          of the onboarding process, with active user data at each stage. Based
-          on this quantitative data as well as an analysis of customer support
-          tickets, student rostering was identified as the main friction point
-          to address. Given the clear dominance of the rostering problem, we
-          left aside other, comparatively smaller friction points like staff
-          rostering and setting up a school calendar.
+          <strong>improving user retention</strong> during our onboarding
+          process.
+          <br />
+          To identify friction points, I built a{" "}
+          <strong>funnel visualisation</strong> of the onboarding process with
+          active user data at each stage.
+          <br />
+          Based on this <strong>quantitative data</strong> as well as an{" "}
+          <strong>analysis of customer support tickets</strong>, student
+          rostering was identified as the main friction point to address.
         </p>
         <div className={styles.stats}>
           <figure className={styles.stat}>
@@ -119,12 +112,13 @@ export function SimplifiedStudentRostering() {
             </p>
             <ol className={styles.actionList}>
               <li className={styles.actionItem}>
-                <strong>Create an easy sync wizard </strong>for users
-                authenticated through the identity platform
+                <strong>Create an easy sync wizard </strong>Streamline
+                onboarding for users already authenticated through the identity
+                platform
               </li>
               <li className={styles.actionItem}>
-                <strong>Enable student-led rostering</strong> as an option,
-                where suitable
+                <strong>Enable student-led rostering</strong> Offer an option
+                for classroom join codes to distribute among students
               </li>
             </ol>
           </div>
