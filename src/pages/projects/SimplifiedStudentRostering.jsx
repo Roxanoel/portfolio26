@@ -55,7 +55,7 @@ export function SimplifiedStudentRostering() {
       <Slide id="slide-defining">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Defining the problem</p>
-          <h2 className={slideStyles.title}>Identifying action points</h2>
+          <h2 className={slideStyles.title}>Drilling down</h2>
         </hgroup>
         <div className={styles.slideContent}>
           <p className={slideStyles.body}>
