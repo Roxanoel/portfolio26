@@ -78,7 +78,11 @@ export function SimplifiedStudentRostering() {
               CSV based on a provided model, or manually rostering each
               individual student using a form similar to the one pictured here.
             </p>
-            <CaseStudyImage src={rosteringFlowchart} alt="Form to add a new student" maxWidth={560} />
+            <CaseStudyImage
+              src={rosteringFlowchart}
+              alt="Form to add a new student"
+              maxWidth={560}
+            />
             <p className={slideStyles.contentParagraph}>
               The CSV template worked for more tech-savvy users, but individual
               teachers and counselors used the manual rostering option in the
@@ -138,7 +142,10 @@ export function SimplifiedStudentRostering() {
           flowchart, mapping out the necessary steps and deliverables.
         </p>
         <br />
-        <CaseStudyImage src={rosteringFlowchartImg} alt="Flowchart of the rostering process" />
+        <CaseStudyImage
+          src={rosteringFlowchartImg}
+          alt="Flowchart of the rostering process"
+        />
         <br />
         <p className={slideStyles.body}>
           In parallel, I consulted the documentation for our identity platform
@@ -164,18 +171,6 @@ export function SimplifiedStudentRostering() {
           </p>
           <div className={slideStyles.contentBody}>
             <h3 className={slideStyles.contentHeading}>
-              A step-by-step rostering wizard
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              User interviews had revealed that, in the onboarding process
-              overall, users felt overwhelmed when all steps were presented on a
-              single page, and didn't know where to begin. To solve this
-              problem, I opted for a wizard flow, guiding the user through a
-              series of simple, easy steps.
-            </p>
-            <CaseStudyImage src={flowPresentation} alt="Flow presentation mockups" />
-            <br />
-            <h3 className={slideStyles.contentHeading}>
               Exploring components for async processes
             </h3>
             <p className={slideStyles.contentParagraph}>
@@ -186,7 +181,27 @@ export function SimplifiedStudentRostering() {
               testing to refine the design. See some explorations below for
               various sync states.
             </p>
-            <CaseStudyImage src={explorationsAsyncStep} alt="Explorations of async step" maxWidth={368} />
+            <CaseStudyImage
+              src={explorationsAsyncStep}
+              alt="Explorations of async step"
+              maxWidth={368}
+            />
+            <br />
+            <h3 className={slideStyles.contentHeading}>
+              A step-by-step rostering wizard
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              User interviews had revealed that, in the onboarding process
+              overall, users felt overwhelmed when all steps were presented on a
+              single page, and didn't know where to begin. To solve this
+              problem, I opted for a wizard flow, guiding the user through a
+              series of simple, easy steps.
+            </p>
+            <CaseStudyImage
+              src={flowPresentation}
+              alt="Flow presentation mockups"
+            />
+            <br />
             <h3 className={slideStyles.contentHeading}>Classroom join codes</h3>
             <p className={slideStyles.body}>
               Using a URL works better for a message sent to students, while a
@@ -196,7 +211,11 @@ export function SimplifiedStudentRostering() {
               based on my knowledge of our user base which tends to find
               icon-only buttons difficult to understand.
             </p>
-            <CaseStudyImage src={shareCode} alt="Share code interface" maxWidth={560} />
+            <CaseStudyImage
+              src={shareCode}
+              alt="Share code interface"
+              maxWidth={560}
+            />
           </div>
         </div>
       </Slide>
@@ -213,17 +232,19 @@ export function SimplifiedStudentRostering() {
         </p>
         <p className={slideStyles.subheading}>Some of my tasks:</p>
         <ul className={styles.taskList}>
-          <li className={styles.taskItem}>Implementing all visual designs</li>
           <li className={styles.taskItem}>
-            Creating components for the new classroom code flow
+            Implementing all visual designs in our frontend code
+          </li>
+          <li className={styles.taskItem}>
+            Creating components for the new classroom join code flow
           </li>
           <li className={styles.taskItem}>
             Writing unit tests for the different rostering options
           </li>
           <li className={styles.taskItem}>
-            Implementing the multi-step rostering wizard and ensuring users
-            don't lose unsaved work if they accidentally navigate away from the
-            flow
+            Implementing the logic for the multi-step rostering wizard and
+            ensuring users don't lose unsaved work if they accidentally navigate
+            away from the flow
           </li>
         </ul>
       </Slide>
