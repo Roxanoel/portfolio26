@@ -15,9 +15,9 @@ const project = PROJECTS.find((p) => p.slug === "simplified-student-rostering");
 export function SimplifiedStudentRostering() {
   return (
     <ProjectLayout project={project}>
-      <Slide id="slide-discovery">
+      <Slide id="slide-discovering">
         <hgroup>
-          <p className={slideStyles.sectionHeader}>Discovery</p>
+          <p className={slideStyles.sectionHeader}>Discovering</p>
           <h2 className={slideStyles.title}>Tackling onboarding attrition</h2>
         </hgroup>
         <p className={slideStyles.body}>
