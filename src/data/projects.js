@@ -40,8 +40,8 @@ const RAW_PROJECTS = [
     slug: "mental-health-resource-assignment",
     title: "Mental Health Resource Assignment",
     year: "2025",
-    status: "draft",
-    nda: false,
+    status: "published",
+    nda: true,
     blurb:
       "Building the missing link to provide an end-to-end student mental health solution.",
     tags: ["Product", "UX", "Engineering"],

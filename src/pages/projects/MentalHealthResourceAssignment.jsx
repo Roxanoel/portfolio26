@@ -1,12 +1,220 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
+import { Slide } from "../../components/Slide";
+import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { PROJECTS } from "../../data/projects";
+import multiStepAltSkeleton from "../../assets/project-resources/multi-step-alt-skeleton.png";
+import multiStepWizardSkeleton from "../../assets/project-resources/multi-step-wizard-skeleton.png";
+import skeletonSinglePage from "../../assets/project-resources/skeleton-single-page.png";
+import explorationsResources from "../../assets/project-resources/explorations-resources.png";
+import solutionResourceRecommendation from "../../assets/project-resources/solution-resource-recommendation.png";
+import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "mental-health-resource-assignment");
+const project = PROJECTS.find(
+  (p) => p.slug === "mental-health-resource-assignment",
+);
 
 export function MentalHealthResourceAssignment() {
   return (
     <ProjectLayout project={project}>
-      {/* Content coming soon */}
+      <Slide id="slide-problem">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>The Problem</p>
+          <h2 className={slideStyles.title}>Access to care is fragmented</h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          Daily emotional check-ins were already helping our users detect
+          struggling students. But most students don't necessarily need, or even
+          want, adult intervention — they just need a bit of guidance to
+          navigate everyday challenges. Singling students out for every concern
+          annoys them, and manually following up with everyone is unsustainable
+          for teachers.
+        </p>
+        <br />
+        <p className={slideStyles.body}>
+          To simplify interventions, we had created{" "}
+          <strong>mental health resources</strong> students could access on
+          their own and which serve as an appropriate first line of support for
+          the majority of needs surfaced.
+        </p>
+        <br />
+        <p className={slideStyles.body}>
+          However, a critical piece was still missing: the{" "}
+          <strong>bridge between detection and action</strong>. How could we
+          make it easy for teachers to go from "a need was surfaced" to
+          "something was done about it"?
+        </p>
+      </Slide>
+
+      <Slide id="slide-defining">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>Defining the solution</p>
+          <h2 className={slideStyles.title}>A smart assignment flow</h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          I identified two natural contexts in which an educator would think of
+          recommending a resource: reviewing a student's check-in and thinking{" "}
+          <strong>"this student could benefit from some help"</strong>, or
+          browsing resources and thinking{" "}
+          <strong>"this would be helpful for some of my students"</strong>.
+        </p>
+        <p className={slideStyles.body}>
+          This led to the decision to build a single assignment flow with two
+          context-aware entry points, using URL params to pre-fill based on
+          where the educator is coming from — so they never have to start from
+          scratch.
+        </p>
+      </Slide>
+
+      <Slide id="slide-ideating">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>Ideating</p>
+          <h2 className={slideStyles.title}>Exploring structure and flow</h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          Before diving into design, I needed to separate what was already clear
+          from what still needed to be figured out.
+        </p>
+        <h3 className={slideStyles.contentHeading}>What we knew</h3>
+        <ul className={slideStyles.body}>
+          <li>
+            The flow must include <strong>student selection</strong>,{" "}
+            <strong>resource selection</strong>, and a way to write an{" "}
+            <strong>optional message</strong>.
+          </li>
+          <li>
+            It also needed to me <strong>minimally disruptive</strong>, allowing
+            users to promptly return to what they were doing before making a
+            recommendation.
+          </li>
+        </ul>
+        <h3 className={slideStyles.contentHeading}>What we needed to answer</h3>
+        <ul className={slideStyles.body}>
+          <li>
+            Should the steps be presented <strong>all on one page</strong> or
+            broken into a <strong>step-by-step wizard</strong>?
+          </li>
+          <li>
+            Should the flow live on a <strong>dedicated page</strong> or in a{" "}
+            <strong>modal</strong>?
+          </li>
+          <li>
+            How should the assignment process handle cases where a resource is
+            already selected, or a student is already chosen?
+          </li>
+        </ul>
+        <br />
+        <div className={slideStyles.contentBody}>
+          <h3 className={slideStyles.contentHeading}>
+            Multi-step wizard skeleton
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <CaseStudyImage
+            src={multiStepWizardSkeleton}
+            alt="Multi-step wizard skeleton layout"
+          />
+          <h3 className={slideStyles.contentHeading}>
+            Multi-step alternative skeleton
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <CaseStudyImage
+            src={multiStepAltSkeleton}
+            alt="Multi-step alternative skeleton layout"
+          />
+          <h3 className={slideStyles.contentHeading}>Single-page skeleton</h3>
+          <p className={slideStyles.contentParagraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <CaseStudyImage
+            src={skeletonSinglePage}
+            alt="Single-page skeleton layout"
+          />
+        </div>
+      </Slide>
+
+      <Slide id="slide-iterating">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>Iterating</p>
+          <h2 className={slideStyles.title}>
+            From wireframes to high-fidelity mockups
+          </h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <br />
+        <div className={slideStyles.contentBody}>
+          <h3 className={slideStyles.contentHeading}>
+            Exploring resource assignment UI
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur.
+          </p>
+          <CaseStudyImage
+            src={explorationsResources}
+            alt="Explorations of resource assignment interfaces"
+          />
+        </div>
+      </Slide>
+
+      <Slide id="slide-delivering">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>Developing & Delivering</p>
+          <h2 className={slideStyles.title}>Shipping the solution</h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <br />
+        <div className={slideStyles.contentBody}>
+          <h3 className={slideStyles.contentHeading}>
+            Resource recommendation solution
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <CaseStudyImage
+            src={solutionResourceRecommendation}
+            alt="Final resource recommendation solution"
+          />
+        </div>
+      </Slide>
+
+      <Slide id="slide-impact">
+        <hgroup>
+          <p className={slideStyles.sectionHeader}>Impact</p>
+          <h2 className={slideStyles.title}>Early results</h2>
+        </hgroup>
+        <p className={slideStyles.body}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <br />
+        <p className={slideStyles.body}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
+        </p>
+      </Slide>
     </ProjectLayout>
   );
 }
