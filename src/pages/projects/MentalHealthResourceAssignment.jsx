@@ -108,8 +108,14 @@ export function MentalHealthResourceAssignment() {
             Multi-step wizard skeleton
           </h3>
           <p className={slideStyles.contentParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            I started by exploring flow options which broke down the process
+            into three distinct steps, allowing users to first select a student,
+            then an activity, and finally get to review their selection with the
+            option of adding a custom note. This first flow was meant to appear
+            as a modal, inspired by install wizards and other such processes
+            with an easy way to track progress on the left. The vast majority of
+            our users only desktop/laptop devices, but the difficulty of making
+            this design responsive made me want to explore a one-column layout.
           </p>
           <CaseStudyImage
             src={multiStepWizardSkeleton}
@@ -119,8 +125,15 @@ export function MentalHealthResourceAssignment() {
             Multi-step alternative skeleton
           </h3>
           <p className={slideStyles.contentParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            I looked at a single-column layout, which is easier to adapt to
+            smaller screens. However, as I was playing around with the flow in a
+            prototype, I ran into an issue. Because the user enters the flow
+            either knowing which student they want to recommend to, or which
+            activity will be the object of the recommendation, autocompleting
+            that step from the URL params made one step of the flow feel
+            superfluous. I tried skipping it when prefilled, but that just
+            created potential confusion especially with the steps tracker and
+            the summary at the end.
           </p>
           <CaseStudyImage
             src={multiStepAltSkeleton}
@@ -128,8 +141,11 @@ export function MentalHealthResourceAssignment() {
           />
           <h3 className={slideStyles.contentHeading}>Single-page skeleton</h3>
           <p className={slideStyles.contentParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            In the end, I opted to have all the information on one screen: this
+            worked better with the autocompletion from URL params, and felt
+            minimally disruptive to the user's work flow. The main challenge was
+            to maintain simplicity and prevent information overload, while
+            allowing users to dig a bit more as needed.
           </p>
           <CaseStudyImage
             src={skeletonSinglePage}
@@ -146,10 +162,9 @@ export function MentalHealthResourceAssignment() {
           </h2>
         </hgroup>
         <p className={slideStyles.body}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Once we were confident with the overall structure of the flow, I
+          started fleshing out the components of the design. Below is just a
+          sample of some of the main action items I worked through.
         </p>
         <br />
         <div className={slideStyles.contentBody}>
