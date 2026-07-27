@@ -238,19 +238,44 @@ export function MentalHealthResourceAssignment() {
           <h2 className={slideStyles.title}>Shipping the solution</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          With the design approved, I built the assignment interface in Ruby on
+          Rails, working closely with the CTO to align on the data structure.
+          Elements I tackled in this solution include: a flexible form that
+          adapts to the user's entry point, a searchable resource library, and a
+          seamless assignment submission flow.
         </p>
         <br />
         <div className={slideStyles.contentBody}>
           <h3 className={slideStyles.contentHeading}>
-            Resource recommendation solution
+            Data model, form logic & unit tests
           </h3>
           <p className={slideStyles.contentParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            I started by defining the assignment data model — capturing the
+            student, resource, optional message, and metadata like the entry
+            context — then built the form logic and wrote unit tests to cover
+            edge cases like duplicate assignments and missing or incorrect form
+            data.
+          </p>
+          <h3 className={slideStyles.contentHeading}>
+            Context-aware pre-filling via URL params
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            A core piece of the experience was using URL params to pre-fill the
+            form based on where the educator came from. If they arrived from a
+            student's check-in, the student was already selected; if they were
+            browsing resources, the resource was pre-filled. This eliminated
+            redundant steps and kept the flow focused on what the user actually
+            needed to decide.
+          </p>
+          <h3 className={slideStyles.contentHeading}>
+            Search and filter libraries
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            For the resource selection step, I implemented search and filter
+            libraries that let educators quickly narrow down options by grade
+            level, topic, and estimated time. A performant, filterable interface
+            that could handle hundreds of resources without slowing down was an
+            integral part of the user experience.
           </p>
           <CaseStudyImage
             src={solutionResourceRecommendation}
