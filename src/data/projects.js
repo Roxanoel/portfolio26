@@ -2,7 +2,7 @@ import mentalHealthCheckInForTeenagers from "../assets/project-mental-health-che
 import simplifiedStudentRostering from "../assets/project-simplified-student-rostering.png";
 import mentalHealthResourceAssignment from "../assets/project-mental-health-resource-assignment.png";
 import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistics.png";
-import opteoDesignSystemOverhaul from "../assets/project-opteo-design-system-overhaul.png";
+import DesignSystemOverhaul from "../assets/project-design-system-overhaul.png";
 import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
 
 export const TAG_COLORS = {
@@ -13,17 +13,6 @@ export const TAG_COLORS = {
 };
 
 const RAW_PROJECTS = [
-  {
-    slug: "mental-health-check-in-for-teenagers",
-    title: "Mental Health Check-In for Teenagers",
-    year: "2026",
-    status: "draft",
-    nda: false,
-    blurb:
-      "A sample from a research deep-dive to better align a mental health check-in tool with the specific needs of teenagers.",
-    tags: ["Research", "Product"],
-    image: mentalHealthCheckInForTeenagers,
-  },
   {
     slug: "simplified-student-rostering",
     title: "Simplified Student Rostering",
@@ -49,15 +38,15 @@ const RAW_PROJECTS = [
   },
 
   {
-    slug: "opteo-design-system-overhaul",
-    title: "Opteo Design System Overhaul",
+    slug: "design-system-overhaul",
+    title: "Design System Overhaul",
     year: "2024",
     status: "draft",
     nda: false,
     blurb:
       "A sample of a few technically challenging components built as part of rebuilding a design system from the ground up.",
     tags: ["Engineering", "UI"],
-    image: opteoDesignSystemOverhaul,
+    image: DesignSystemOverhaul,
   },
   {
     slug: "b2b-saas-impact-statistics",
