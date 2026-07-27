@@ -298,14 +298,14 @@ export function MentalHealthResourceAssignment() {
         <br />
         <div className={slideStyles.contentBody}>
           <h3 className={slideStyles.contentHeading}>
-            70% of completed resources were assigned through the flow
+            74% of all completed resources were assigned through the flow
           </h3>
           <p className={slideStyles.contentParagraph}>
-            This figure counts all resource completions, including those that
-            predate the assignment feature. More importantly, a resource
-            assigned once but completed multiple times only counts as "assigned"
-            for one of those completions — so the true share of
-            educator-initiated completions is even higher than 70%.
+            It is worth noting that a resource assigned once but completed
+            multiple times only counts as "assigned" for one of those
+            completions. As a result, even if we cannot know the exact extent of
+            it, the true share of educator-initiated completions is likely even
+            higher than 74%.
           </p>
           <h3 className={slideStyles.contentHeading}>
             63% of assignments included a personal note
@@ -313,17 +313,17 @@ export function MentalHealthResourceAssignment() {
           <p className={slideStyles.contentParagraph}>
             Well over half of educators went beyond the bare requirement of
             clicking "assign," taking the time to write a custom message to
-            their student. This signals that the note field — intentionally
-            optional — added real value and didn't just sit there unused.
+            their student. This signals that the note field added real value and
+            didn't just sit there unused.
           </p>
           <h3 className={slideStyles.contentHeading}>
             Strong qualitative feedback from prospective clients
           </h3>
           <p className={slideStyles.contentParagraph}>
-            During demo calls, the assignment flow consistently drew
-            unprompted, positive reactions from prospective clients. Educators
-            and admins alike recognized the problem it solved and could
-            immediately see how it would fit into their daily workflow.
+            During demo calls, the assignment flow consistently drew unprompted,
+            positive reactions from prospective clients. Educators and admins
+            alike recognized the problem it solved and could immediately see how
+            it would fit into their daily workflow.
           </p>
         </div>
       </Slide>
