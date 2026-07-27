@@ -180,22 +180,16 @@ export function Main() {
         <div className="wrap">
           <div className={styles.footTop}>
             <h3>Let's chat!</h3>
-            <a className={styles.mail} href="mailto:hello@roxane.studio">
-              hello@roxane.studio
+            <a className={styles.mail} href="mailto:roxanenoel.dev@gmail.com">
+              roxanenoel.dev@gmail.com
             </a>
           </div>
           <ul className={styles.socials}>
             <li>
-              <a href="#">GitHub</a>
+              <a href="https://github.com/Roxanoel">GitHub</a>
             </li>
             <li>
-              <a href="#">Read.cv</a>
-            </li>
-            <li>
-              <a href="#">LinkedIn</a>
-            </li>
-            <li>
-              <a href="#">Are.na</a>
+              <a href="https://www.linkedin.com/in/roxane-noel/">LinkedIn</a>
             </li>
           </ul>
           <div className={styles.footBottom}>
