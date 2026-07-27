@@ -1,4 +1,4 @@
-import mentalHealthCheckInForTeenagers from "../assets/project-mental-health-check-in-for-teenagers.png";
+
 import simplifiedStudentRostering from "../assets/project-simplified-student-rostering.png";
 import mentalHealthResourceAssignment from "../assets/project-mental-health-resource-assignment.png";
 import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistics.png";
