@@ -7,6 +7,7 @@ import multiStepWizardSkeleton from "../../assets/project-resources/multi-step-w
 import skeletonSinglePage from "../../assets/project-resources/skeleton-single-page.png";
 import explorationsResources from "../../assets/project-resources/explorations-resources.png";
 import solutionResourceRecommendation from "../../assets/project-resources/solution-resource-recommendation.png";
+import solutionCards from "../../assets/project-resources/solution-cards.png";
 import slideStyles from "../../components/Slide.module.css";
 
 const project = PROJECTS.find(
@@ -172,14 +173,61 @@ export function MentalHealthResourceAssignment() {
             Exploring resource assignment UI
           </h3>
           <p className={slideStyles.contentParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur.
+            One of the key design questions at this stage was how to represent
+            the resources on the page. Based on our design system, I knew I had
+            to use cards, but the content and layout of the cards was still
+            fairly open. The cards needed to include the following:
+            <ul>
+              <li>Title</li>
+              <li>Short description</li>
+              <li>Author + time required</li>
+              <li>Approrpriate grades</li>
+              <li>Topics covered</li>
+              <li>Image</li>
+            </ul>
+            Since each card acts as a quick summary, users also had to be able
+            to dig deeper as needed, either to see more complete information or
+            to try the activity for themselves. I started by just adding
+            everything, and then progressively optimized for space to see how
+            compact I could get without losing the most important information. I
+            also explored both vertical and horizontal layouts to see what
+            worked best for layout and responsiveness.
           </p>
           <CaseStudyImage
             src={explorationsResources}
             alt="Explorations of resource assignment interfaces"
+          />
+          <h3 className={slideStyles.contentHeading}>
+            Digging in: grade level representation
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            One part of my solution I'm particularly happy with is the grade
+            level indicator on each card.
+            <br />
+            First, I sat with the fact that grades are linear, and usually a
+            resource will only be available for adjacent grade levels (i.e., it
+            would not make sense if an activity was recommended for grades 1 and
+            5 but no grade in-between). Moreover, I was aware that most
+            activities are recommended for a fairly broad range of grade levels,
+            usually at least three or four. On this basis, I rejected solutions
+            which unnecessarily added separate chips for each grade level, as
+            this took too much space for very little benefit.
+            <br />
+            Then, I empathized with users and walked through their process,
+            thinking about how they could get the maximum out of how these
+            grades were displayed. I figured that having one consistent "scale"
+            to display, for each activity and always in the same spot on every
+            card, made it so much easier to quickly scan for appropriate
+            activities, even in the case where a user does not want to take the
+            extra step of interacting with filters.
+            <br />
+            <br />
+            Once I added the radio buttons for selection, I settled on a final
+            card design for approval.
+          </p>
+          <CaseStudyImage
+            src={solutionCards}
+            alt="Final solution cards for resource assignment"
           />
         </div>
       </Slide>
