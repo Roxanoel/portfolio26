@@ -287,21 +287,45 @@ export function MentalHealthResourceAssignment() {
       <Slide id="slide-impact">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Impact</p>
-          <h2 className={slideStyles.title}>Early results</h2>
+          <h2 className={slideStyles.title}>Success metrics</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Since resource assignment was an entirely new feature, there was no
+          pre-post baseline to measure against. Instead, I chose metrics that
+          would tell a story about adoption and engagement: were educators
+          actually using the tool, and were they engaging with it meaningfully?
         </p>
         <br />
-        <p className={slideStyles.body}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur.
-        </p>
+        <div className={slideStyles.contentBody}>
+          <h3 className={slideStyles.contentHeading}>
+            70% of completed resources were assigned through the flow
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            This figure counts all resource completions, including those that
+            predate the assignment feature. More importantly, a resource
+            assigned once but completed multiple times only counts as "assigned"
+            for one of those completions — so the true share of
+            educator-initiated completions is even higher than 70%.
+          </p>
+          <h3 className={slideStyles.contentHeading}>
+            63% of assignments included a personal note
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            Well over half of educators went beyond the bare requirement of
+            clicking "assign," taking the time to write a custom message to
+            their student. This signals that the note field — intentionally
+            optional — added real value and didn't just sit there unused.
+          </p>
+          <h3 className={slideStyles.contentHeading}>
+            Strong qualitative feedback from prospective clients
+          </h3>
+          <p className={slideStyles.contentParagraph}>
+            During demo calls, the assignment flow consistently drew
+            unprompted, positive reactions from prospective clients. Educators
+            and admins alike recognized the problem it solved and could
+            immediately see how it would fit into their daily workflow.
+          </p>
+        </div>
       </Slide>
     </ProjectLayout>
   );
