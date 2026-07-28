@@ -15,18 +15,18 @@
 }
 
 .statValue {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 800;
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-family: var(--font-heading);
+  font-weight: var(--font-extrabold);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl));
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-none);
   display: block;
   margin-bottom: 8px;
 }
 
 .statLabel {
-  font-size: clamp(13px, 1.1vw, 16px);
-  line-height: 1.5;
+  font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
+  line-height: var(--leading-normal);
   color: color-mix(in srgb, var(--cream) 75%, transparent);
 }
 
@@ -45,16 +45,16 @@
   background: var(--green-bg);
   border: 1px solid var(--green-border);
   border-radius: 12px;
-  font-size: clamp(13px, 1vw, 15px);
-  line-height: 1.5;
+  font-size: clamp(var(--text-sm), 1vw, var(--text-base));
+  line-height: var(--leading-normal);
   color: var(--green-dark);
 }
 
 .actionItem strong {
   display: block;
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: clamp(14px, 1.1vw, 17px);
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
   color: var(--green-dark);
   margin-bottom: 2px;
 }
@@ -72,8 +72,8 @@
 .taskItem {
   position: relative;
   padding-left: 20px;
-  font-size: clamp(14px, 1.1vw, 17px);
-  line-height: 1.5;
+  font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
+  line-height: var(--leading-normal);
   color: var(--ink-soft);
 }
 
