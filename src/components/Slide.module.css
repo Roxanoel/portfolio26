@@ -15,26 +15,26 @@
 }
 
 .sectionHeader {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-ultra);
   text-transform: uppercase;
   color: var(--ink-soft);
   margin: 0 0 12px;
 }
 
 .title {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 800;
-  font-size: clamp(28px, 4vw, 48px);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-family: var(--font-heading);
+  font-weight: var(--font-extrabold);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
   margin: 0 0 24px;
 }
 
 .body {
-  font-size: clamp(15px, 1.2vw, 18px);
+  font-size: clamp(var(--text-sm), 1.2vw, var(--text-lg));
   line-height: 1.65;
   color: var(--ink-soft);
   max-width: 64ch;
@@ -43,9 +43,9 @@
 }
 
 .subheading {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 15px;
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
   color: var(--ink);
   margin: 24px 0 12px;
 }
@@ -57,16 +57,15 @@
 }
 
 .contentHeading {
-  font-family: "Bricolage Grotesque", "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: clamp(16px, 1.3vw, 20px);
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: clamp(var(--text-base), 1.3vw, var(--text-xl));
   margin: unset;
 }
 
 .contentParagraph {
-  font-size: clamp(14px, 1.1vw, 17px);
-  line-height: 1.5;
+  font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
+  line-height: var(--leading-normal);
   color: var(--ink-soft);
   margin: 0;
 }
-

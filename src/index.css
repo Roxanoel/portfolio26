@@ -2,7 +2,7 @@
 
 *  { box-sizing: border-box; }
 html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-body { margin: 0; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { margin: 0; overflow-x: hidden; font-family: var(--font-body); }
 
 /* Paper grain overlay — place <Grain /> as a fixed layer */
 .grain {
@@ -35,5 +35,5 @@ body { margin: 0; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-ser
 
 /* Utilities */
 .wrap  { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
-.mono  { font-family: 'Space Mono', ui-monospace, monospace; }
-.serif { font-family: 'Instrument Serif', Georgia, serif; }
+.mono  { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
