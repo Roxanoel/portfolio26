@@ -180,6 +180,10 @@ export function ProjectLayout({ project, children }) {
   const sections = sectionsFromChildren(children);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleJump = useCallback((id) => {
     setActiveId(id);
     const el = document.getElementById(id);
