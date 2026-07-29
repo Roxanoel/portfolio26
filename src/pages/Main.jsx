@@ -42,9 +42,9 @@ export function Main() {
     });
   }, []);
 
-  const marqueeContent = [...MARQUEE_WORDS, ...MARQUEE_WORDS].map((w, i) => (
-    <span key={i}>{w}</span>
-  ));
+  const marqueeContent = Array.from({ length: 8 }, () => MARQUEE_WORDS)
+    .flat()
+    .map((w, i) => <span key={i}>{w}</span>);
 
   return (
     <div ref={pageRef} className={styles.page}>
