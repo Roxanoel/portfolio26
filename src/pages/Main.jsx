@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { Grain } from "../components/Grain";
 import { WorkGrid } from "../components/WorkGrid";
 import { BookCard } from "../components/BookCard";
@@ -29,6 +29,17 @@ export function Main() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    requestAnimationFrame(() => {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   }, []);
 
   const marqueeContent = [...MARQUEE_WORDS, ...MARQUEE_WORDS].map((w, i) => (
