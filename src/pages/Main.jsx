@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { Grain } from "../components/Grain";
 import { WorkGrid } from "../components/WorkGrid";
 import { BookCard } from "../components/BookCard";
@@ -21,6 +21,27 @@ export function Main() {
   useRevealOnScroll(pageRef);
   useParallax();
 
+  const handleAnchorClick = useCallback((e) => {
+    const href = e.currentTarget.getAttribute("href");
+    if (!href?.startsWith("#")) return;
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    requestAnimationFrame(() => {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }, []);
+
   const marqueeContent = [...MARQUEE_WORDS, ...MARQUEE_WORDS].map((w, i) => (
     <span key={i}>{w}</span>
   ));
@@ -37,13 +58,13 @@ export function Main() {
           </div>
           <ul className={styles.navList}>
             <li>
-              <a href="#work">Work</a>
+              <a href="#work" onClick={handleAnchorClick}>Work</a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="#about" onClick={handleAnchorClick}>About</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact" onClick={handleAnchorClick}>Contact</a>
             </li>
           </ul>
         </div>
@@ -69,10 +90,10 @@ export function Main() {
               deliver projects holistically from start to finish.
             </p>
             <div className={styles.cta}>
-              <a href="#work" className={styles.btn}>
+              <a href="#work" className={styles.btn} onClick={handleAnchorClick}>
                 See the work
               </a>
-              <a href="#contact" className={`${styles.btn} ${styles.ghost}`}>
+              <a href="#contact" className={`${styles.btn} ${styles.ghost}`} onClick={handleAnchorClick}>
                 Get in touch
               </a>
             </div>

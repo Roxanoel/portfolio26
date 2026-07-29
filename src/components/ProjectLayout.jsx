@@ -179,6 +179,7 @@ export function ProjectLayout({ project, children }) {
   const { n, title, year, blurb, tags, dateRange, nda } = project;
   const sections = sectionsFromChildren(children);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const jumpLockRef = useRef(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -186,31 +187,47 @@ export function ProjectLayout({ project, children }) {
 
   const handleJump = useCallback((id) => {
     setActiveId(id);
+    jumpLockRef.current = true;
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+    clearTimeout(jumpLockRef.timer);
+    jumpLockRef.timer = setTimeout(() => {
+      jumpLockRef.current = false;
+    }, 700);
   }, []);
 
   useEffect(() => {
     if (sections.length === 0) return;
 
+    const lastId = sections[sections.length - 1].id;
+
     let ticking = false;
     const handleScroll = () => {
       if (ticking) return;
       requestAnimationFrame(() => {
-        const center = window.innerHeight / 2;
+        if (jumpLockRef.current) {
+          ticking = false;
+          return;
+        }
+
+        const threshold = window.innerHeight / 2;
         let best = sections[0].id;
-        let bestDist = Infinity;
 
         for (const s of sections) {
           const el = document.getElementById(s.id);
           if (!el) continue;
-          const dist = Math.abs(el.getBoundingClientRect().top - center);
-          if (dist < bestDist) {
-            bestDist = dist;
+          if (el.getBoundingClientRect().top <= threshold) {
             best = s.id;
           }
+        }
+
+        const atBottom =
+          window.innerHeight + window.scrollY >=
+          document.body.scrollHeight - 4;
+        if (atBottom) {
+          best = lastId;
         }
 
         setActiveId(best);
