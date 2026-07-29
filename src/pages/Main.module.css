@@ -422,22 +422,22 @@
 .meta {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
 }
 .meta > div {
   font-size: var(--text-sm);
   color: var(--ink);
-  background: var(--paper);
-  border: 1.5px solid var(--ink);
-  border-radius: 14px;
-  padding: 10px 16px;
 }
 .meta b {
   display: block;
+  font-family: var(--font-heading);
   font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  margin-bottom: 4px;
 }
 .meta span {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 /* Footer */
@@ -545,6 +545,12 @@
   }
   .about {
     grid-template-columns: 1fr;
+  }
+  .about > :first-child {
+    order: 2;
+  }
+  .about > :last-child {
+    order: 1;
   }
 }
 
