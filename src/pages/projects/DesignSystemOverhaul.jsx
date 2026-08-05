@@ -6,6 +6,8 @@ import lineChartLight from "../../assets/project-design-system-overhaul/line-cha
 import lineChartDark from "../../assets/project-design-system-overhaul/line-chart-dark.png";
 import lineChartContainedLight from "../../assets/project-design-system-overhaul/line-chart-contained-light.png";
 import lineChartContainedDark from "../../assets/project-design-system-overhaul/line-chart-contained-dark.png";
+import originalTooltip from "../../assets/project-design-system-overhaul/origina_amcharts_tooltip.png";
+import opteoDsTooltip from "../../assets/project-design-system-overhaul/opteo_ds_tooltip.png";
 import slideStyles from "../../components/Slide.module.css";
 
 const project = PROJECTS.find((p) => p.slug === "design-system-overhaul");
@@ -50,7 +52,7 @@ export function OpteoDesignSystemOverhaul() {
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
-              Challenge 1: Custom Tooltips
+              Main Challenge: Custom Tooltips
             </h3>
             <p className={slideStyles.contentParagraph}>
               To match our design system, we couldn&apos;t use the built-in
@@ -88,12 +90,14 @@ export function OpteoDesignSystemOverhaul() {
               tooltip's HTML adapter independently queries all real series to
               populate the content.
             </p>
-            <h4 className={slideStyles.contentHeading}>Challenge three</h4>
-            <p className={slideStyles.contentParagraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore.
-            </p>
+            <CompareSlider
+              itemOne={opteoDsTooltip}
+              itemTwo={originalTooltip}
+              altOne="Opteo custom design system tooltip"
+              altTwo="Original amCharts tooltip"
+              labelOne="Custom"
+              labelTwo="Default"
+            />
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
