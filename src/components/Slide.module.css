@@ -63,9 +63,24 @@
   margin: unset;
 }
 
+.contentHeading:is(h4) {
+  font-weight: var(--font-semibold);
+  font-size: clamp(var(--text-base), 1.15vw, var(--text-lg));
+  opacity: 0.9;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+}
+
 .contentParagraph {
   font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
   line-height: var(--leading-normal);
   color: var(--ink-soft);
   margin: 0;
 }
+
+.contentGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+

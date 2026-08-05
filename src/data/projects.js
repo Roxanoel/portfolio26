@@ -1,4 +1,3 @@
-
 import simplifiedStudentRostering from "../assets/project-simplified-student-rostering.png";
 import mentalHealthResourceAssignment from "../assets/project-mental-health-resource-assignment.png";
 import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistics.png";
@@ -41,7 +40,7 @@ const RAW_PROJECTS = [
     slug: "design-system-overhaul",
     title: "Design System Overhaul",
     year: "2024",
-    status: "draft",
+    status: "published",
     nda: false,
     blurb:
       "A sample of a few technically challenging components built as part of rebuilding a design system from the ground up.",
