@@ -17,9 +17,9 @@ export function OpteoDesignSystemOverhaul() {
     <ProjectLayout project={project}>
       <Slide id="slide-charts">
         <hgroup>
-          <p className={slideStyles.sectionHeader}>Charts</p>
+          <p className={slideStyles.sectionHeader}>Example #1</p>
           <h2 className={slideStyles.title}>
-            Performance-first data visualisation
+            Performant and Responsive Charts
           </h2>
         </hgroup>
         <p className={slideStyles.body}>
@@ -116,8 +116,8 @@ export function OpteoDesignSystemOverhaul() {
 
       <Slide id="slide-number-input">
         <hgroup>
-          <p className={slideStyles.sectionHeader}>Number Input</p>
-          <h2 className={slideStyles.title}>A deceptively complex primitive</h2>
+          <p className={slideStyles.sectionHeader}>Example #2</p>
+          <h2 className={slideStyles.title}>Formatted Number Input</h2>
         </hgroup>
         <p className={slideStyles.body}>
           A number input sounds simple — but building one that handles locale
@@ -127,17 +127,18 @@ export function OpteoDesignSystemOverhaul() {
         </p>
         <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
           <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>
-              Exploration and edge cases
-            </h3>
+            <h3 className={slideStyles.contentHeading}>Masking approach</h3>
             <p className={slideStyles.contentParagraph}>
-              I explored several approaches, from a simplified controlled input
-              to a fully-featured component supporting range limits, step
-              controls, suffix/prefix units, and custom formatting. The final
-              design settled on a single input with stepper buttons, a clear
-              button, and configurable validation rules.
+              We considered the <code>vue-number-format</code> library, which
+              shares much of our intended functionality, but settled on{" "}
+              <code>maska</code> with a custom implementation for two reasons:
+              <code>maska</code> is lightweight with zero dependencies, and
+              building our own layer on top of it let us keep number input and
+              display consistent across the application using the same internal
+              number utility functions. This customized implementation also
+              allowed us to integrate directly with our form validation
+              pipeline.
             </p>
-            {/* TODO: add number input image */}
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
@@ -146,18 +147,15 @@ export function OpteoDesignSystemOverhaul() {
             <p className={slideStyles.contentParagraph}>
               The native <code>&lt;input type=&quot;number&quot;&gt;</code> was
               quickly ruled out due to inconsistent browser behaviour — Firefox
-              allows any character, Safari strips invalid values silently, and
-              Chrome fires input events differently. I opted for a text-based
-              input with a custom parsing and formatting layer, ensuring
-              predictable behaviour across all environments.
+              allows any character, Safari strips invalid values, and Chrome
+              fires input events differently. I opted for a text-based input
+              with a custom parsing and formatting layer, ensuring predictable
+              behaviour across all environments.
             </p>
             <p className={slideStyles.contentParagraph}>
               The component respects locale-specific formatting — using the
               correct decimal and grouping separators — while maintaining a
-              stable numeric value in the background. Keyboard-only users can
-              increment and decrement values using native step controls styled
-              to match the system, and validation errors are announced to screen
-              readers via live regions.
+              stable numeric value in the background.
             </p>
           </div>
         </div>
