@@ -195,8 +195,8 @@ export function Main() {
             </div>
           </div>
         </section>
-      </main>
 
+      </main>
       <footer id="contact" className={styles.footer}>
         <div className="wrap">
           <div className={styles.footTop}>
