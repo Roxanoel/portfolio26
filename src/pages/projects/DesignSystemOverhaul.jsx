@@ -47,6 +47,7 @@ export function OpteoDesignSystemOverhaul() {
               component (line, area, donut, bar, etc.). I was then responsible
               for building the specific logic for all chart types.
             </p>
+            <br />
             <CompareSlider
               itemOne={lineChartContainedLight}
               itemTwo={lineChartContainedDark}
@@ -94,6 +95,7 @@ export function OpteoDesignSystemOverhaul() {
               individual series, while the tooltip's HTML adapter independently
               queries all real series to populate the content.
             </p>
+            <br />
             <CompareSlider
               itemOne={multiSeriesTooltip}
               itemTwo={originalTooltip}
@@ -129,6 +131,7 @@ export function OpteoDesignSystemOverhaul() {
           across all browsers turned out to be one of the most challenging
           components in the system.
         </p>
+        <br />
         <video
           src={numberInputVideo}
           autoPlay
