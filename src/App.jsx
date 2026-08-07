@@ -17,7 +17,7 @@ export default function App() {
 
         <Route path="/work/b2b-saas-impact-statistics" element={<B2BSaaSImpactStatistics />} />
         <Route path="/work/responsive-search-ads-preview" element={<ResponsiveSearchAdsPreview />} />
-        <Route path="/work/opteo-design-system-overhaul" element={<OpteoDesignSystemOverhaul />} />
+        <Route path="/work/design-system-overhaul" element={<OpteoDesignSystemOverhaul />} />
       </Routes>
     </BrowserRouter>
   );

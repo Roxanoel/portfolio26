@@ -37,3 +37,12 @@ body { margin: 0; overflow-x: hidden; font-family: var(--font-body); }
 .wrap  { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 .mono  { font-family: var(--font-mono); }
 .serif { font-family: var(--font-serif); }
+
+code {
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(28, 26, 23, 0.06);
+  color: var(--ink-soft);
+}
