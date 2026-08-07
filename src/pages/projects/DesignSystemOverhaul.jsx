@@ -8,8 +8,8 @@ import lineChartDark from "../../assets/project-design-system-overhaul/line-char
 import lineChartContainedLight from "../../assets/project-design-system-overhaul/line-chart-contained-light.png";
 import lineChartContainedDark from "../../assets/project-design-system-overhaul/line-chart-contained-dark.png";
 import originalTooltip from "../../assets/project-design-system-overhaul/origina_amcharts_tooltip.png";
-import opteoDsTooltip from "../../assets/project-design-system-overhaul/opteo_ds_tooltip.png";
 import colorPickerInContext from "../../assets/project-design-system-overhaul/color-picker-in-context.png";
+import multiSeriesTooltip from "../../assets/project-design-system-overhaul/contained-line-multi-series-tooltip.png";
 import slideStyles from "../../components/Slide.module.css";
 
 const project = PROJECTS.find((p) => p.slug === "design-system-overhaul");
@@ -93,9 +93,9 @@ export function OpteoDesignSystemOverhaul() {
               populate the content.
             </p>
             <CompareSlider
-              itemOne={opteoDsTooltip}
+              itemOne={multiSeriesTooltip}
               itemTwo={originalTooltip}
-              altOne="Opteo custom design system tooltip"
+              altOne="Custom multi-series tooltip"
               altTwo="Original amCharts tooltip"
               labelOne="Custom"
               labelTwo="Default"
