@@ -34,7 +34,7 @@
 }
 
 .body {
-  font-size: clamp(var(--text-md), 1.2vw, var(--text-lg));
+  font-size: clamp(var(--text-base), 1.2vw, var(--text-lg));
   line-height: 1.65;
   color: var(--ink-soft);
   max-width: 64ch;
@@ -72,7 +72,7 @@
 }
 
 .contentParagraph {
-  font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
+  font-size: clamp(var(--text-base), 1.1vw, var(--text-lg));
   line-height: var(--leading-normal);
   color: var(--ink-soft);
   margin: 0;
@@ -91,4 +91,3 @@
   margin: 0 auto;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
-
