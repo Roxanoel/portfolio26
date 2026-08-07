@@ -10,6 +10,7 @@ import lineChartContainedDark from "../../assets/project-design-system-overhaul/
 import originalTooltip from "../../assets/project-design-system-overhaul/origina_amcharts_tooltip.png";
 import colorPickerInContext from "../../assets/project-design-system-overhaul/color-picker-in-context.png";
 import multiSeriesTooltip from "../../assets/project-design-system-overhaul/contained-line-multi-series-tooltip.png";
+import numberInputVideo from "../../assets/project-design-system-overhaul/number-input-interaction.mp4";
 import slideStyles from "../../components/Slide.module.css";
 
 const project = PROJECTS.find((p) => p.slug === "design-system-overhaul");
@@ -28,8 +29,9 @@ export function OpteoDesignSystemOverhaul() {
           The existing in-house chart components were tightly coupled to
           business logic and poorly documented, making reuse impractical. Using
           a line chart outside its original context required convoluted
-          workarounds or ad-hoc changes. The SVG-based rendering also struggled
-          with larger datasets.
+          workarounds or ad-hoc changes. Furthermore, as we were moving towards
+          higher-density displays with more data points, we needed a more
+          performant solution.
         </p>
         <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
           <div className={slideStyles.contentGroup}>
@@ -42,8 +44,8 @@ export function OpteoDesignSystemOverhaul() {
               compatibility. We settled on amCharts and built a shared
               integration layer that translates our data format to the
               library&apos;s expected structure, reused across every chart
-              component — line, area, donut, bar, and more. I was then
-              responsible for building the specific logic for all chart types.
+              component (line, area, donut, bar, etc.). I was then responsible
+              for building the specific logic for all chart types.
             </p>
             <CompareSlider
               itemOne={lineChartContainedLight}
@@ -54,11 +56,11 @@ export function OpteoDesignSystemOverhaul() {
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
-              Main Challenge: Custom Tooltips
+              Implementation Challenge: Custom Tooltips
             </h3>
             <p className={slideStyles.contentParagraph}>
               To match our design system, we couldn&apos;t use the built-in
-              styles for the amCharts tooltips. I had to build a custom tooltip,
+              styles for the amCharts tooltips. I had to build a custom one,
               which involved several challenges.
             </p>
             <h4 className={slideStyles.contentHeading}>
@@ -85,12 +87,12 @@ export function OpteoDesignSystemOverhaul() {
               <br />
               <br />I achieved this by creating a "phantom" series whose data is
               the maximum Y value per X coordinate across all real series. This
-              series is rendered with strokeOpacity: 0 (rather than "display:
-              hidden"), to make it invisible while still triggering mouseover
-              events. The result: the cursor and tooltip lock to the highest
-              peak at each date rather than to any individual series, while the
-              tooltip's HTML adapter independently queries all real series to
-              populate the content.
+              series is rendered with <code>strokeOpacity: 0</code> (rather than{" "}
+              <code>display: hidden</code>), to make it invisible while still
+              triggering mouseover events. The result: the cursor and tooltip
+              lock to the highest peak at each date rather than to any
+              individual series, while the tooltip's HTML adapter independently
+              queries all real series to populate the content.
             </p>
             <CompareSlider
               itemOne={multiSeriesTooltip}
@@ -127,6 +129,15 @@ export function OpteoDesignSystemOverhaul() {
           across all browsers turned out to be one of the most challenging
           components in the system.
         </p>
+        <video
+          src={numberInputVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={slideStyles.media}
+          aria-label="Number input interaction demo"
+        />
         <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Masking approach</h3>
