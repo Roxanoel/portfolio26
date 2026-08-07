@@ -34,7 +34,7 @@
 }
 
 .body {
-  font-size: clamp(var(--text-sm), 1.2vw, var(--text-lg));
+  font-size: clamp(var(--text-md), 1.2vw, var(--text-lg));
   line-height: 1.65;
   color: var(--ink-soft);
   max-width: 64ch;
@@ -83,4 +83,3 @@
   flex-direction: column;
   gap: 0.25em;
 }
-
