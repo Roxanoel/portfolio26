@@ -105,53 +105,66 @@ export function MentalHealthResourceAssignment() {
         </ul>
         <br />
         <div className={slideStyles.contentBody}>
-          <h3 className={slideStyles.contentHeading}>
-            Multi-step wizard skeleton
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            I started by exploring flow options which broke down the process
-            into three distinct steps, allowing users to first select a student,
-            then an activity, and finally get to review their selection with the
-            option of adding a custom note. This first flow was meant to appear
-            as a modal, inspired by install wizards and other such processes
-            with an easy way to track progress on the left. The vast majority of
-            our users only desktop/laptop devices, but the difficulty of making
-            this design responsive made me want to explore a one-column layout.
-          </p>
-          <CaseStudyImage
-            src={multiStepWizardSkeleton}
-            alt="Multi-step wizard skeleton layout"
-          />
-          <h3 className={slideStyles.contentHeading}>
-            Multi-step alternative skeleton
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            I looked at a single-column layout, which is easier to adapt to
-            smaller screens. However, as I was playing around with the flow in a
-            prototype, I ran into an issue. Because the user enters the flow
-            either knowing which student they want to recommend to, or which
-            activity will be the object of the recommendation, autocompleting
-            that step from the URL params made one step of the flow feel
-            superfluous. I tried skipping it when prefilled, but that just
-            created potential confusion especially with the steps tracker and
-            the summary at the end.
-          </p>
-          <CaseStudyImage
-            src={multiStepAltSkeleton}
-            alt="Multi-step alternative skeleton layout"
-          />
-          <h3 className={slideStyles.contentHeading}>Single-page skeleton</h3>
-          <p className={slideStyles.contentParagraph}>
-            In the end, I opted to have all the information on one screen: this
-            worked better with the autocompletion from URL params, and felt
-            minimally disruptive to the user's work flow. The main challenge was
-            to maintain simplicity and prevent information overload, while
-            allowing users to dig a bit more as needed.
-          </p>
-          <CaseStudyImage
-            src={skeletonSinglePage}
-            alt="Single-page skeleton layout"
-          />
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Multi-step wizard skeleton
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              I started by exploring flow options which broke down the process
+              into three distinct steps, allowing users to first select a
+              student, then an activity, and finally get to review their
+              selection with the option of adding a custom note. This first flow
+              was meant to appear as a modal, inspired by install wizards and
+              other such processes with an easy way to track progress on the
+              left. The vast majority of our users only desktop/laptop devices,
+              but the difficulty of making this design responsive made me want
+              to explore a one-column layout.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={multiStepWizardSkeleton}
+              alt="Multi-step wizard skeleton layout"
+            />
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Multi-step alternative skeleton
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              I looked at a single-column layout, which is easier to adapt to
+              smaller screens. However, as I was playing around with the flow in
+              a prototype, I ran into an issue. Because the user enters the flow
+              either knowing which student they want to recommend to, or which
+              activity will be the object of the recommendation, autocompleting
+              that step from the URL params made one step of the flow feel
+              superfluous. I tried skipping it when prefilled, but that just
+              created potential confusion especially with the steps tracker and
+              the summary at the end.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={multiStepAltSkeleton}
+              alt="Multi-step alternative skeleton layout"
+            />
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>Single-page skeleton</h3>
+            <p className={slideStyles.contentParagraph}>
+              In the end, I opted to have all the information on one screen:
+              this worked better with the autocompletion from URL params, and
+              felt minimally disruptive to the user's work flow. The main
+              challenge was to maintain simplicity and prevent information
+              overload, while allowing users to dig a bit more as needed.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={skeletonSinglePage}
+              alt="Single-page skeleton layout"
+            />
+          </div>
         </div>
       </Slide>
 
@@ -169,66 +182,74 @@ export function MentalHealthResourceAssignment() {
         </p>
         <br />
         <div className={slideStyles.contentBody}>
-          <h3 className={slideStyles.contentHeading}>
-            Exploring resource assignment UI
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            One of the key design questions at this stage was how to represent
-            the resources on the page. Based on our design system, I knew I had
-            to use cards, but the content and layout of the cards was still
-            fairly open. The cards needed to include the following:
-            <ul>
-              <li>Title</li>
-              <li>Short description</li>
-              <li>Author + time required</li>
-              <li>Approrpriate grades</li>
-              <li>Topics covered</li>
-              <li>Image</li>
-            </ul>
-            Since each card acts as a quick summary, users also had to be able
-            to dig deeper as needed, either to see more complete information or
-            to try the activity for themselves. I started by just adding
-            everything, and then progressively optimized for space to see how
-            compact I could get without losing the most important information. I
-            also explored both vertical and horizontal layouts to see what
-            worked best for layout and responsiveness.
-          </p>
-          <CaseStudyImage
-            src={explorationsResources}
-            alt="Explorations of resource assignment interfaces"
-          />
-          <h3 className={slideStyles.contentHeading}>
-            Digging in: grade level representation
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            One part of my solution I'm particularly happy with is the grade
-            level indicator on each card.
-            <br />
-            First, I sat with the fact that grades are linear, and usually a
-            resource will only be available for adjacent grade levels (i.e., it
-            would not make sense if an activity was recommended for grades 1 and
-            5 but no grade in-between). Moreover, I was aware that most
-            activities are recommended for a fairly broad range of grade levels,
-            usually at least three or four. On this basis, I rejected solutions
-            which unnecessarily added separate chips for each grade level, as
-            this took too much space for very little benefit.
-            <br />
-            Then, I empathized with users and walked through their process,
-            thinking about how they could get the maximum out of how these
-            grades were displayed. I figured that having one consistent "scale"
-            to display, for each activity and always in the same spot on every
-            card, made it so much easier to quickly scan for appropriate
-            activities, even in the case where a user does not want to take the
-            extra step of interacting with filters.
-            <br />
-            <br />
-            Once I added the radio buttons for selection, I settled on a final
-            card design for approval.
-          </p>
-          <CaseStudyImage
-            src={solutionCards}
-            alt="Final solution cards for resource assignment"
-          />
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Exploring resource assignment UI
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              One of the key design questions at this stage was how to represent
+              the resources on the page. Based on our design system, I knew I
+              had to use cards, but the content and layout of the cards was
+              still fairly open. The cards needed to include the following:
+              <ul>
+                <li>Title</li>
+                <li>Short description</li>
+                <li>Author + time required</li>
+                <li>Approrpriate grades</li>
+                <li>Topics covered</li>
+                <li>Image</li>
+              </ul>
+              Since each card acts as a quick summary, users also had to be able
+              to dig deeper as needed, either to see more complete information
+              or to try the activity for themselves. I started by just adding
+              everything, and then progressively optimized for space to see how
+              compact I could get without losing the most important information.
+              I also explored both vertical and horizontal layouts to see what
+              worked best for layout and responsiveness.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={explorationsResources}
+              alt="Explorations of resource assignment interfaces"
+            />
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Digging in: grade level representation
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              One part of my solution I'm particularly happy with is the grade
+              level indicator on each card.
+              <br />
+              First, I sat with the fact that grades are linear, and usually a
+              resource will only be available for adjacent grade levels (i.e.,
+              it would not make sense if an activity was recommended for grades
+              1 and 5 but no grade in-between). Moreover, I was aware that most
+              activities are recommended for a fairly broad range of grade
+              levels, usually at least three or four. On this basis, I rejected
+              solutions which unnecessarily added separate chips for each grade
+              level, as this took too much space for very little benefit.
+              <br />
+              Then, I empathized with users and walked through their process,
+              thinking about how they could get the maximum out of how these
+              grades were displayed. I figured that having one consistent
+              "scale" to display, for each activity and always in the same spot
+              on every card, made it so much easier to quickly scan for
+              appropriate activities, even in the case where a user does not
+              want to take the extra step of interacting with filters.
+              <br />
+              <br />
+              Once I added the radio buttons for selection, I settled on a final
+              card design for approval.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={solutionCards}
+              alt="Final solution cards for resource assignment"
+            />
+          </div>
         </div>
       </Slide>
 
@@ -246,41 +267,49 @@ export function MentalHealthResourceAssignment() {
         </p>
         <br />
         <div className={slideStyles.contentBody}>
-          <h3 className={slideStyles.contentHeading}>
-            Data model, form logic & unit tests
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            I started by defining the assignment data model — capturing the
-            student, resource, optional message, and metadata like the entry
-            context — then built the form logic and wrote unit tests to cover
-            edge cases like duplicate assignments and missing or incorrect form
-            data.
-          </p>
-          <h3 className={slideStyles.contentHeading}>
-            Context-aware pre-filling via URL params
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            A core piece of the experience was using URL params to pre-fill the
-            form based on where the educator came from. If they arrived from a
-            student's check-in, the student was already selected; if they were
-            browsing resources, the resource was pre-filled. This eliminated
-            redundant steps and kept the flow focused on what the user actually
-            needed to decide.
-          </p>
-          <h3 className={slideStyles.contentHeading}>
-            Search and filter libraries
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            For the resource selection step, I implemented search and filter
-            libraries that let educators quickly narrow down options by grade
-            level, topic, and estimated time. A performant, filterable interface
-            that could handle hundreds of resources without slowing down was an
-            integral part of the user experience.
-          </p>
-          <CaseStudyImage
-            src={solutionResourceRecommendation}
-            alt="Final resource recommendation solution"
-          />
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Data model, form logic & unit tests
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              I started by defining the assignment data model — capturing the
+              student, resource, optional message, and metadata like the entry
+              context — then built the form logic and wrote unit tests to cover
+              edge cases like duplicate assignments and missing or incorrect
+              form data.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Context-aware pre-filling via URL params
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              A core piece of the experience was using URL params to pre-fill
+              the form based on where the educator came from. If they arrived
+              from a student's check-in, the student was already selected; if
+              they were browsing resources, the resource was pre-filled. This
+              eliminated redundant steps and kept the flow focused on what the
+              user actually needed to decide.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Search and filter libraries
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              For the resource selection step, I implemented search and filter
+              libraries that let educators quickly narrow down options by grade
+              level, topic, and estimated time. A performant, filterable
+              interface that could handle hundreds of resources without slowing
+              down was an integral part of the user experience.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <CaseStudyImage
+              src={solutionResourceRecommendation}
+              alt="Final resource recommendation solution"
+            />
+          </div>
         </div>
       </Slide>
 
@@ -297,34 +326,40 @@ export function MentalHealthResourceAssignment() {
         </p>
         <br />
         <div className={slideStyles.contentBody}>
-          <h3 className={slideStyles.contentHeading}>
-            74% of all completed resources were assigned through the flow
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            It is worth noting that a resource assigned once but completed
-            multiple times only counts as "assigned" for one of those
-            completions. As a result, even if we cannot know the exact extent of
-            it, the true share of educator-initiated completions is likely even
-            higher than 74%.
-          </p>
-          <h3 className={slideStyles.contentHeading}>
-            63% of assignments included a personal note
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            Well over half of educators went beyond the bare requirement of
-            clicking "assign," taking the time to write a custom message to
-            their student. This signals that the note field added real value and
-            didn't just sit there unused.
-          </p>
-          <h3 className={slideStyles.contentHeading}>
-            Strong qualitative feedback from prospective clients
-          </h3>
-          <p className={slideStyles.contentParagraph}>
-            During demo calls, the assignment flow consistently drew unprompted,
-            positive reactions from prospective clients. Educators and admins
-            alike recognized the problem it solved and could immediately see how
-            it would fit into their daily workflow.
-          </p>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              74% of all completed resources were assigned through the flow
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              It is worth noting that a resource assigned once but completed
+              multiple times only counts as "assigned" for one of those
+              completions. As a result, even if we cannot know the exact extent
+              of it, the true share of educator-initiated completions is likely
+              even higher than 74%.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              63% of assignments included a personal note
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              Well over half of educators went beyond the bare requirement of
+              clicking "assign," taking the time to write a custom message to
+              their student. This signals that the note field added real value
+              and didn't just sit there unused.
+            </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <h3 className={slideStyles.contentHeading}>
+              Strong qualitative feedback from prospective clients
+            </h3>
+            <p className={slideStyles.contentParagraph}>
+              During demo calls, the assignment flow consistently drew
+              unprompted, positive reactions from prospective clients. Educators
+              and admins alike recognized the problem it solved and could
+              immediately see how it would fit into their daily workflow.
+            </p>
+          </div>
         </div>
       </Slide>
     </ProjectLayout>

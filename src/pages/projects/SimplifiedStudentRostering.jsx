@@ -63,64 +63,71 @@ export function SimplifiedStudentRostering() {
             integrations.
           </p>
           <div className={slideStyles.contentBody}>
-            <h3 className={slideStyles.contentHeading}>
-              A long, unoptimized form
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              The existing rostering process only had two options: uploading a
-              CSV based on a provided model, or manually rostering each
-              individual student using a form similar to the one pictured here.
-            </p>
+            <div className={slideStyles.contentGroup}>
+              <h3 className={slideStyles.contentHeading}>
+                A long, unoptimized form
+              </h3>
+              <p className={slideStyles.contentParagraph}>
+                The existing rostering process only had two options: uploading a
+                CSV based on a provided model, or manually rostering each
+                individual student using a form similar to the one pictured
+                here.
+              </p>
+            </div>
             <CaseStudyImage
               src={rosteringFlowchart}
               alt="Form to add a new student"
               maxWidth={560}
             />
-            <p className={slideStyles.contentParagraph}>
-              The CSV template worked for more tech-savvy users, but individual
-              teachers and counselors used the manual rostering option in the
-              vast majority of cases.
-            </p>
-            <p className={slideStyles.contentParagraph}>
-              The form asked for a lot of information about students. While
-              useful, this information is not strictly necessary to get up and
-              running, and a majority of users might not need it at all, based
-              on usage data.
-            </p>
-            <p className={slideStyles.contentParagraph}>
-              Based on this information, I identified two priorities for the
-              improved rostering flow:
-            </p>
-            <ul className={slideStyles.contentParagraph}>
-              <li>
-                Require only the strict minimum of information to get started
-              </li>
-              <li>
-                Instead of filling each form one by one, users should be able to
-                batch-roster students in one simple, in-app process
-              </li>
-            </ul>
+            <div className={slideStyles.contentGroup}>
+              <p className={slideStyles.contentParagraph}>
+                The CSV template worked for more tech-savvy users, but
+                individual teachers and counselors used the manual rostering
+                option in the vast majority of cases.
+              </p>
+              <p className={slideStyles.contentParagraph}>
+                The form asked for a lot of information about students. While
+                useful, this information is not strictly necessary to get up and
+                running, and a majority of users might not need it at all, based
+                on usage data.
+              </p>
+              <p className={slideStyles.contentParagraph}>
+                Based on this information, I identified two priorities for the
+                improved rostering flow:
+              </p>
+              <ul className={slideStyles.contentParagraph}>
+                <li>
+                  Require only the strict minimum of information to get started
+                </li>
+                <li>
+                  Instead of filling each form one by one, users should be able
+                  to batch-roster students in one simple, in-app process
+                </li>
+              </ul>
+            </div>
           </div>
           <div className={slideStyles.contentBody}>
-            <h3 className={slideStyles.contentHeading}>New Opportunities</h3>
-            <p className={slideStyles.contentParagraph}>
-              I had extensive discussions with our CTO in order to determine
-              what could be done to better use our existing identity platform
-              integrations, and evaluating some findings of our competitor audit
-              to determine feasibility and appetite. We agreed on the following
-              action points:
-            </p>
-            <ol className={styles.actionList}>
-              <li className={styles.actionItem}>
-                <strong>Create an easy sync wizard </strong>Streamline
-                onboarding for users already authenticated through the identity
-                platform
-              </li>
-              <li className={styles.actionItem}>
-                <strong>Enable student-led rostering</strong> Offer an option
-                for classroom join codes to distribute among students
-              </li>
-            </ol>
+            <div className={slideStyles.contentGroup}>
+              <h3 className={slideStyles.contentHeading}>New Opportunities</h3>
+              <p className={slideStyles.contentParagraph}>
+                I had extensive discussions with our CTO in order to determine
+                what could be done to better use our existing identity platform
+                integrations, and evaluating some findings of our competitor
+                audit to determine feasibility and appetite. We agreed on the
+                following action points:
+              </p>
+              <ol className={styles.actionList}>
+                <li className={styles.actionItem}>
+                  <strong>Create an easy sync wizard </strong>Streamline
+                  onboarding for users already authenticated through the
+                  identity platform
+                </li>
+                <li className={styles.actionItem}>
+                  <strong>Enable student-led rostering</strong> Offer an option
+                  for classroom join codes to distribute among students
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </Slide>
@@ -164,52 +171,65 @@ export function SimplifiedStudentRostering() {
             exploring a few different options.
           </p>
           <div className={slideStyles.contentBody}>
-            <h3 className={slideStyles.contentHeading}>
-              Exploring components for async processes
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              For our integrations, I built a quick code prototype using Claude
-              so the CTO and I could test what the interactions and loading
-              states felt like in practice, plugged into the real API, to make
-              design decisions in consequence. We did a few rounds of internal
-              testing to refine the design. See some explorations below for
-              various sync states.
-            </p>
-            <CaseStudyImage
-              src={explorationsAsyncStep}
-              alt="Explorations of async step"
-              maxWidth={368}
-            />
-            <br />
-            <h3 className={slideStyles.contentHeading}>
-              A step-by-step rostering wizard
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              User interviews had revealed that, in the onboarding process
-              overall, users felt overwhelmed when all steps were presented on a
-              single page, and didn't know where to begin. To solve this
-              problem, I opted for a wizard flow, guiding the user through a
-              series of simple, easy steps.
-            </p>
-            <CaseStudyImage
-              src={flowPresentation}
-              alt="Flow presentation mockups"
-            />
-            <br />
-            <h3 className={slideStyles.contentHeading}>Classroom join codes</h3>
-            <p className={slideStyles.body}>
-              Using a URL works better for a message sent to students, while a
-              code works better for displaying on a projector, so it made sense
-              to support both. I also wanted to make it easy for our users to
-              quickly copy the code, and couldn't rely on an icon-only button
-              based on my knowledge of our user base which tends to find
-              icon-only buttons difficult to understand.
-            </p>
-            <CaseStudyImage
-              src={shareCode}
-              alt="Share code interface"
-              maxWidth={560}
-            />
+            <div className={slideStyles.contentGroup}>
+              <h3 className={slideStyles.contentHeading}>
+                Exploring components for async processes
+              </h3>
+              <p className={slideStyles.contentParagraph}>
+                For our integrations, I built a quick code prototype using
+                Claude so the CTO and I could test what the interactions and
+                loading states felt like in practice, plugged into the real API,
+                to make design decisions in consequence. We did a few rounds of
+                internal testing to refine the design. See some explorations
+                below for various sync states.
+              </p>
+            </div>
+            <div className={slideStyles.contentGroup}>
+              <CaseStudyImage
+                src={explorationsAsyncStep}
+                alt="Explorations of async step"
+                maxWidth={368}
+              />
+            </div>
+            <div className={slideStyles.contentGroup}>
+              <h3 className={slideStyles.contentHeading}>
+                A step-by-step rostering wizard
+              </h3>
+              <p className={slideStyles.contentParagraph}>
+                User interviews had revealed that, in the onboarding process
+                overall, users felt overwhelmed when all steps were presented on
+                a single page, and didn't know where to begin. To solve this
+                problem, I opted for a wizard flow, guiding the user through a
+                series of simple, easy steps.
+              </p>
+            </div>
+            <div className={slideStyles.contentGroup}>
+              <CaseStudyImage
+                src={flowPresentation}
+                alt="Flow presentation mockups"
+              />
+              <br />
+            </div>
+            <div className={slideStyles.contentGroup}>
+              <h3 className={slideStyles.contentHeading}>
+                Classroom join codes
+              </h3>
+              <p className={slideStyles.body}>
+                Using a URL works better for a message sent to students, while a
+                code works better for displaying on a projector, so it made
+                sense to support both. I also wanted to make it easy for our
+                users to quickly copy the code, and couldn't rely on an
+                icon-only button based on my knowledge of our user base which
+                tends to find icon-only buttons difficult to understand.
+              </p>
+            </div>
+            <div className={slideStyles.contentGroup}>
+              <CaseStudyImage
+                src={shareCode}
+                alt="Share code interface"
+                maxWidth={560}
+              />
+            </div>
           </div>
         </div>
       </Slide>
