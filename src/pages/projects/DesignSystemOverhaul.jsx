@@ -147,13 +147,14 @@ export function OpteoDesignSystemOverhaul() {
             <p className={slideStyles.contentParagraph}>
               We considered the <code>vue-number-format</code> library, which
               shares much of our intended functionality, but settled on{" "}
-              <code>maska</code> with a custom implementation for two reasons:
-              <code>maska</code> is lightweight with zero dependencies, and
-              building our own layer on top of it let us keep number input and
-              display consistent across the application using the same internal
-              number utility functions. This customized implementation also
-              allowed us to integrate directly with our form validation
-              pipeline.
+              <code>maska</code> with a custom implementation: both libraries
+              are lightweight with zero dependency, but <code>maska</code>,
+              simply being a masking library, was more versatile and allowed for
+              deeper customisation. Building our own layer on top of it let us
+              keep number input and display consistent across the application
+              using the same internal number utility functions. This customized
+              implementation also allowed us to integrate directly with our form
+              validation pipeline.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
