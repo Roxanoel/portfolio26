@@ -2,6 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CompareSlider } from "../../components/CompareSlider";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
+import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
 import lineChartLight from "../../assets/project-design-system-overhaul/line-chart-light.png";
 import lineChartDark from "../../assets/project-design-system-overhaul/line-chart-dark.png";
@@ -48,12 +49,14 @@ export function OpteoDesignSystemOverhaul() {
               for building the specific logic for all chart types.
             </p>
             <br />
-            <CompareSlider
-              itemOne={lineChartContainedLight}
-              itemTwo={lineChartContainedDark}
-              altOne="Contained line chart in light mode"
-              altTwo="Contained line chart in dark mode"
-            />
+            <Legend caption="Line chart in its contained, full-width variant, automatically adapting to light and dark themes.">
+              <CompareSlider
+                itemOne={lineChartContainedLight}
+                itemTwo={lineChartContainedDark}
+                altOne="Contained line chart in light mode"
+                altTwo="Contained line chart in dark mode"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
@@ -96,14 +99,16 @@ export function OpteoDesignSystemOverhaul() {
               queries all real series to populate the content.
             </p>
             <br />
-            <CompareSlider
-              itemOne={multiSeriesTooltip}
-              itemTwo={originalTooltip}
-              altOne="Custom multi-series tooltip"
-              altTwo="Original amCharts tooltip"
-              labelOne="Custom"
-              labelTwo="Default"
-            />
+            <Legend caption="Custom multi-series tooltip vs. amCharts' default.">
+              <CompareSlider
+                itemOne={multiSeriesTooltip}
+                itemTwo={originalTooltip}
+                altOne="Custom multi-series tooltip"
+                altTwo="Original amCharts tooltip"
+                labelOne="Custom"
+                labelTwo="Default"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
@@ -132,15 +137,17 @@ export function OpteoDesignSystemOverhaul() {
           components in the system.
         </p>
         <br />
-        <video
-          src={numberInputVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={slideStyles.media}
-          aria-label="Number input interaction demo"
-        />
+        <Legend caption="Number input component handling real-time masking.">
+          <video
+            src={numberInputVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={slideStyles.media}
+            aria-label="Number input interaction demo"
+          />
+        </Legend>
         <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Masking approach</h3>
@@ -195,18 +202,20 @@ export function OpteoDesignSystemOverhaul() {
           .
           <br />
           <br />
-          In the previous version of the app, users could pick one of five
+          In the previous version of the app, users could only pick one of five
           pre-set colors. In this new design, we provided eight presets and the
           ability to pick a custom color, or paste a custom hex code. The latter
           option is particularly neat for cases where users might want to use an
           account's specific brand color.
           <br />
         </p>
-        <CaseStudyImage
-          src={colorPickerInContext}
-          alt="Color picker in context within a table cell"
-          maxWidth={300}
-        />
+        <Legend caption="The color picker shown in-context.">
+          <CaseStudyImage
+            src={colorPickerInContext}
+            alt="Color picker in context within a table cell"
+            maxWidth={300}
+          />
+        </Legend>
         <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>

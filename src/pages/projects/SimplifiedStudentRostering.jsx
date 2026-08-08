@@ -1,6 +1,7 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
+import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
 import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
 import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
@@ -74,11 +75,13 @@ export function SimplifiedStudentRostering() {
                 here.
               </p>
             </div>
-            <CaseStudyImage
-              src={rosteringFlowchart}
-              alt="Form to add a new student"
-              maxWidth={560}
-            />
+            <Legend caption="Re-creation of the original manual student entry form.">
+              <CaseStudyImage
+                src={rosteringFlowchart}
+                alt="Form to add a new student"
+                maxWidth={560}
+              />
+            </Legend>
             <div className={slideStyles.contentGroup}>
               <p className={slideStyles.contentParagraph}>
                 The CSV template worked for more tech-savvy users, but
@@ -143,10 +146,12 @@ export function SimplifiedStudentRostering() {
           flowchart, mapping out the necessary steps and deliverables.
         </p>
         <br />
-        <CaseStudyImage
-          src={rosteringFlowchartImg}
-          alt="Flowchart of the rostering process"
-        />
+        <Legend caption="Flowchart of the redesigned rostering process with multiple entry points and paths.">
+          <CaseStudyImage
+            src={rosteringFlowchartImg}
+            alt="Flowchart of the rostering process"
+          />
+        </Legend>
         <br />
         <p className={slideStyles.body}>
           In parallel, I consulted the documentation for our identity platform
@@ -185,11 +190,13 @@ export function SimplifiedStudentRostering() {
               </p>
             </div>
             <div className={slideStyles.contentGroup}>
-              <CaseStudyImage
-                src={explorationsAsyncStep}
-                alt="Explorations of async step"
-                maxWidth={368}
-              />
+              <Legend caption="Prototype explorations of loading states and sync feedback during the identity platform integration.">
+                <CaseStudyImage
+                  src={explorationsAsyncStep}
+                  alt="Explorations of async step"
+                  maxWidth={368}
+                />
+              </Legend>
             </div>
             <div className={slideStyles.contentGroup}>
               <h3 className={slideStyles.contentHeading}>
@@ -204,10 +211,12 @@ export function SimplifiedStudentRostering() {
               </p>
             </div>
             <div className={slideStyles.contentGroup}>
-              <CaseStudyImage
-                src={flowPresentation}
-                alt="Flow presentation mockups"
-              />
+              <Legend caption="A visualisation of the new step-by-step flow.">
+                <CaseStudyImage
+                  src={flowPresentation}
+                  alt="Flow presentation mockups"
+                />
+              </Legend>
               <br />
             </div>
             <div className={slideStyles.contentGroup}>
@@ -224,11 +233,13 @@ export function SimplifiedStudentRostering() {
               </p>
             </div>
             <div className={slideStyles.contentGroup}>
-              <CaseStudyImage
-                src={shareCode}
-                alt="Share code interface"
-                maxWidth={560}
-              />
+              <Legend caption="Classroom code interface supporting both shareable URL links and display-friendly codes.">
+                <CaseStudyImage
+                  src={shareCode}
+                  alt="Share code interface"
+                  maxWidth={560}
+                />
+              </Legend>
             </div>
           </div>
         </div>

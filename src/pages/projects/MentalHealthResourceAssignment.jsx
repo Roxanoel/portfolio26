@@ -1,6 +1,7 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
+import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
 import multiStepAltSkeleton from "../../assets/project-resources/multi-step-alt-skeleton.png";
 import multiStepWizardSkeleton from "../../assets/project-resources/multi-step-wizard-skeleton.png";
@@ -122,10 +123,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={multiStepWizardSkeleton}
-              alt="Multi-step wizard skeleton layout"
-            />
+            <Legend caption="Early exploration of a three-step modal wizard with a progress tracker on the left.">
+              <CaseStudyImage
+                src={multiStepWizardSkeleton}
+                alt="Multi-step wizard skeleton layout"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
@@ -144,10 +147,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={multiStepAltSkeleton}
-              alt="Multi-step alternative skeleton layout"
-            />
+            <Legend caption="Single-column alternative that improved responsiveness but introduced confusion with pre-filled steps.">
+              <CaseStudyImage
+                src={multiStepAltSkeleton}
+                alt="Multi-step alternative skeleton layout"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Single-page skeleton</h3>
@@ -160,10 +165,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={skeletonSinglePage}
-              alt="Single-page skeleton layout"
-            />
+            <Legend caption="The final approach consolidating all inputs on one screen for minimal disruption to the user's workflow.">
+              <CaseStudyImage
+                src={skeletonSinglePage}
+                alt="Single-page skeleton layout"
+              />
+            </Legend>
           </div>
         </div>
       </Slide>
@@ -209,10 +216,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={explorationsResources}
-              alt="Explorations of resource assignment interfaces"
-            />
+            <Legend caption="Resource card explorations with varying layouts and information display formats">
+              <CaseStudyImage
+                src={explorationsResources}
+                alt="Explorations of resource assignment interfaces"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
@@ -245,10 +254,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={solutionCards}
-              alt="Final solution cards for resource assignment"
-            />
+            <Legend caption="Final card design featuring the grade-level scale, radio button selection, and a consistent scan-friendly layout.">
+              <CaseStudyImage
+                src={solutionCards}
+                alt="Final solution cards for resource assignment"
+              />
+            </Legend>
           </div>
         </div>
       </Slide>
@@ -305,10 +316,12 @@ export function MentalHealthResourceAssignment() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <CaseStudyImage
-              src={solutionResourceRecommendation}
-              alt="Final resource recommendation solution"
-            />
+            <Legend caption="The shipped resource recommendation interface with search, filters, and context-aware pre-filling.">
+              <CaseStudyImage
+                src={solutionResourceRecommendation}
+                alt="Final resource recommendation solution"
+              />
+            </Legend>
           </div>
         </div>
       </Slide>
