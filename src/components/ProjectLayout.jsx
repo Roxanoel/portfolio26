@@ -2,8 +2,15 @@ import { Children, useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { NdaDisclosure } from "./NdaDisclosure";
-import { TAG_COLORS } from "../data/projects";
 import styles from "./ProjectLayout.module.css";
+
+const TAG_CLASS = {
+  Engineering: styles.tagEngineering,
+  Product: styles.tagProduct,
+  UI: styles.tagUI,
+  Research: styles.tagResearch,
+  UX: styles.tagUX,
+};
 
 function sectionsFromChildren(children) {
   return Children.toArray(children)
@@ -275,11 +282,7 @@ export function ProjectLayout({ project, children }) {
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className={styles.tag}
-                  style={{
-                    background: TAG_COLORS[tag]?.bg,
-                    color: TAG_COLORS[tag]?.ink,
-                  }}
+                  className={`${styles.tag} ${TAG_CLASS[tag] ?? styles.tagUX}`}
                 >
                   {tag}
                 </span>
