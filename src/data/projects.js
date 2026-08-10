@@ -43,7 +43,7 @@ const RAW_PROJECTS = [
     status: "published",
     nda: false,
     blurb:
-      "A sample of a few technically challenging components built as part of rebuilding a design system from the ground up.",
+      "Deep dive into technically challenging components built during a ground-up design system rebuild, with an engineering focus.",
     tags: ["Engineering", "UI"],
     image: DesignSystemOverhaul,
   },
