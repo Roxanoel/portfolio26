@@ -4,13 +4,6 @@ import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistic
 import DesignSystemOverhaul from "../assets/project-design-system-overhaul.png";
 import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
 
-export const TAG_COLORS = {
-  Engineering: { bg: "#3f5e54", ink: "#f2e8d5" },
-  Product: { bg: "#c75f3a", ink: "#f7efe0" },
-  UI: { bg: "#d9a441", ink: "#241c10" },
-  Research: { bg: "#1c1a17", ink: "#f2e8d5" },
-  UX: { bg: "rgba(36, 28, 16, 0.1)", ink: "#241c10" },
-};
 
 const RAW_PROJECTS = [
   {

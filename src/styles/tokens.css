@@ -14,6 +14,7 @@
   --green-border: color-mix(in srgb, var(--green) 30%, transparent);
   --green-dark: color-mix(in srgb, var(--green) 80%, black);
   --night: #14110d;
+  --umber: #241c10;
 
   /* ---------- Layout ---------- */
   --maxw: 1320px;
