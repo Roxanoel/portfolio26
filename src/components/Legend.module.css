@@ -1,0 +1,14 @@
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--ink-soft);
+  font-style: italic;
+  text-align: center;
+}
