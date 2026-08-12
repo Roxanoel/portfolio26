@@ -45,7 +45,7 @@ const RAW_PROJECTS = [
     slug: "b2b-saas-impact-statistics",
     title: "B2B SaaS Impact Statistics",
     year: "2024",
-    status: "draft",
+    status: "published",
     nda: false,
     blurb:
       "A suite of data visualisation tools to help team leaders monitor team contributions and optimize tool usage for increased ROI.",
