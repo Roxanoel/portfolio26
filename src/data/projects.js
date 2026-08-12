@@ -1,6 +1,6 @@
 import simplifiedStudentRostering from "../assets/project-simplified-student-rostering.png";
 import mentalHealthResourceAssignment from "../assets/project-mental-health-resource-assignment.png";
-import b2bSaaSImpactStatistics from "../assets/project-b2b-saas-impact-statistics.png";
+import impactStatistics from "../assets/project-impact-statistics.png";
 import DesignSystemOverhaul from "../assets/project-design-system-overhaul.png";
 import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
 
@@ -42,15 +42,15 @@ const RAW_PROJECTS = [
     image: DesignSystemOverhaul,
   },
   {
-    slug: "b2b-saas-impact-statistics",
-    title: "B2B SaaS Impact Statistics",
+    slug: "impact-statistics",
+    title: "Impact Statistics",
     year: "2024",
     status: "published",
     nda: false,
     blurb:
       "A suite of data visualisation tools to help team leaders monitor team contributions and optimize tool usage for increased ROI.",
     tags: ["UX", "Engineering", "UI"],
-    image: b2bSaaSImpactStatistics,
+    image: impactStatistics,
   },
   {
     slug: "shareable-responsive-search-ads",

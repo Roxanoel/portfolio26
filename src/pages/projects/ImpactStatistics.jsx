@@ -1,17 +1,22 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
+import { CaseStudyImage } from "../../components/CaseStudyImage";
+import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
+import framedOverview from "../../assets/project-impact-statistics/framed-overview.png";
+import dateRangeSwitcher from "../../assets/project-impact-statistics/date-range-switcher.png";
+
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "b2b-saas-impact-statistics");
+const project = PROJECTS.find((p) => p.slug === "impact-statistics");
 
-export function B2BSaaSImpactStatistics() {
+export function ImpactStatistics() {
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-problem">
         <hgroup>
           <p className={slideStyles.sectionHeader}>The Problem</p>
-          <h2 className={slideStyles.title}>Making value visible</h2>
+          <h2 className={slideStyles.title}>What we were asked</h2>
         </hgroup>
         <p className={slideStyles.body}>
           Larger clients were increasingly asking for a way to keep an eye on
@@ -42,33 +47,22 @@ export function B2BSaaSImpactStatistics() {
           three concrete needs.
         </p>
         <br />
-        <div className={slideStyles.contentBody}>
-          <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>
-              See which actions are most valuable
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              Users need to be able to see what the most valuable actions they
-              take in the app are, so they can make informed decisions.
-            </p>
-          </div>
-          <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>
-              Spot opportunities across accounts
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              Users need to be able to monitor across their accounts to see where
-              there might be room for improvement.
-            </p>
-          </div>
-          <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>Monitor team activity</h3>
-            <p className={slideStyles.contentParagraph}>
-              Users need to be able to monitor team activity and quickly see who
-              is doing what.
-            </p>
-          </div>
-        </div>
+        <ol className={slideStyles.body}>
+          <li>
+            <strong>See which actions are most valuable.</strong> Users need to
+            be able to see what the most valuable actions they take in the app
+            are, so they can make informed decisions.
+          </li>
+          <li>
+            <strong>Spot opportunities across accounts.</strong> Users need to be
+            able to monitor across their accounts to see where there might be
+            room for improvement.
+          </li>
+          <li>
+            <strong>Monitor team activity.</strong> Users need to be able to
+            monitor team activity and quickly see who is doing what.
+          </li>
+        </ol>
         <br />
         <p className={slideStyles.body}>
           Behind these goals sat a few clear buckets of data: team usage stats
@@ -82,7 +76,7 @@ export function B2BSaaSImpactStatistics() {
       <Slide id="slide-valuable-actions">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Valuable actions</p>
-          <h2 className={slideStyles.title}>The value at a glance</h2>
+          <h2 className={slideStyles.title}>Value at a glance</h2>
         </hgroup>
         <p className={slideStyles.body}>
           The first need was helping users see the value of the app and identify
@@ -95,22 +89,37 @@ export function B2BSaaSImpactStatistics() {
               An overview as the cliff notes
             </h3>
             <p className={slideStyles.contentParagraph}>
-              I opened with an overview section that acted as the cliff notes:
-              the general idea at a glance. A headline figure set the scene, and
+              I opened with an overview section to give a quick overview of the three main metrics our users cared most about. A headline figure set the scene, and
               a breakdown by action type let users quickly understand the most
-              impactful actions they take in the app.
+              impactful actions they have taken in the app.
             </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <Legend caption="The overview section acting as the cliff notes, with a headline figure and a breakdown by action type.">
+              <CaseStudyImage
+                src={framedOverview}
+                alt="Overview dashboard showing a headline value figure and a breakdown by action type"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Choosing the time periods</h3>
             <p className={slideStyles.contentParagraph}>
-              Time period switchers were a lower priority than the rest, but they
-              still needed a decision. Based on user feedback and the ways the
-              data would actually be used, I settled on three options: a recent
-              window for day-to-day checks, a roughly quarterly range for
-              periodic reviews, and all time for the big picture.
+              In the mockup presented above, the user is viewing their statistics for "All Time". However,
+              they could also pick "Last 30 days" or "Last 90 days" as their interval of preference. We
+              explored using a date picker to allow users to select custom date ranges, but in the end,
+              most users were interested in roughly seeing the last month or the last quarter. The added complexity
+              was not a worthy tradeoff for our users above the the simple, 3-options switcher. Most importantly,
+              this choice led to <strong>improved performance</strong>: knowing in advance which ranges are possible
+              enabled us to <strong>pre-fetch</strong> the data in the background, so the user never had to wait for it to load.
             </p>
           </div>
+          <Legend caption="Date range switcher, at the page level">
+            <CaseStudyImage
+              src={dateRangeSwitcher}
+                alt="Date range switcher with three options: All Time, Last 30 days, and Last 90 days"
+              />
+          </Legend>
         </div>
       </Slide>
 
@@ -168,7 +177,7 @@ export function B2BSaaSImpactStatistics() {
       <Slide id="slide-team">
         <hgroup>
           <p className={slideStyles.sectionHeader}>Team activity</p>
-          <h2 className={slideStyles.title}>A heatmap and a table</h2>
+          <h2 className={slideStyles.title}>See who does what</h2>
         </hgroup>
         <p className={slideStyles.body}>
           The third goal — monitoring team activity — needed both a quick
