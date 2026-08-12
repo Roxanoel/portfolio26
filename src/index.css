@@ -38,6 +38,15 @@ body { margin: 0; overflow-x: hidden; font-family: var(--font-body); }
 .mono  { font-family: var(--font-mono); }
 .serif { font-family: var(--font-serif); }
 
+a {
+  color: var(--green);
+  font-weight: var(--font-bold);
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--green-dark);
+}
+
 code {
   padding: 0.15em 0.4em;
   border-radius: 5px;

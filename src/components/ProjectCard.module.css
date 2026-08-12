@@ -117,6 +117,7 @@
 .blurb {
   color: var(--ink-soft);
   font-size: var(--text-sm);
+  font-weight: var(--font-normal);
   line-height: var(--leading-normal);
   text-wrap: pretty;
   margin: 0;
