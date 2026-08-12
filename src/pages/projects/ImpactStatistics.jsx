@@ -5,6 +5,8 @@ import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
 import framedOverview from "../../assets/project-impact-statistics/framed-overview.png";
 import dateRangeSwitcher from "../../assets/project-impact-statistics/date-range-switcher.png";
+import costSavingsSection from "../../assets/project-impact-statistics/cost-savings-section.png";
+import costSavingsBreakdown from "../../assets/project-impact-statistics/cost-savings-breakdown.png";
 
 import slideStyles from "../../components/Slide.module.css";
 
@@ -136,39 +138,49 @@ export function ImpactStatistics() {
         <div className={slideStyles.contentBody}>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
-              Sections for each kind of savings
+              Sections for each metric
             </h3>
             <p className={slideStyles.contentParagraph}>
-              I gave each kind of savings its own section — cost and time — so
-              users could dig into whichever metric mattered to them. Time
-              savings was the most-requested but hardest-to-measure; because it
-              is computed differently from cost savings, keeping it separate
-              avoided a figure that conflates money saved with hours saved.
+              I gave each metric (cost, time, and alerts) its own section so
+              users could dig deeper. Instead of breaking down by action type,
+              as was done in the overview section, here we break down the impact
+              data by account. This allows users to determine which accounts might
+              benefit from more attention.
             </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <Legend caption="The cost savings section, one of the sections for each kind of savings.">
+              <CaseStudyImage
+                src={costSavingsSection}
+                alt="Cost savings section of the dashboard"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Broken down per account</h3>
             <p className={slideStyles.contentParagraph}>
-              A per-account breakdown of costs saved let users see which accounts
-              were performing well and which could benefit from more attention.
+              For each account, users can look at all of the actions that were taken,
+              to see exactly what was done and when. Each row is presented in the
+              same way as the improvements are shown in other pages of the app, and
+              is clickable to take the user to view that improvement.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>Broken down per action</h3>
-            <p className={slideStyles.contentParagraph}>
-              I also broke savings down per action across all accounts, so users
-              could see which actions were doing the heavy lifting across their
-              portfolio.
-            </p>
+            <Legend caption="Cost savings broken down per account.">
+              <CaseStudyImage
+                src={costSavingsBreakdown}
+                alt="Cost savings broken down per account"
+              />
+            </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
               A deep dive into specific examples
             </h3>
             <p className={slideStyles.contentParagraph}>
-              A deep dive view let users see the specific examples behind the
-              numbers — the actual improvements and reports that added up to each
-              figure — so the statistics felt concrete rather than abstract.
+              A detailed view modal let users see the specific examples behind the
+              numbers for each account and metric, i.e. the actual improvements and reports that added up
+              to each, so the statistics felt concrete rather than abstract.
             </p>
           </div>
         </div>
