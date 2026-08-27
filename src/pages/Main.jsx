@@ -165,6 +165,7 @@ export function Main() {
                   <b>On Repeat</b>
                   <iframe
                     data-testid="embed-iframe"
+                    title="Currently on repeat (Spotify album)"
                     src="https://open.spotify.com/embed/album/0mu3EvWYfNwBfISSg0q03p?utm_source=generator&si=83b3d10fe58948cf"
                     width="100%"
                     height="152"

@@ -21,7 +21,6 @@ export function ProjectCard({ project, motifSvg }) {
             decoding="async"
           />
         ) : (
-          /* eslint-disable-next-line react/no-danger */
           <div
             className={styles.motif}
             dangerouslySetInnerHTML={{ __html: motifSvg }}

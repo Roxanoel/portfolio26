@@ -4,8 +4,6 @@ import { CompareSlider } from "../../components/CompareSlider";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
 import { PROJECTS } from "../../data/projects";
-import lineChartLight from "../../assets/project-design-system-overhaul/line-chart-light.png";
-import lineChartDark from "../../assets/project-design-system-overhaul/line-chart-dark.png";
 import lineChartContainedLight from "../../assets/project-design-system-overhaul/line-chart-contained-light.png";
 import lineChartContainedDark from "../../assets/project-design-system-overhaul/line-chart-contained-dark.png";
 import originalTooltip from "../../assets/project-design-system-overhaul/origina_amcharts_tooltip.png";

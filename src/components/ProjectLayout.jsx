@@ -39,6 +39,7 @@ function JumpSelect({ sections, activeId, onJump }) {
   const [menuStyle, setMenuStyle] = useState({});
   const triggerRef = useRef(null);
   const listRef = useRef(null);
+  const optionRefs = useRef([]);
 
   const activeLabel =
     sections.find((s) => s.id === activeId)?.label ?? "Jump to section…";
@@ -59,8 +60,8 @@ function JumpSelect({ sections, activeId, onJump }) {
   }, [open]);
 
   useEffect(() => {
-    if (open && focusIdx >= 0 && listRef.current) {
-      listRef.current.children[focusIdx]?.scrollIntoView({ block: "nearest" });
+    if (open && focusIdx >= 0) {
+      optionRefs.current[focusIdx]?.focus();
     }
   }, [focusIdx, open]);
 
@@ -77,13 +78,6 @@ function JumpSelect({ sections, activeId, onJump }) {
     setFocusIdx(startIndex);
   }, []);
 
-  const selectFocused = useCallback(() => {
-    if (focusIdx >= 0) {
-      onJump(sections[focusIdx].id);
-      setOpen(false);
-    }
-  }, [focusIdx, sections, onJump]);
-
   const handleTriggerKey = useCallback(
     (e) => {
       if (!open) {
@@ -93,26 +87,13 @@ function JumpSelect({ sections, activeId, onJump }) {
         }
         return;
       }
-      switch (e.key) {
-        case "Escape":
-          setOpen(false);
-          break;
-        case "ArrowDown":
-          e.preventDefault();
-          setFocusIdx((i) => (i < sections.length - 1 ? i + 1 : 0));
-          break;
-        case "ArrowUp":
-          e.preventDefault();
-          setFocusIdx((i) => (i > 0 ? i - 1 : sections.length - 1));
-          break;
-        case "Enter":
-        case " ":
-          e.preventDefault();
-          selectFocused();
-          break;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setOpen(false);
+        triggerRef.current?.focus();
       }
     },
-    [open, sections.length, openMenu, selectFocused],
+    [open, openMenu],
   );
 
   const handleTriggerClick = useCallback(() => {
@@ -130,6 +111,42 @@ function JumpSelect({ sections, activeId, onJump }) {
       setOpen(false);
     },
     [onJump],
+  );
+
+  const handleItemKeyDown = useCallback(
+    (e, i) => {
+      switch (e.key) {
+        case "ArrowDown":
+          e.preventDefault();
+          setFocusIdx((idx) => (idx < sections.length - 1 ? idx + 1 : 0));
+          break;
+        case "ArrowUp":
+          e.preventDefault();
+          setFocusIdx((idx) => (idx > 0 ? idx - 1 : sections.length - 1));
+          break;
+        case "Home":
+          e.preventDefault();
+          setFocusIdx(0);
+          break;
+        case "End":
+          e.preventDefault();
+          setFocusIdx(sections.length - 1);
+          break;
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          onJump(sections[i].id);
+          setOpen(false);
+          triggerRef.current?.focus();
+          break;
+        case "Escape":
+          e.preventDefault();
+          setOpen(false);
+          triggerRef.current?.focus();
+          break;
+      }
+    },
+    [sections, onJump],
   );
 
   return (
@@ -171,13 +188,17 @@ function JumpSelect({ sections, activeId, onJump }) {
             {sections.map((s, i) => (
               <li
                 key={s.id}
+                ref={(el) => {
+                  optionRefs.current[i] = el;
+                }}
                 role="option"
                 aria-selected={s.id === activeId}
+                tabIndex={i === focusIdx ? 0 : -1}
                 className={`${styles.jumpItem}${
                   s.id === activeId ? ` ${styles.jumpItemActive}` : ""
                 }${i === focusIdx ? ` ${styles.jumpItemFocus}` : ""}`}
                 onClick={() => handleItemClick(s.id)}
-                onMouseEnter={() => setFocusIdx(i)}
+                onKeyDown={(e) => handleItemKeyDown(e, i)}
               >
                 {s.label}
               </li>
@@ -190,7 +211,7 @@ function JumpSelect({ sections, activeId, onJump }) {
 }
 
 export function ProjectLayout({ project, children }) {
-  const { n, title, year, blurb, tags, dateRange, nda } = project;
+  const { n, title, blurb, tags, dateRange, nda } = project;
   const sections = useMemo(() => sectionsFromChildren(children), [children]);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const jumpLockRef = useRef(false);
