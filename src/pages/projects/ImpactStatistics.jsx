@@ -24,18 +24,33 @@ export function ImpactStatistics() {
         </hgroup>
         <p className={slideStyles.body}>
           Larger clients were increasingly asking for a way to keep an eye on
-          how their team was using our performance advertising optimization app, where the tool was bringing the most
-          value across their portfolio, and which accounts might benefit from a
-          bit more attention. I was tasked with creating a dashboard that
-          presented this data in a clear and actionable way.
+          how their team was using our performance advertising optimization app.
+          Specifically, they wanted to see:
+        </p>
+        <ul className={slideStyles.body}>
+          <li>
+            <strong>How their team was using the app</strong> — which actions
+            people were taking and how active everyone was.
+          </li>
+          <li>
+            <strong>Where the tool was bringing the most value</strong> across
+            their portfolio.
+          </li>
+          <li>
+            <strong>Which accounts might benefit from a bit more attention</strong>.
+          </li>
+        </ul>
+        <br />
+        <p className={slideStyles.body}>
+          I was tasked with creating a dashboard that presented this data in a
+          <strong>clear</strong> and <strong>actionable</strong> way.
         </p>
         <br />
         <p className={slideStyles.body}>
-          Beyond serving clients, the dashboard had a clear internal use case:
-          our customer success team needed a way to{" "}
-          <strong>demonstrate value</strong> during demos and convert prospects
-          into paying customers by showing them what the tool had already
-          done for them.
+          Beyond serving clients, the dashboard served a pretty neat internal use case:
+          providing an easy, visually compelling way for our customer success team to
+          demonstrate value during demos, converting prospects into paying customers by showing
+          them what the tool had already done for them.
         </p>
       </Slide>
 
@@ -174,16 +189,6 @@ export function ImpactStatistics() {
                 alt="Cost savings broken down per account"
               />
             </Legend>
-          </div>
-          <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>
-              A deep dive into specific examples
-            </h3>
-            <p className={slideStyles.contentParagraph}>
-              A detailed view modal let users see the specific examples behind the
-              numbers for each account and metric, i.e. the actual improvements and reports that added up
-              to each, so the statistics felt concrete rather than abstract.
-            </p>
           </div>
         </div>
       </Slide>
