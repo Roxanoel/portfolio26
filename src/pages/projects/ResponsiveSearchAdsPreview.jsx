@@ -1,7 +1,7 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
-import { PROJECTS } from "../../data/projects";
+import { findProject } from "../../data/projects";
 
-const project = PROJECTS.find((p) => p.slug === "responsive-search-ads-preview");
+const project = findProject("shareable-responsive-search-ads");
 
 export function ResponsiveSearchAdsPreview() {
   return (

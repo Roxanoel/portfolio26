@@ -72,3 +72,7 @@ export const PROJECTS = sorted.map((p, i) => ({
   ...p,
   n: String(i + 1).padStart(2, "0"),
 }));
+
+export function findProject(slug) {
+  return RAW_PROJECTS.find((p) => p.slug === slug);
+}
