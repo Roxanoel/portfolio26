@@ -4,7 +4,6 @@ import impactStatistics from "../assets/project-impact-statistics.png";
 import DesignSystemOverhaul from "../assets/project-design-system-overhaul.png";
 import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
 
-
 const RAW_PROJECTS = [
   {
     slug: "simplified-student-rostering",

@@ -5,8 +5,6 @@ const project = findProject("shareable-responsive-search-ads");
 
 export function ResponsiveSearchAdsPreview() {
   return (
-    <ProjectLayout project={project}>
-      {/* Content coming soon */}
-    </ProjectLayout>
+    <ProjectLayout project={project}>{/* Content coming soon */}</ProjectLayout>
   );
 }

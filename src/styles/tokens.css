@@ -23,51 +23,50 @@
 
 /* ---------- Typography ---------- */
 :root {
-
   /* --  Type scale (Refactoring UI / Tailwind-inspired, all even px)  -- */
-  --text-xs:   0.75rem;    /* 12px */
-  --text-sm:   0.875rem;   /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg:   1.125rem;   /* 18px */
-  --text-xl:   1.25rem;    /* 20px */
-  --text-2xl:  1.5rem;     /* 24px */
-  --text-3xl:  1.875rem;   /* 30px */
-  --text-4xl:  2.25rem;    /* 36px */
-  --text-5xl:  3rem;       /* 48px */
-  --text-6xl:  3.75rem;    /* 60px */
-  --text-7xl:  4.5rem;     /* 72px */
-  --text-8xl:  6rem;       /* 96px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+  --text-7xl: 4.5rem; /* 72px */
+  --text-8xl: 6rem; /* 96px */
 
   /* --  Font families  -- */
-  --font-heading: 'Bricolage Grotesque', 'Archivo', sans-serif;
-  --font-body:    'Plus Jakarta Sans', sans-serif;
-  --font-serif:   'Instrument Serif', Georgia, serif;
-  --font-mono:    'Space Mono', ui-monospace, monospace;
+  --font-heading: "Bricolage Grotesque", "Archivo", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 
   /* --  Font weights  -- */
-  --font-normal:    400;
-  --font-medium:    500;
-  --font-semibold:  600;
-  --font-bold:      700;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
   --font-extrabold: 800;
 
   /* --  Line heights  -- */
-  --leading-none:   1;
-  --leading-tight:  1.1;
-  --leading-snug:   1.25;
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
-  --leading-loose:  1.75;
+  --leading-loose: 1.75;
 
   /* --  Letter spacing  -- */
   --tracking-tighter: -0.03em;
-  --tracking-tight:   -0.02em;
-  --tracking-snug:    -0.01em;
-  --tracking-normal:   0;
-  --tracking-wide:    0.02em;
-  --tracking-wider:   0.04em;
-  --tracking-widest:  0.06em;
-  --tracking-ultra:   0.08em;
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.04em;
+  --tracking-widest: 0.06em;
+  --tracking-ultra: 0.08em;
 }
 
 @media (max-width: 640px) {

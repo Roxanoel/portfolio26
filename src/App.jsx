@@ -12,13 +12,28 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/work/simplified-student-rostering" element={<SimplifiedStudentRostering />} />
-        <Route path="/work/mental-health-resource-assignment" element={<MentalHealthResourceAssignment />} />
+        <Route
+          path="/work/simplified-student-rostering"
+          element={<SimplifiedStudentRostering />}
+        />
+        <Route
+          path="/work/mental-health-resource-assignment"
+          element={<MentalHealthResourceAssignment />}
+        />
 
         <Route path="/work/impact-statistics" element={<ImpactStatistics />} />
-        <Route path="/work/b2b-saas-impact-statistics" element={<Navigate to="/work/impact-statistics" replace />} />
-        <Route path="/work/responsive-search-ads-preview" element={<ResponsiveSearchAdsPreview />} />
-        <Route path="/work/design-system-overhaul" element={<OpteoDesignSystemOverhaul />} />
+        <Route
+          path="/work/b2b-saas-impact-statistics"
+          element={<Navigate to="/work/impact-statistics" replace />}
+        />
+        <Route
+          path="/work/responsive-search-ads-preview"
+          element={<ResponsiveSearchAdsPreview />}
+        />
+        <Route
+          path="/work/design-system-overhaul"
+          element={<OpteoDesignSystemOverhaul />}
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

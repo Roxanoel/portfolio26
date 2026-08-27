@@ -25,11 +25,15 @@ export function OpteoDesignSystemOverhaul() {
           <h2 className={slideStyles.title}>Design System Foundations</h2>
         </hgroup>
         <div className={slideStyles.contentBody}>
-          <ul className={slideStyles.contentParagraph} style={{ listStyle: "disc", paddingLeft: "1.5em" }}>
+          <ul
+            className={slideStyles.contentParagraph}
+            style={{ listStyle: "disc", paddingLeft: "1.5em" }}
+          >
             <li>
-              Built in <strong>Vue 3</strong> using the <strong>Composition API</strong> for a
-              fully functional, declarative coding style with composable logic
-              shared across components.
+              Built in <strong>Vue 3</strong> using the{" "}
+              <strong>Composition API</strong> for a fully functional,
+              declarative coding style with composable logic shared across
+              components.
             </li>
             <li>
               Fully typed with <strong>TypeScript</strong>, ensuring type safety
@@ -37,22 +41,27 @@ export function OpteoDesignSystemOverhaul() {
               library.
             </li>
             <li>
-              Design tokens and style primitives defined in <strong>Sass</strong>,
-              centralising colours, spacing, typography, and elevation values
-              into a single source of truth consumed by every component.
+              Design tokens and style primitives defined in{" "}
+              <strong>Sass</strong>, centralising colours, spacing, typography,
+              and elevation values into a single source of truth consumed by
+              every component.
             </li>
             <li>
               First-class support for both <strong>light and dark mode</strong>,
-              with every component adapting automatically through Sass-based theme
-              tokens and CSS custom properties.
+              with every component adapting automatically through Sass-based
+              theme tokens and CSS custom properties.
             </li>
             <li>
               Squircle-shaped border radii via the{" "}
-              <a href="https://pavellaptev.github.io/css-houdini-squircle/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://pavellaptev.github.io/css-houdini-squircle/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <strong>Houdini CSS Paint API</strong>
-              </a>,
-              with standard <code>border-radius</code> fallbacks in browsers that
-              don&apos;t support the API.
+              </a>
+              , with standard <code>border-radius</code> fallbacks in browsers
+              that don&apos;t support the API.
             </li>
           </ul>
         </div>
@@ -81,15 +90,18 @@ export function OpteoDesignSystemOverhaul() {
             <p className={slideStyles.contentParagraph}>
               Our design lead evaluated charting libraries against two criteria:
               sufficient customisation to match our design system, and Vue
-               compatibility. We settled on{" "}
-              <a href="https://www.amcharts.com/" target="_blank" rel="noopener noreferrer">
+              compatibility. We settled on{" "}
+              <a
+                href="https://www.amcharts.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 amCharts
               </a>{" "}
-              and built a shared
-              integration layer that translates our data format to the
-              library&apos;s expected structure, reused across every chart
-              component (line, area, donut, bar, etc.). I was then responsible
-              for building the specific logic for all chart types.
+              and built a shared integration layer that translates our data
+              format to the library&apos;s expected structure, reused across
+              every chart component (line, area, donut, bar, etc.). I was then
+              responsible for building the specific logic for all chart types.
             </p>
             <br />
             <Legend caption="Line chart in its contained, full-width variant, automatically adapting to light and dark themes.">

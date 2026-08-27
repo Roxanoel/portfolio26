@@ -105,7 +105,7 @@ function JumpSelect({ sections, activeId, onJump }) {
           break;
       }
     },
-    [open, sections.length, openMenu, selectFocused]
+    [open, sections.length, openMenu, selectFocused],
   );
 
   const handleTriggerClick = useCallback(() => {
@@ -122,7 +122,7 @@ function JumpSelect({ sections, activeId, onJump }) {
       onJump(id);
       setOpen(false);
     },
-    [onJump]
+    [onJump],
   );
 
   return (
@@ -176,7 +176,7 @@ function JumpSelect({ sections, activeId, onJump }) {
               </li>
             ))}
           </ul>,
-          document.body
+          document.body,
         )}
     </div>
   );
@@ -231,8 +231,7 @@ export function ProjectLayout({ project, children }) {
         }
 
         const atBottom =
-          window.innerHeight + window.scrollY >=
-          document.body.scrollHeight - 4;
+          window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
         if (atBottom) {
           best = lastId;
         }
@@ -268,7 +267,11 @@ export function ProjectLayout({ project, children }) {
           </Link>
           <span className={styles.navTitle}>{title}</span>
           {sections.length > 0 ? (
-            <JumpSelect sections={sections} activeId={activeId} onJump={handleJump} />
+            <JumpSelect
+              sections={sections}
+              activeId={activeId}
+              onJump={handleJump}
+            />
           ) : (
             <span className={styles.navNo}>{n}</span>
           )}
@@ -291,7 +294,9 @@ export function ProjectLayout({ project, children }) {
           </div>
           <h1 className={styles.title}>{title}</h1>
           {dateRange && <p className={styles.dateRange}>{dateRange}</p>}
-          <p className={`${styles.blurb}${nda ? ` ${styles.blurbNda}` : ""}`}>{blurb}</p>
+          <p className={`${styles.blurb}${nda ? ` ${styles.blurbNda}` : ""}`}>
+            {blurb}
+          </p>
           {nda && <NdaDisclosure />}
         </div>
       </header>

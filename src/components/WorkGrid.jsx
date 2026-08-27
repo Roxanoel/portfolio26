@@ -1,6 +1,6 @@
-import { PROJECTS } from '../data/projects'
-import { ProjectCard } from './ProjectCard'
-import styles from './WorkGrid.module.css'
+import { PROJECTS } from "../data/projects";
+import { ProjectCard } from "./ProjectCard";
+import styles from "./WorkGrid.module.css";
 
 export function WorkGrid({ motifs }) {
   return (
@@ -13,5 +13,5 @@ export function WorkGrid({ motifs }) {
         />
       ))}
     </div>
-  )
+  );
 }

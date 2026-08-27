@@ -9,8 +9,13 @@ export function BookCard({ isbn, label = "Currently Reading" }) {
     const opts = { signal: controller.signal };
 
     Promise.all([
-      fetch(`https://openlibrary.org/isbn/${isbn}.json`, opts).then((r) => r.json()),
-      fetch(`https://openlibrary.org/search.json?isbn=${isbn}&fields=author_name`, opts).then((r) => r.json()),
+      fetch(`https://openlibrary.org/isbn/${isbn}.json`, opts).then((r) =>
+        r.json(),
+      ),
+      fetch(
+        `https://openlibrary.org/search.json?isbn=${isbn}&fields=author_name`,
+        opts,
+      ).then((r) => r.json()),
     ])
       .then(([edition, search]) => {
         setBook({
@@ -23,7 +28,8 @@ export function BookCard({ isbn, label = "Currently Reading" }) {
         });
       })
       .catch((err) => {
-        if (err.name !== "AbortError") console.error("BookCard fetch failed:", err);
+        if (err.name !== "AbortError")
+          console.error("BookCard fetch failed:", err);
       });
 
     return () => controller.abort();

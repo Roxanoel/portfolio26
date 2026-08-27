@@ -1,4 +1,7 @@
-import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 import { Handle } from "react-compare-slider/components";
 import styles from "./CompareSlider.module.css";
 

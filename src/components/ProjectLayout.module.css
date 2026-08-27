@@ -205,11 +205,26 @@
   padding: 4px 10px;
   border-radius: 999px;
 }
-.tagEngineering { background: var(--green); color: var(--cream); }
-.tagProduct     { background: var(--terra); color: var(--paper); }
-.tagUI          { background: var(--gold); color: var(--umber); }
-.tagResearch    { background: var(--ink); color: var(--cream); }
-.tagUX          { background: color-mix(in srgb, var(--umber) 10%, transparent); color: var(--umber); }
+.tagEngineering {
+  background: var(--green);
+  color: var(--cream);
+}
+.tagProduct {
+  background: var(--terra);
+  color: var(--paper);
+}
+.tagUI {
+  background: var(--gold);
+  color: var(--umber);
+}
+.tagResearch {
+  background: var(--ink);
+  color: var(--cream);
+}
+.tagUX {
+  background: color-mix(in srgb, var(--umber) 10%, transparent);
+  color: var(--umber);
+}
 .title {
   font-family: var(--font-heading);
   font-weight: var(--font-extrabold);
