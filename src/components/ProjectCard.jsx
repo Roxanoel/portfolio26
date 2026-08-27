@@ -13,7 +13,13 @@ export function ProjectCard({ project, motifSvg }) {
     >
       <div className={styles.art}>
         {image ? (
-          <img src={image} alt="" className={styles.image} />
+          <img
+            src={image}
+            alt=""
+            className={styles.image}
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           /* eslint-disable-next-line react/no-danger */
           <div

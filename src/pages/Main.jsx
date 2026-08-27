@@ -119,7 +119,12 @@ export function Main() {
             style={{ "--reveal-delay": "120ms" }}
           >
             <div className={styles.photoFrame}>
-              <img src={portrait} alt="Roxane" className={styles.portrait} />
+              <img
+                src={portrait}
+                alt="Roxane"
+                className={styles.portrait}
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>

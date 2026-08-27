@@ -40,7 +40,13 @@ export function BookCard({ isbn, label = "Currently Reading" }) {
       <b>{label}</b>
       {book && (
         <div className={styles.book}>
-          <img src={book.coverUrl} alt={book.title} className={styles.cover} />
+          <img
+            src={book.coverUrl}
+            alt={book.title}
+            className={styles.cover}
+            loading="lazy"
+            decoding="async"
+          />
           <div className={styles.info}>
             <span className={styles.title}>{book.title}</span>
             {book.subtitle && (

@@ -54,6 +54,12 @@ body {
   }
 }
 
+/* Route-level Suspense fallback */
+.pageLoader {
+  min-height: 100vh;
+  background: var(--cream);
+}
+
 /* Utilities */
 .wrap {
   max-width: var(--maxw);

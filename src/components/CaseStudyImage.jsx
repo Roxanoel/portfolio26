@@ -14,6 +14,8 @@ export function CaseStudyImage({ src, alt, maxWidth }) {
       alt={alt}
       className={`${styles.image} ${maxWidth === true ? styles.maxWidth : ""}`}
       style={style}
+      loading="lazy"
+      decoding="async"
     />
   );
 }

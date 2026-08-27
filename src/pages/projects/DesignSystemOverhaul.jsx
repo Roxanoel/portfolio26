@@ -199,6 +199,7 @@ export function OpteoDesignSystemOverhaul() {
             loop
             muted
             playsInline
+            preload="none"
             className={slideStyles.media}
             aria-label="Number input interaction demo"
           />
