@@ -1,4 +1,11 @@
-import { Children, useState, useEffect, useCallback, useRef } from "react";
+import {
+  Children,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { NdaDisclosure } from "./NdaDisclosure";
@@ -184,7 +191,7 @@ function JumpSelect({ sections, activeId, onJump }) {
 
 export function ProjectLayout({ project, children }) {
   const { n, title, year, blurb, tags, dateRange, nda } = project;
-  const sections = sectionsFromChildren(children);
+  const sections = useMemo(() => sectionsFromChildren(children), [children]);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const jumpLockRef = useRef(false);
 
