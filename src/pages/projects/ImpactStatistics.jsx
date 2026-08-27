@@ -7,6 +7,8 @@ import framedOverview from "../../assets/project-impact-statistics/framed-overvi
 import dateRangeSwitcher from "../../assets/project-impact-statistics/date-range-switcher.png";
 import costSavingsSection from "../../assets/project-impact-statistics/cost-savings-section.png";
 import costSavingsBreakdown from "../../assets/project-impact-statistics/cost-savings-breakdown.png";
+import activityHeatmap from "../../assets/project-impact-statistics/activity_heatmap.png";
+import teamTable from "../../assets/project-impact-statistics/team-table.png";
 
 import slideStyles from "../../components/Slide.module.css";
 
@@ -91,7 +93,7 @@ export function ImpactStatistics() {
               An overview as the cliff notes
             </h3>
             <p className={slideStyles.contentParagraph}>
-              I opened with an overview section to give a quick overview of the three main metrics our users cared most about. A headline figure set the scene, and
+              I opened with an overview section to give a quick survey of the three main metrics our users cared most about. A headline figure set the scene, and
               a breakdown by action type let users quickly understand the most
               impactful actions they have taken in the app.
             </p>
@@ -192,7 +194,7 @@ export function ImpactStatistics() {
           <h2 className={slideStyles.title}>See who does what</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          The third goal — monitoring team activity — needed both a quick
+          The third goal, monitoring team activity, needed both a quick
           at-a-glance view and something more structured. Rather than forcing
           both into a single component, I kept them separate.
         </p>
@@ -210,6 +212,14 @@ export function ImpactStatistics() {
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
+            <Legend caption="The activity heatmap, with a switcher to toggle between the whole team and individual members.">
+              <CaseStudyImage
+                src={activityHeatmap}
+                alt="Activity heatmap showing team member activity patterns"
+              />
+            </Legend>
+          </div>
+          <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>A table for the full team</h3>
             <p className={slideStyles.contentParagraph}>
               A table below lists the whole team and each member&apos;s activity.
@@ -218,6 +228,14 @@ export function ImpactStatistics() {
               assigning, reviewing, or comparing members — have a clear place to
               grow into, rather than being retrofitted into the heatmap.
             </p>
+          </div>
+          <div className={slideStyles.contentGroup}>
+            <Legend caption="The full-team activity table, kept separate to leave room for future team features.">
+              <CaseStudyImage
+                src={teamTable}
+                alt="Table listing the whole team and each member's activity"
+              />
+            </Legend>
           </div>
         </div>
       </Slide>
