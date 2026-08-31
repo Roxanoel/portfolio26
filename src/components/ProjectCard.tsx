@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { TagList } from "./Tag";
+import type { PublishedProject } from "../data/projects";
 import styles from "./ProjectCard.module.css";
 
-export function ProjectCard({ project, motifSvg }) {
+interface ProjectCardProps {
+  project: PublishedProject;
+  motifSvg: string;
+}
+
+export function ProjectCard({ project, motifSvg }: ProjectCardProps) {
   const { n, slug, title, year, blurb, tags, image } = project;
 
   return (

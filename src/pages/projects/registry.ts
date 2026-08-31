@@ -1,11 +1,14 @@
-import { lazy } from "react";
+import { lazy, type ComponentType, type LazyExoticComponent } from "react";
 
 /**
  * Single source of truth mapping each project slug to its case-study page.
- * App.jsx generates the /work/:slug routes from this, and each page derives
+ * App.tsx generates the /work/:slug routes from this, and each page derives
  * its own project via useProject() (slug read from the URL).
  */
-export const PROJECT_COMPONENTS = {
+export const PROJECT_COMPONENTS: Record<
+  string,
+  LazyExoticComponent<ComponentType>
+> = {
   "simplified-student-rostering": lazy(() =>
     import("./SimplifiedStudentRostering").then((m) => ({
       default: m.SimplifiedStudentRostering,

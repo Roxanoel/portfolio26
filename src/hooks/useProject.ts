@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { findProject } from "../data/projects";
+import { findProject, type Project } from "../data/projects";
 
 /**
  * Returns the project matching the current /work/:slug route param.
  */
-export function useProject() {
+export function useProject(): Project | undefined {
   const { slug } = useParams();
-  return findProject(slug);
+  return findProject(slug ?? "");
 }

@@ -1,6 +1,6 @@
 /* Bauhaus SVG card motifs — Spectrum muted neutral palette */
 
-function halftoneField(fill) {
+function halftoneField(fill: string): string {
   let s = "";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 9; x++) {
@@ -11,7 +11,7 @@ function halftoneField(fill) {
   return s;
 }
 
-function makeSVG(bg, shapes) {
+function makeSVG(bg: string, shapes: string): string {
   return `<svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="250" fill="${bg}"/>${shapes}</svg>`;
 }
 
@@ -23,7 +23,7 @@ const S = {
   lt: "#d6d4d1",
 };
 
-export const MOTIFS = [
+export const MOTIFS: string[] = [
   makeSVG(
     S.bg,
     `<circle cx="200" cy="125" r="110" fill="${S.dk}"/><circle cx="200" cy="125" r="74" fill="${S.bg}"/><circle cx="200" cy="125" r="42" fill="${S.mid}"/><circle cx="200" cy="125" r="14" fill="${S.ink}"/>`,

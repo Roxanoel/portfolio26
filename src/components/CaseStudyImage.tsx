@@ -1,6 +1,12 @@
 import styles from "./CaseStudyImage.module.css";
 
-export function CaseStudyImage({ src, alt, maxWidth }) {
+interface CaseStudyImageProps {
+  src: string;
+  alt: string;
+  maxWidth?: number;
+}
+
+export function CaseStudyImage({ src, alt, maxWidth }: CaseStudyImageProps) {
   return (
     <img
       src={src}

@@ -4,7 +4,27 @@ import impactStatistics from "../assets/project-impact-statistics.png";
 import DesignSystemOverhaul from "../assets/project-design-system-overhaul.png";
 import shareableResponsiveSearchAds from "../assets/project-shareable-responsive-search-ads.png";
 
-const RAW_PROJECTS = [
+export type ProjectStatus = "published" | "draft";
+
+export interface Project {
+  slug: string;
+  title: string;
+  year: string;
+  status: ProjectStatus;
+  nda: boolean;
+  blurb: string;
+  tags: string[];
+  image: string;
+  dateRange?: string;
+  /** Zero-padded index, set on published projects only. */
+  n?: string;
+}
+
+export interface PublishedProject extends Project {
+  n: string;
+}
+
+const RAW_PROJECTS: Project[] = [
   {
     slug: "simplified-student-rostering",
     title: "Simplified Student Rostering",
@@ -28,7 +48,6 @@ const RAW_PROJECTS = [
     tags: ["Product", "UX", "Engineering"],
     image: mentalHealthResourceAssignment,
   },
-
   {
     slug: "design-system-overhaul",
     title: "Design System Overhaul",
@@ -65,13 +84,13 @@ const RAW_PROJECTS = [
 ];
 
 const published = RAW_PROJECTS.filter((p) => p.status === "published");
-const sorted = [...published].sort((a, b) => b.year - a.year);
+const sorted = [...published].sort((a, b) => Number(b.year) - Number(a.year));
 
-export const PROJECTS = sorted.map((p, i) => ({
+export const PROJECTS: PublishedProject[] = sorted.map((p, i) => ({
   ...p,
   n: String(i + 1).padStart(2, "0"),
 }));
 
-export function findProject(slug) {
+export function findProject(slug: string): Project | undefined {
   return RAW_PROJECTS.find((p) => p.slug === slug);
 }

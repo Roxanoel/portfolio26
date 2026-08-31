@@ -1,8 +1,20 @@
 import { useState, useEffect } from "react";
 import styles from "./BookCard.module.css";
 
-export function BookCard({ isbn, label = "Currently Reading" }) {
-  const [book, setBook] = useState(null);
+interface Book {
+  title: string;
+  subtitle: string | null;
+  author: string | null;
+  coverUrl: string;
+}
+
+interface BookCardProps {
+  isbn: string;
+  label?: string;
+}
+
+export function BookCard({ isbn, label = "Currently Reading" }: BookCardProps) {
+  const [book, setBook] = useState<Book | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();

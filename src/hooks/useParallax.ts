@@ -8,20 +8,22 @@ export function useParallax() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const nodes = Array.from(document.querySelectorAll("[data-parallax]"));
+    const nodes = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-parallax]"),
+    );
     if (nodes.length === 0) return;
 
-    let tx = 0,
-      ty = 0,
-      cx = 0,
-      cy = 0,
-      raf = null;
+    let tx = 0;
+    let ty = 0;
+    let cx = 0;
+    let cy = 0;
+    let raf: number | null = null;
 
     function loop() {
       cx += (tx - cx) * 0.06;
       cy += (ty - cy) * 0.06;
       nodes.forEach((n) => {
-        const s = parseFloat(n.getAttribute("data-parallax")) || 10;
+        const s = parseFloat(n.getAttribute("data-parallax") ?? "") || 10;
         n.style.transform = `translate3d(${cx * s}px,${cy * s}px,0)`;
       });
       raf =
@@ -30,7 +32,7 @@ export function useParallax() {
           : null;
     }
 
-    function onMove(e) {
+    function onMove(e: PointerEvent) {
       tx = e.clientX / window.innerWidth - 0.5;
       ty = e.clientY / window.innerHeight - 0.5;
       if (!raf) raf = requestAnimationFrame(loop);

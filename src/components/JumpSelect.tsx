@@ -1,24 +1,38 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  type CSSProperties,
+  type KeyboardEvent,
+} from "react";
 import { createPortal } from "react-dom";
+import type { Section } from "../utils/sections";
 import styles from "./JumpSelect.module.css";
 
-export function JumpSelect({ sections, activeId, onJump }) {
+interface JumpSelectProps {
+  sections: Section[];
+  activeId: string;
+  onJump: (id: string) => void;
+}
+
+export function JumpSelect({ sections, activeId, onJump }: JumpSelectProps) {
   const [open, setOpen] = useState(false);
   const [focusIdx, setFocusIdx] = useState(-1);
-  const [menuStyle, setMenuStyle] = useState({});
-  const triggerRef = useRef(null);
-  const listRef = useRef(null);
-  const optionRefs = useRef([]);
+  const [menuStyle, setMenuStyle] = useState<CSSProperties>({});
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const optionRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   const activeLabel =
     sections.find((s) => s.id === activeId)?.label ?? "Jump to section…";
 
   useEffect(() => {
     if (!open) return;
-    const handler = (e) => {
+    const handler = (e: MouseEvent) => {
       if (
-        triggerRef.current?.contains(e.target) ||
-        listRef.current?.contains(e.target)
+        triggerRef.current?.contains(e.target as Node) ||
+        listRef.current?.contains(e.target as Node)
       ) {
         return;
       }
@@ -34,7 +48,7 @@ export function JumpSelect({ sections, activeId, onJump }) {
     }
   }, [focusIdx, open]);
 
-  const openMenu = useCallback((startIndex) => {
+  const openMenu = useCallback((startIndex: number) => {
     if (triggerRef.current) {
       const rect = triggerRef.current.getBoundingClientRect();
       setMenuStyle({
@@ -48,7 +62,7 @@ export function JumpSelect({ sections, activeId, onJump }) {
   }, []);
 
   const handleTriggerKey = useCallback(
-    (e) => {
+    (e: KeyboardEvent<HTMLButtonElement>) => {
       if (!open) {
         if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
           e.preventDefault();
@@ -75,7 +89,7 @@ export function JumpSelect({ sections, activeId, onJump }) {
   }, [open, sections, activeId, openMenu]);
 
   const handleItemClick = useCallback(
-    (id) => {
+    (id: string) => {
       onJump(id);
       setOpen(false);
     },
@@ -83,7 +97,7 @@ export function JumpSelect({ sections, activeId, onJump }) {
   );
 
   const handleItemKeyDown = useCallback(
-    (e, i) => {
+    (e: KeyboardEvent<HTMLLIElement>, i: number) => {
       switch (e.key) {
         case "ArrowDown":
           e.preventDefault();

@@ -13,6 +13,7 @@ import slideStyles from "../../components/Slide.module.css";
 
 export function SimplifiedStudentRostering() {
   const project = useProject();
+  if (!project) return null;
 
   return (
     <ProjectLayout project={project}>

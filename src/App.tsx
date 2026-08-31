@@ -12,8 +12,9 @@ import { findProject } from "./data/projects";
 
 function ProjectRoute() {
   const { slug } = useParams();
-  const Component = PROJECT_COMPONENTS[slug];
-  if (!Component || !findProject(slug)) {
+  const resolved = slug ?? "";
+  const Component = PROJECT_COMPONENTS[resolved];
+  if (!Component || !findProject(resolved)) {
     return <Navigate to="/" replace />;
   }
   return <Component />;

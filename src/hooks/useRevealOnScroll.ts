@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type RefObject } from "react";
 
 /**
  * Attaches an IntersectionObserver to all [data-reveal] descendants of the
@@ -7,11 +7,11 @@ import { useEffect } from "react";
  * Falls back to revealing everything at once when IntersectionObserver is
  * unavailable or the user prefers reduced motion.
  */
-export function useRevealOnScroll(containerRef) {
+export function useRevealOnScroll(containerRef: RefObject<HTMLElement | null>) {
   useEffect(() => {
-    const root = containerRef?.current ?? document;
+    const root = containerRef.current ?? document;
 
-    const els = Array.from(root.querySelectorAll("[data-reveal]"));
+    const els = Array.from(root.querySelectorAll<HTMLElement>("[data-reveal]"));
     if (els.length === 0) return;
 
     const revealAll = () => els.forEach((el) => el.classList.add("in"));
@@ -24,11 +24,15 @@ export function useRevealOnScroll(containerRef) {
       return;
     }
 
-    root.querySelectorAll("[data-reveal-group]").forEach((group) => {
-      group.querySelectorAll("[data-reveal]").forEach((el, i) => {
-        el.style.setProperty("--reveal-delay", `${(i % 6) * 90}ms`);
+    root
+      .querySelectorAll<HTMLElement>("[data-reveal-group]")
+      .forEach((group) => {
+        group
+          .querySelectorAll<HTMLElement>("[data-reveal]")
+          .forEach((el, i) => {
+            el.style.setProperty("--reveal-delay", `${(i % 6) * 90}ms`);
+          });
       });
-    });
 
     const observer = new IntersectionObserver(
       (entries) => {

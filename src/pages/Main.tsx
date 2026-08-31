@@ -1,4 +1,5 @@
 import { useRef, useCallback, useEffect } from "react";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import { Grain } from "../components/Grain";
 import { WorkGrid } from "../components/WorkGrid";
 import { BookCard } from "../components/BookCard";
@@ -17,19 +18,22 @@ const MARQUEE_WORDS = [
 ];
 
 export function Main() {
-  const pageRef = useRef(null);
+  const pageRef = useRef<HTMLDivElement | null>(null);
   useRevealOnScroll(pageRef);
   useParallax();
 
-  const handleAnchorClick = useCallback((e) => {
-    const href = e.currentTarget.getAttribute("href");
-    if (!href?.startsWith("#")) return;
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
+  const handleAnchorClick = useCallback(
+    (e: ReactMouseEvent<HTMLAnchorElement>) => {
+      const href = e.currentTarget.getAttribute("href");
+      if (!href?.startsWith("#")) return;
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const hash = window.location.hash;

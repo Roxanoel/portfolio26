@@ -1,31 +1,49 @@
-import { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+  type ReactNode,
+} from "react";
 import { Link } from "react-router-dom";
 import { NdaDisclosure } from "./NdaDisclosure";
 import { JumpSelect } from "./JumpSelect";
 import { TagList } from "./Tag";
 import { sectionsFromChildren } from "../utils/sections";
+import type { Project } from "../data/projects";
 import styles from "./ProjectLayout.module.css";
 
-export function ProjectLayout({ project, children }) {
+interface ProjectLayoutProps {
+  project: Project;
+  children?: ReactNode;
+}
+
+interface JumpLock {
+  locked: boolean;
+  timer: number | undefined;
+}
+
+export function ProjectLayout({ project, children }: ProjectLayoutProps) {
   const { n, title, blurb, tags, dateRange, nda } = project;
   const sections = useMemo(() => sectionsFromChildren(children), [children]);
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
-  const jumpLockRef = useRef(false);
+  const jumpLockRef = useRef<JumpLock>({ locked: false, timer: undefined });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleJump = useCallback((id) => {
+  const handleJump = useCallback((id: string) => {
     setActiveId(id);
-    jumpLockRef.current = true;
+    jumpLockRef.current.locked = true;
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
-    clearTimeout(jumpLockRef.timer);
-    jumpLockRef.timer = setTimeout(() => {
-      jumpLockRef.current = false;
+    clearTimeout(jumpLockRef.current.timer);
+    jumpLockRef.current.timer = window.setTimeout(() => {
+      jumpLockRef.current.locked = false;
     }, 700);
   }, []);
 
@@ -38,7 +56,7 @@ export function ProjectLayout({ project, children }) {
     const handleScroll = () => {
       if (ticking) return;
       requestAnimationFrame(() => {
-        if (jumpLockRef.current) {
+        if (jumpLockRef.current.locked) {
           ticking = false;
           return;
         }
