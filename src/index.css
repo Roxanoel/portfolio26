@@ -43,6 +43,14 @@ body {
   transform: none;
 }
 
+/* Keep content visible when scripting is unavailable (no-JS progressive enhancement) */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1 !important;
