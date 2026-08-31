@@ -2,7 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
-import { PROJECTS } from "../../data/projects";
+import { useProject } from "../../hooks/useProject";
 import framedOverview from "../../assets/project-impact-statistics/framed-overview.png";
 import dateRangeSwitcher from "../../assets/project-impact-statistics/date-range-switcher.png";
 import costSavingsSection from "../../assets/project-impact-statistics/cost-savings-section.png";
@@ -12,9 +12,10 @@ import teamTable from "../../assets/project-impact-statistics/team-table.png";
 
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "impact-statistics");
-
 export function ImpactStatistics() {
+  const project = useProject();
+  if (!project) return null;
+
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-problem">
@@ -37,7 +38,10 @@ export function ImpactStatistics() {
             their portfolio.
           </li>
           <li>
-            <strong>Which accounts might benefit from a bit more attention</strong>.
+            <strong>
+              Which accounts might benefit from a bit more attention
+            </strong>
+            .
           </li>
         </ul>
         <br />
@@ -47,10 +51,11 @@ export function ImpactStatistics() {
         </p>
         <br />
         <p className={slideStyles.body}>
-          Beyond serving clients, the dashboard served a pretty neat internal use case:
-          providing an easy, visually compelling way for our customer success team to
-          demonstrate value during demos, converting prospects into paying customers by showing
-          them what the tool had already done for them.
+          Beyond serving clients, the dashboard served a pretty neat internal
+          use case: providing an easy, visually compelling way for our customer
+          success team to demonstrate value during demos, converting prospects
+          into paying customers by showing them what the tool had already done
+          for them.
         </p>
       </Slide>
 
@@ -73,8 +78,8 @@ export function ImpactStatistics() {
             are, so they can make informed decisions.
           </li>
           <li>
-            <strong>Spot opportunities across accounts.</strong> Users need to be
-            able to monitor across their accounts to see where there might be
+            <strong>Spot opportunities across accounts.</strong> Users need to
+            be able to monitor across their accounts to see where there might be
             room for improvement.
           </li>
           <li>
@@ -108,9 +113,10 @@ export function ImpactStatistics() {
               An overview as the cliff notes
             </h3>
             <p className={slideStyles.contentParagraph}>
-              I opened with an overview section to give a quick survey of the three main metrics our users cared most about. A headline figure set the scene, and
-              a breakdown by action type let users quickly understand the most
-              impactful actions they have taken in the app.
+              I opened with an overview section to give a quick survey of the
+              three main metrics our users cared most about. A headline figure
+              set the scene, and a breakdown by action type let users quickly
+              understand the most impactful actions they have taken in the app.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
@@ -122,22 +128,29 @@ export function ImpactStatistics() {
             </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>Choosing the time periods</h3>
+            <h3 className={slideStyles.contentHeading}>
+              Choosing the time periods
+            </h3>
             <p className={slideStyles.contentParagraph}>
-              In the mockup presented above, the user is viewing their statistics for "All Time". However,
-              they could also pick "Last 30 days" or "Last 90 days" as their interval of preference. We
-              explored using a date picker to allow users to select custom date ranges, but in the end,
-              most users were interested in roughly seeing the last month or the last quarter. The added complexity
-              was not a worthy tradeoff for our users above the the simple, 3-options switcher. Most importantly,
-              this choice led to <strong>improved performance</strong>: knowing in advance which ranges are possible
-              enabled us to <strong>pre-fetch</strong> the data in the background, so the user never had to wait for it to load.
+              In the mockup presented above, the user is viewing their
+              statistics for "All Time". However, they could also pick "Last 30
+              days" or "Last 90 days" as their interval of preference. We
+              explored using a date picker to allow users to select custom date
+              ranges, but in the end, most users were interested in roughly
+              seeing the last month or the last quarter. The added complexity
+              was not a worthy tradeoff for our users above the the simple,
+              3-options switcher. Most importantly, this choice led to{" "}
+              <strong>improved performance</strong>: knowing in advance which
+              ranges are possible enabled us to <strong>pre-fetch</strong> the
+              data in the background, so the user never had to wait for it to
+              load.
             </p>
           </div>
           <Legend caption="Date range switcher, at the page level">
             <CaseStudyImage
               src={dateRangeSwitcher}
-                alt="Date range switcher with three options: All Time, Last 30 days, and Last 90 days"
-              />
+              alt="Date range switcher with three options: All Time, Last 30 days, and Last 90 days"
+            />
           </Legend>
         </div>
       </Slide>
@@ -148,8 +161,8 @@ export function ImpactStatistics() {
           <h2 className={slideStyles.title}>Finding room for improvement</h2>
         </hgroup>
         <p className={slideStyles.body}>
-          The second need was helping users monitor across their accounts to spot
-          where there might be room for improvement.
+          The second need was helping users monitor across their accounts to
+          spot where there might be room for improvement.
         </p>
         <br />
         <div className={slideStyles.contentBody}>
@@ -161,8 +174,8 @@ export function ImpactStatistics() {
               I gave each metric (cost, time, and alerts) its own section so
               users could dig deeper. Instead of breaking down by action type,
               as was done in the overview section, here we break down the impact
-              data by account. This allows users to determine which accounts might
-              benefit from more attention.
+              data by account. This allows users to determine which accounts
+              might benefit from more attention.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
@@ -174,12 +187,15 @@ export function ImpactStatistics() {
             </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>Broken down per account</h3>
+            <h3 className={slideStyles.contentHeading}>
+              Broken down per account
+            </h3>
             <p className={slideStyles.contentParagraph}>
-              For each account, users can look at all of the actions that were taken,
-              to see exactly what was done and when. Each row is presented in the
-              same way as the improvements are shown in other pages of the app, and
-              is clickable to take the user to view that improvement.
+              For each account, users can look at all of the actions that were
+              taken, to see exactly what was done and when. Each row is
+              presented in the same way as the improvements are shown in other
+              pages of the app, and is clickable to take the user to view that
+              improvement.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>
@@ -225,13 +241,16 @@ export function ImpactStatistics() {
             </Legend>
           </div>
           <div className={slideStyles.contentGroup}>
-            <h3 className={slideStyles.contentHeading}>A table for the full team</h3>
+            <h3 className={slideStyles.contentHeading}>
+              A table for the full team
+            </h3>
             <p className={slideStyles.contentParagraph}>
-              A table below lists the whole team and each member&apos;s activity.
-              For now it is display-only, but it is a deliberate first step:
-              keeping team features in their own space means future actions —
-              assigning, reviewing, or comparing members — have a clear place to
-              grow into, rather than being retrofitted into the heatmap.
+              A table below lists the whole team and each member&apos;s
+              activity. For now it is display-only, but it is a deliberate first
+              step: keeping team features in their own space means future
+              actions — assigning, reviewing, or comparing members — have a
+              clear place to grow into, rather than being retrofitted into the
+              heatmap.
             </p>
           </div>
           <div className={slideStyles.contentGroup}>

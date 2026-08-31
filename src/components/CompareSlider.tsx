@@ -1,6 +1,18 @@
-import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 import { Handle } from "react-compare-slider/components";
 import styles from "./CompareSlider.module.css";
+
+interface CompareSliderProps {
+  itemOne: string;
+  itemTwo: string;
+  altOne: string;
+  altTwo: string;
+  labelOne?: string;
+  labelTwo?: string;
+}
 
 export function CompareSlider({
   itemOne,
@@ -9,7 +21,7 @@ export function CompareSlider({
   altTwo,
   labelOne,
   labelTwo,
-}) {
+}: CompareSliderProps) {
   const handle =
     labelOne || labelTwo ? (
       <div className={styles.handleRow}>

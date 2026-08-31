@@ -1,16 +1,33 @@
 import { useState, useEffect } from "react";
 import styles from "./BookCard.module.css";
 
-export function BookCard({ isbn, label = "Currently Reading" }) {
-  const [book, setBook] = useState(null);
+interface Book {
+  title: string;
+  subtitle: string | null;
+  author: string | null;
+  coverUrl: string;
+}
+
+interface BookCardProps {
+  isbn: string;
+  label?: string;
+}
+
+export function BookCard({ isbn, label = "Currently Reading" }: BookCardProps) {
+  const [book, setBook] = useState<Book | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
     const opts = { signal: controller.signal };
 
     Promise.all([
-      fetch(`https://openlibrary.org/isbn/${isbn}.json`, opts).then((r) => r.json()),
-      fetch(`https://openlibrary.org/search.json?isbn=${isbn}&fields=author_name`, opts).then((r) => r.json()),
+      fetch(`https://openlibrary.org/isbn/${isbn}.json`, opts).then((r) =>
+        r.json(),
+      ),
+      fetch(
+        `https://openlibrary.org/search.json?isbn=${isbn}&fields=author_name`,
+        opts,
+      ).then((r) => r.json()),
     ])
       .then(([edition, search]) => {
         setBook({
@@ -23,7 +40,8 @@ export function BookCard({ isbn, label = "Currently Reading" }) {
         });
       })
       .catch((err) => {
-        if (err.name !== "AbortError") console.error("BookCard fetch failed:", err);
+        if (err.name !== "AbortError")
+          console.error("BookCard fetch failed:", err);
       });
 
     return () => controller.abort();
@@ -34,7 +52,13 @@ export function BookCard({ isbn, label = "Currently Reading" }) {
       <b>{label}</b>
       {book && (
         <div className={styles.book}>
-          <img src={book.coverUrl} alt={book.title} className={styles.cover} />
+          <img
+            src={book.coverUrl}
+            alt={book.title}
+            className={styles.cover}
+            loading="lazy"
+            decoding="async"
+          />
           <div className={styles.info}>
             <span className={styles.title}>{book.title}</span>
             {book.subtitle && (

@@ -1,4 +1,5 @@
 import { useRef, useCallback, useEffect } from "react";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import { Grain } from "../components/Grain";
 import { WorkGrid } from "../components/WorkGrid";
 import { BookCard } from "../components/BookCard";
@@ -17,19 +18,22 @@ const MARQUEE_WORDS = [
 ];
 
 export function Main() {
-  const pageRef = useRef(null);
+  const pageRef = useRef<HTMLDivElement | null>(null);
   useRevealOnScroll(pageRef);
   useParallax();
 
-  const handleAnchorClick = useCallback((e) => {
-    const href = e.currentTarget.getAttribute("href");
-    if (!href?.startsWith("#")) return;
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
+  const handleAnchorClick = useCallback(
+    (e: ReactMouseEvent<HTMLAnchorElement>) => {
+      const href = e.currentTarget.getAttribute("href");
+      if (!href?.startsWith("#")) return;
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -58,13 +62,19 @@ export function Main() {
           </div>
           <ul className={styles.navList}>
             <li>
-              <a href="#work" onClick={handleAnchorClick}>Work</a>
+              <a href="#work" onClick={handleAnchorClick}>
+                Work
+              </a>
             </li>
             <li>
-              <a href="#about" onClick={handleAnchorClick}>About</a>
+              <a href="#about" onClick={handleAnchorClick}>
+                About
+              </a>
             </li>
             <li>
-              <a href="#contact" onClick={handleAnchorClick}>Contact</a>
+              <a href="#contact" onClick={handleAnchorClick}>
+                Contact
+              </a>
             </li>
           </ul>
         </div>
@@ -90,22 +100,31 @@ export function Main() {
               deliver projects holistically from start to finish.
             </p>
             <div className={styles.cta}>
-              <a href="#work" className={styles.btn} onClick={handleAnchorClick}>
+              <a
+                href="#work"
+                className={styles.btn}
+                onClick={handleAnchorClick}
+              >
                 See the work
               </a>
-              <a href="#contact" className={`${styles.btn} ${styles.ghost}`} onClick={handleAnchorClick}>
+              <a
+                href="#contact"
+                className={`${styles.btn} ${styles.ghost}`}
+                onClick={handleAnchorClick}
+              >
                 Get in touch
               </a>
             </div>
           </div>
 
-          <div
-            className={styles.heroArt}
-            data-reveal
-            style={{ "--reveal-delay": "120ms" }}
-          >
+          <div className={`${styles.heroArt} reveal-delay-120`} data-reveal>
             <div className={styles.photoFrame}>
-              <img src={portrait} alt="Roxane" className={styles.portrait} />
+              <img
+                src={portrait}
+                alt="Roxane"
+                className={styles.portrait}
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>
@@ -130,11 +149,7 @@ export function Main() {
           </h2>
           <div className={styles.about}>
             <div>
-              <div
-                className={styles.meta}
-                data-reveal
-                style={{ "--reveal-delay": "80ms" }}
-              >
+              <div className={`${styles.meta} reveal-delay-80`} data-reveal>
                 <div>
                   <b>Based in</b>
                   <span>San Francisco, remote-friendly</span>
@@ -146,18 +161,14 @@ export function Main() {
                   <b>On Repeat</b>
                   <iframe
                     data-testid="embed-iframe"
+                    title="Currently on repeat (Spotify album)"
                     src="https://open.spotify.com/embed/album/0mu3EvWYfNwBfISSg0q03p?utm_source=generator&si=83b3d10fe58948cf"
                     width="100%"
                     height="152"
                     allowFullScreen
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
-                    style={{
-                      border: "none",
-                      borderRadius: "8px",
-                      marginTop: "8px",
-                      display: "block",
-                    }}
+                    className={styles.embed}
                   ></iframe>
                 </div>
               </div>
@@ -172,7 +183,7 @@ export function Main() {
                 fascinated by the challenge of translating creative vision into
                 something usable and practical.
               </p>
-              <p data-reveal style={{ "--reveal-delay": "80ms" }}>
+              <p data-reveal className="reveal-delay-80">
                 My PhD in Philosophy from the University of Cambridge provides
                 the analytical anchor for this balance of creativity and
                 structure. My years training in analytical rigor and logic gave
@@ -182,7 +193,7 @@ export function Main() {
                 worldview and deeply understand how people think, feel, and
                 navigate their realities.
               </p>
-              <p data-reveal style={{ "--reveal-delay": "160ms" }}>
+              <p data-reveal className="reveal-delay-160">
                 This unique toolkit allows me to comfortably translate abstract
                 user needs into a product with precise technical execution. I
                 thrive on small, agile teams where I can wear many hats and
@@ -195,7 +206,6 @@ export function Main() {
             </div>
           </div>
         </section>
-
       </main>
       <footer id="contact" className={styles.footer}>
         <div className="wrap">
@@ -215,7 +225,6 @@ export function Main() {
           </ul>
           <div className={styles.footBottom}>
             <span>© {new Date().getFullYear()} Roxane Noel.</span>
-            {/* <span>Roxane — Portfolio</span> */}
           </div>
         </div>
       </footer>

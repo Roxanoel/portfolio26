@@ -8,7 +8,7 @@
 .caption {
   font-size: var(--text-xs);
   line-height: var(--leading-normal);
-  color: var(--ink-soft);
+  color: var(--ink-700);
   font-style: italic;
   text-align: center;
 }

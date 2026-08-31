@@ -1,0 +1,77 @@
+/* Jump trigger */
+.jumpWrapper {
+  position: relative;
+  display: inline-flex;
+}
+.jumpTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: var(--font-extrabold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-widest);
+  color: var(--ink-700);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.jumpTrigger:hover {
+  background-color: var(--ink-900);
+  color: var(--paper-100);
+}
+.jumpTrigger:focus-visible {
+  outline: none;
+}
+
+.jumpChevron {
+  transition: transform 0.2s;
+}
+.jumpChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Jump menu */
+.jumpMenu {
+  position: fixed;
+  z-index: 10000;
+  width: max-content;
+  background: var(--paper-100);
+  border-radius: 12px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.jumpItem {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+  color: var(--ink-900);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.jumpItem:hover,
+.jumpItemFocus {
+  background-color: var(--ink-900);
+  color: var(--paper-100);
+}
+.jumpItemActive {
+  font-weight: var(--font-extrabold);
+}
+.jumpItemActive:hover,
+.jumpItemActive.jumpItemFocus {
+  background-color: var(--ink-900);
+  color: var(--paper-100);
+}
