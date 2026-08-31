@@ -2,19 +2,70 @@
 
 /* ---------- Color ---------- */
 :root {
-  --cream: #f2e8d5;
-  --paper: #f7efe0;
-  --ink: #1c1a17;
-  --ink-soft: #3a352d;
-  --terra: #c75f3a;
-  --gold: #d9a441;
-  --gold-dark: #b07a1f;
-  --green: #3f5e54;
-  --green-bg: color-mix(in srgb, var(--green) 20%, transparent);
-  --green-border: color-mix(in srgb, var(--green) 30%, transparent);
-  --green-dark: color-mix(in srgb, var(--green) 80%, black);
-  --night: #14110d;
-  --umber: #241c10;
+  /* Orange */
+  --orange-50: #fcf6f0;
+  --orange-100: #f7eadd;
+  --orange-200: #eed2ba;
+  --orange-300: #e3b38e;
+  --orange-400: #d68c61;
+  --orange-500: #ce6f41;
+  --orange-600: #c75f3a;
+  --orange-700: #9f472f;
+  --orange-800: #803a2c;
+  --orange-900: #683226;
+  --orange-950: #381712;
+
+  /* Ink */
+  --ink-50: #fafaf9;
+  --ink-100: #f5f5f4;
+  --ink-200: #e7e6e4;
+  --ink-300: #d6d4d1;
+  --ink-400: #a8a49e;
+  --ink-500: #78736c;
+  --ink-600: #57554e;
+  --ink-700: #44423c;
+  --ink-800: #292624;
+  --ink-900: #1c1a17;
+  --ink-950: #0c0b09;
+
+  /* Gold */
+  --gold-50: #fbf7eb;
+  --gold-100: #f5ebcc;
+  --gold-200: #ecd79c;
+  --gold-300: #e1ba63;
+  --gold-400: #d9a441;
+  --gold-500: #c88a2a;
+  --gold-600: #ac6b22;
+  --gold-700: #8a4e1e;
+  --gold-800: #734020;
+  --gold-900: #633620;
+  --gold-950: #633620;
+
+  /* Green */
+  --green-50: #f5f8f7;
+  --green-100: #dee9e4;
+  --green-200: #bdd2c9;
+  --green-300: #94b4a7;
+  --green-400: #6d9486;
+  --green-500: #53796c;
+  --green-600: #3f5e54;
+  --green-700: #364f47;
+  --green-800: #2e413b;
+  --green-900: #2a3733;
+  --green-950: #141f1c;
+
+  /* Paper */
+  --paper-50: #fbf7f1;
+  --paper-100: #f2e8d5;
+  --paper-200: #ead9be;
+  --paper-300: #ddbf94;
+  --paper-400: #ce9f69;
+  --paper-500: #c3874c;
+  --paper-600: #b67240;
+  --paper-700: #975b37;
+  --paper-800: #7a4a32;
+  --paper-900: #633e2b;
+  --paper-950: #351f15;
 
   /* ---------- Layout ---------- */
   --maxw: 1320px;

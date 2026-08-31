@@ -8,8 +8,8 @@
 
 .stat {
   margin: 0;
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--ink-900);
+  color: var(--paper-100);
   border-radius: 12px;
   padding: clamp(20px, 3vw, 32px);
 }
@@ -27,7 +27,7 @@
 .statLabel {
   font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
   line-height: var(--leading-normal);
-  color: color-mix(in srgb, var(--cream) 75%, transparent);
+  color: color-mix(in srgb, var(--paper-100) 75%, transparent);
 }
 
 /* Action points (Defining slide) */
@@ -42,12 +42,12 @@
 
 .actionItem {
   padding: 16px;
-  background: var(--green-bg);
-  border: 1px solid var(--green-border);
+  background: color-mix(in srgb, var(--green-600) 20%, transparent);
+  border: 1px solid var(--green-300);
   border-radius: 12px;
   font-size: clamp(var(--text-sm), 1vw, var(--text-base));
   line-height: var(--leading-normal);
-  color: var(--green-dark);
+  color: var(--green-700);
 }
 
 .actionItem strong {
@@ -55,7 +55,7 @@
   font-family: var(--font-heading);
   font-weight: var(--font-bold);
   font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
-  color: var(--green-dark);
+  color: var(--green-700);
   margin-bottom: 2px;
 }
 
@@ -74,7 +74,7 @@
   padding-left: 20px;
   font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
   line-height: var(--leading-normal);
-  color: var(--ink-soft);
+  color: var(--ink-700);
 }
 
 .taskItem::before {
@@ -85,7 +85,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--ink);
+  background: var(--ink-900);
 }
 
 .slideContent {

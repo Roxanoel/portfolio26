@@ -16,11 +16,11 @@ function makeSVG(bg, shapes) {
 }
 
 const S = {
-  bg: "#ece3d2",
+  bg: "#f2e8d5",
   ink: "#1c1a17",
-  dk: "#5b544a",
-  mid: "#a89e8b",
-  lt: "#d6cdba",
+  dk: "#57554e",
+  mid: "#a8a49e",
+  lt: "#d6d4d1",
 };
 
 export const MOTIFS = [
