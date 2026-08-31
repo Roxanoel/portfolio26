@@ -56,6 +56,15 @@
   gap: 1em;
 }
 
+.contentBodyTop {
+  margin-top: 1.5em;
+}
+
+.contentList {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+
 .contentHeading {
   font-family: var(--font-heading);
   font-weight: var(--font-bold);

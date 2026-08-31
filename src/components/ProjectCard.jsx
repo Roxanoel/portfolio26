@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { TagList } from "./Tag";
 import styles from "./ProjectCard.module.css";
 
 export function ProjectCard({ project, motifSvg }) {
@@ -47,13 +48,7 @@ export function ProjectCard({ project, motifSvg }) {
           <span className={styles.year}>{year}</span>
         </div>
         <p className={styles.blurb}>{blurb}</p>
-        <div className={styles.tags}>
-          {tags.map((tag) => (
-            <span key={tag} className={styles.tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
+        <TagList tags={tags} variant="outline" className={styles.tags} />
       </div>
     </Link>
   );

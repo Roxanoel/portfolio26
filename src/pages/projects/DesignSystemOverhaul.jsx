@@ -24,8 +24,7 @@ export function OpteoDesignSystemOverhaul() {
         </hgroup>
         <div className={slideStyles.contentBody}>
           <ul
-            className={slideStyles.contentParagraph}
-            style={{ listStyle: "disc", paddingLeft: "1.5em" }}
+            className={`${slideStyles.contentParagraph} ${slideStyles.contentList}`}
           >
             <li>
               Built in <strong>Vue 3</strong> using the{" "}
@@ -80,7 +79,9 @@ export function OpteoDesignSystemOverhaul() {
           higher-density displays with more data points, we needed a more
           performant solution.
         </p>
-        <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
+        <div
+          className={`${slideStyles.contentBody} ${slideStyles.contentBodyTop}`}
+        >
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
               Solution architecture
@@ -202,7 +203,9 @@ export function OpteoDesignSystemOverhaul() {
             aria-label="Number input interaction demo"
           />
         </Legend>
-        <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
+        <div
+          className={`${slideStyles.contentBody} ${slideStyles.contentBodyTop}`}
+        >
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>Masking approach</h3>
             <p className={slideStyles.contentParagraph}>
@@ -270,7 +273,9 @@ export function OpteoDesignSystemOverhaul() {
             maxWidth={300}
           />
         </Legend>
-        <div className={slideStyles.contentBody} style={{ marginTop: "1.5em" }}>
+        <div
+          className={`${slideStyles.contentBody} ${slideStyles.contentBodyTop}`}
+        >
           <div className={slideStyles.contentGroup}>
             <h3 className={slideStyles.contentHeading}>
               Reshaping a third-party library

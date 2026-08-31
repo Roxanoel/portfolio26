@@ -1,3 +1,3 @@
-export function Grain({ light = false }) {
-  return <div className={`grain${light ? " light" : ""}`} aria-hidden="true" />;
+export function Grain() {
+  return <div className="grain" aria-hidden="true" />;
 }

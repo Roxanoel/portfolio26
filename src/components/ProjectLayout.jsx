@@ -2,16 +2,9 @@ import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { NdaDisclosure } from "./NdaDisclosure";
 import { JumpSelect } from "./JumpSelect";
+import { TagList } from "./Tag";
 import { sectionsFromChildren } from "../utils/sections";
 import styles from "./ProjectLayout.module.css";
-
-const TAG_CLASS = {
-  Engineering: styles.tagEngineering,
-  Product: styles.tagProduct,
-  UI: styles.tagUI,
-  Research: styles.tagResearch,
-  UX: styles.tagUX,
-};
 
 export function ProjectLayout({ project, children }) {
   const { n, title, blurb, tags, dateRange, nda } = project;
@@ -112,16 +105,7 @@ export function ProjectLayout({ project, children }) {
       <header className={styles.header}>
         <div className="wrap">
           <div className={styles.meta}>
-            <div className={styles.tags}>
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`${styles.tag} ${TAG_CLASS[tag] ?? styles.tagUX}`}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+            <TagList tags={tags} />
           </div>
           <h1 className={styles.title}>{title}</h1>
           {dateRange && <p className={styles.dateRange}>{dateRange}</p>}

@@ -113,11 +113,7 @@ export function Main() {
             </div>
           </div>
 
-          <div
-            className={styles.heroArt}
-            data-reveal
-            style={{ "--reveal-delay": "120ms" }}
-          >
+          <div className={`${styles.heroArt} reveal-delay-120`} data-reveal>
             <div className={styles.photoFrame}>
               <img
                 src={portrait}
@@ -149,11 +145,7 @@ export function Main() {
           </h2>
           <div className={styles.about}>
             <div>
-              <div
-                className={styles.meta}
-                data-reveal
-                style={{ "--reveal-delay": "80ms" }}
-              >
+              <div className={`${styles.meta} reveal-delay-80`} data-reveal>
                 <div>
                   <b>Based in</b>
                   <span>San Francisco, remote-friendly</span>
@@ -172,12 +164,7 @@ export function Main() {
                     allowFullScreen
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
-                    style={{
-                      border: "none",
-                      borderRadius: "8px",
-                      marginTop: "8px",
-                      display: "block",
-                    }}
+                    className={styles.embed}
                   ></iframe>
                 </div>
               </div>
@@ -192,7 +179,7 @@ export function Main() {
                 fascinated by the challenge of translating creative vision into
                 something usable and practical.
               </p>
-              <p data-reveal style={{ "--reveal-delay": "80ms" }}>
+              <p data-reveal className="reveal-delay-80">
                 My PhD in Philosophy from the University of Cambridge provides
                 the analytical anchor for this balance of creativity and
                 structure. My years training in analytical rigor and logic gave
@@ -202,7 +189,7 @@ export function Main() {
                 worldview and deeply understand how people think, feel, and
                 navigate their realities.
               </p>
-              <p data-reveal style={{ "--reveal-delay": "160ms" }}>
+              <p data-reveal className="reveal-delay-160">
                 This unique toolkit allows me to comfortably translate abstract
                 user needs into a product with precise technical execution. I
                 thrive on small, agile teams where I can wear many hats and
@@ -234,7 +221,6 @@ export function Main() {
           </ul>
           <div className={styles.footBottom}>
             <span>© {new Date().getFullYear()} Roxane Noel.</span>
-            {/* <span>Roxane — Portfolio</span> */}
           </div>
         </div>
       </footer>
