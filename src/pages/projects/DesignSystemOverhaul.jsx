@@ -3,7 +3,7 @@ import { Slide } from "../../components/Slide";
 import { CompareSlider } from "../../components/CompareSlider";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
-import { PROJECTS } from "../../data/projects";
+import { useProject } from "../../hooks/useProject";
 import lineChartContainedLight from "../../assets/project-design-system-overhaul/line-chart-contained-light.png";
 import lineChartContainedDark from "../../assets/project-design-system-overhaul/line-chart-contained-dark.png";
 import originalTooltip from "../../assets/project-design-system-overhaul/origina_amcharts_tooltip.png";
@@ -12,9 +12,9 @@ import multiSeriesTooltip from "../../assets/project-design-system-overhaul/cont
 import numberInputVideo from "../../assets/project-design-system-overhaul/number-input-interaction.mp4";
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "design-system-overhaul");
-
 export function OpteoDesignSystemOverhaul() {
+  const project = useProject();
+
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-overview">

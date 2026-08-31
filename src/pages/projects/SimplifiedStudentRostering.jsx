@@ -2,7 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
-import { PROJECTS } from "../../data/projects";
+import { useProject } from "../../hooks/useProject";
 import rosteringFlowchart from "../../assets/project-rostering/add_new_student.png";
 import rosteringFlowchartImg from "../../assets/project-rostering/rostering-flowchart.png";
 import flowPresentation from "../../assets/project-rostering/flow_presentation.png";
@@ -11,9 +11,9 @@ import shareCode from "../../assets/project-rostering/share_code.png";
 import styles from "./SimplifiedStudentRostering.module.css";
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "simplified-student-rostering");
-
 export function SimplifiedStudentRostering() {
+  const project = useProject();
+
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-discovering">

@@ -1,9 +1,9 @@
 import { ProjectLayout } from "../../components/ProjectLayout";
-import { findProject } from "../../data/projects";
-
-const project = findProject("shareable-responsive-search-ads");
+import { useProject } from "../../hooks/useProject";
 
 export function ResponsiveSearchAdsPreview() {
+  const project = useProject();
+
   return (
     <ProjectLayout project={project}>{/* Content coming soon */}</ProjectLayout>
   );

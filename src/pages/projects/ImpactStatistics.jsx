@@ -2,7 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
-import { PROJECTS } from "../../data/projects";
+import { useProject } from "../../hooks/useProject";
 import framedOverview from "../../assets/project-impact-statistics/framed-overview.png";
 import dateRangeSwitcher from "../../assets/project-impact-statistics/date-range-switcher.png";
 import costSavingsSection from "../../assets/project-impact-statistics/cost-savings-section.png";
@@ -12,9 +12,9 @@ import teamTable from "../../assets/project-impact-statistics/team-table.png";
 
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find((p) => p.slug === "impact-statistics");
-
 export function ImpactStatistics() {
+  const project = useProject();
+
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-problem">

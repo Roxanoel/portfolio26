@@ -2,7 +2,7 @@ import { ProjectLayout } from "../../components/ProjectLayout";
 import { Slide } from "../../components/Slide";
 import { CaseStudyImage } from "../../components/CaseStudyImage";
 import { Legend } from "../../components/Legend";
-import { PROJECTS } from "../../data/projects";
+import { useProject } from "../../hooks/useProject";
 import multiStepAltSkeleton from "../../assets/project-resources/multi-step-alt-skeleton.png";
 import multiStepWizardSkeleton from "../../assets/project-resources/multi-step-wizard-skeleton.png";
 import skeletonSinglePage from "../../assets/project-resources/skeleton-single-page.png";
@@ -11,11 +11,9 @@ import solutionResourceRecommendation from "../../assets/project-resources/solut
 import solutionCards from "../../assets/project-resources/solution-cards.png";
 import slideStyles from "../../components/Slide.module.css";
 
-const project = PROJECTS.find(
-  (p) => p.slug === "mental-health-resource-assignment",
-);
-
 export function MentalHealthResourceAssignment() {
+  const project = useProject();
+
   return (
     <ProjectLayout project={project}>
       <Slide id="slide-problem">
